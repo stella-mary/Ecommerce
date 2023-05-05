@@ -1,0 +1,428 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;600&family=Dancing+Script:wght@700&family=Kanit:wght@200;300;500&family=Karla:ital,wght@0,200;0,400;1,300&family=Merriweather+Sans:wght@500&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200;1,300&family=Oleo+Script:wght@700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Playball&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;1,100&family=Satisfy&family=Source+Sans+Pro:ital,wght@0,200;0,400;0,600;0,700;0,900;1,200&display=swap');
+
+html,
+body,
+#root,
+.app,
+.content {
+  height: 100%;;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  /* font-weight: bold; */
+}
+
+.button {
+  background-color: #2499ee;
+  padding: 10px;
+  color: white;
+  width: 90%;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.button1{
+  background-color: #27ce88;
+  padding: 10px;
+  color: white;
+  /* width: 25%; */
+  font-size: 12px;
+  border: solid 1px #3d454e;
+  outline: none; 
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button2{
+  background-color:#222b36;
+  padding: 10px;
+  color: white;
+  /* width: 25%; */
+  font-size: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: solid 1px #3d454e;
+  outline: none;
+}
+
+.checkOut {
+  margin-top: 20px;
+}
+
+.bgColor11{
+  color: #dc2445;
+}
+
+.productDetails {
+ display: flex;
+ /* color: red; */
+ flex-direction: column;
+ justify-content: space-between;
+}
+
+.productDetails1 {
+  display: flex;
+  /* color: red; */
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-between;
+ }
+
+
+.button4{
+  background-color:#222b36;
+  padding: 10px;
+  width: 100px;
+  color: white;
+  font-size: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: solid 1px #3d454e;
+  outline: none;
+}
+
+.button3{
+  background-color: #2499ef;
+  padding: 10px;
+  color: white;
+  width: 100px;
+  /* width: 25%; */
+  font-size: 12px;
+  border: solid 1px #3d454e;
+  outline: none; 
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+.bgColor {
+  background-color: #333c46;
+  border-radius: 1px;
+  color: #2499ee;
+  cursor: pointer;
+  border: solid 1px #3d454e;
+  outline: none; 
+  border-radius: 5px;
+}
+
+.bgColor1{
+  color:  #1f2a40;
+}
+
+.bgColor2 {
+  color: #283b82;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.bgColor3 {
+  color: #469bdb;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.bgColor4 {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+ vertical-align: middle;
+  color: #2499ee;
+}
+
+
+.bgcolor5 {
+  background-color: #27ce88;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+}
+
+.bgcolor6 {
+  background-color: #2499ef;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.bgcolor6:hover{
+  background: #0c5d96;
+}
+
+.buttonC {
+  background-color: #424242;
+  /* border: none; */
+  color: white;
+  padding: 5px;
+  width: 100%;
+  border-radius: 5px;
+  border:solid 1px #656b73;
+}
+
+.bgColor7 {
+  color: #283b82;
+  font-style: italic;
+  font-size: 15px;
+}
+
+
+.bgColor8 {
+  color: #469bdb;
+  font-style: italic;
+  font-size: 15px;
+}
+
+.bgColor9{
+  color: white;
+  font-size: 15px;
+}
+
+.bgColorR{
+  color: #ff316f; 
+}
+
+
+.button5{
+  background-color: #2499ef;
+  padding: 10px;
+  color: white;
+  width: 100%;
+  font-size: 12px;
+  border: solid 1px #3d454e;
+  outline: none; 
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.delete-icon {
+  height: 40px;
+  width: 40px;
+  display: block;
+  /* background-color: #fff; */
+  text-align: center;
+  border-radius: 50%;
+  /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.tick-icon {
+  height: 30px;
+  width: 30px;
+  display: block;
+  background-color: #2499ef;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 25px;
+  margin-top: 15px;
+  margin-bottom: 0px;
+  /* height: 100vh; */
+}
+
+.circle {
+  /* width: 200px;
+  height: 200px; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: white; */
+  border: 2px solid white;
+}
+
+.circle-left {
+  margin-right: auto;
+}
+
+.circle-right {
+  margin-left: -20px;
+  background-color: yellow;
+}
+
+
+.billClick{
+  background-color: #171c24;
+  border: solid 1px red;
+}
+
+
+.delete-icon:hover {
+  background-color: gray;
+  cursor: pointer;
+ 
+}
+
+.delete-icon span  {
+  font-size: 25px;
+  color: #455a79;
+  line-height: 40px;
+}
+
+.tick-icon span  {
+  font-size: 25px;
+  color: #455a79;
+  line-height: 30px;
+}
+
+
+.Radio-input[type="radio"]:checked {
+  /* This will change the color of the radio button when it's selected */
+  background-color: blue;
+}
+
+.my-radio input[type="radio"]:checked {
+  /* This will change the color of the radio button when it's selected */
+  background-color: red;
+}
+
+.bgColor10 {
+ color: #455a79;
+  cursor: pointer;
+}
+
+.color{
+  color: #455a79;
+}
+
+
+.checkOut{
+margin-left: 20px;
+
+}
+
+.image1{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.bordertop{
+  border-top: solid 0.2px #3d454e;
+  margin-top: -2px;
+  margin-bottom: -5px;
+}
+
+.borderbottom{
+  border-bottom: solid 0.08px #3d454e;;
+  width: 40%;
+margin-left: 30%;  
+  margin-top: -2px;
+  margin-bottom: -5px;
+  text-align: center;
+}
+
+.image{
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.image2{
+  /* width: 100%; */
+  
+}
+
+.space{
+  padding-left: 20px;
+}
+
+.space1{
+  padding-left: 10px;
+}
+
+.space2{
+  padding-left: 50%;
+}
+
+.app {
+  display: flex;
+  position: relative;
+}
+
+.bgcolorW{
+  color: #fff;
+  
+}
+
+.circle {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  background-color: #fe316f;
+  border-radius: 50%;
+}
+
+.circle1 {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  background-color: #fe8969;
+  border-radius: 50%;
+}
+
+.circle2 {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  background-color: #8c8dff;
+  border-radius: 50%;
+}
+
+.circle3 {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  background-color: #2499ef;
+  border-radius: 50%;
+}
+
+.circle4 {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  background-color: #27ce88;
+  border-radius: 50%;
+}
+
+
+.text {
+  margin: auto;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on Hover */
+::-webkit-scrollbar-track:hover {
+  background: #555;
+}
+
+
+
+
+
+
