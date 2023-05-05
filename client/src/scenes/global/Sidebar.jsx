@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ProSidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme } from '@mui/material';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { tokens } from "../../theme";
 import "react-pro-sidebar/dist/css/styles.css";
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
@@ -27,7 +27,7 @@ import AttachMoneyOutlinedIcon from '@mui/icons-material/AttachMoneyOutlined';
 import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
 import CheckBoxOutlineBlankOutlinedIcon from '@mui/icons-material/CheckBoxOutlineBlankOutlined';
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
-
+import { useNavigate } from 'react-router-dom';
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import { Height } from '@mui/icons-material';
 
@@ -37,13 +37,57 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
     return (
         <MenuItem active={selected === title} style={{ color: colors.grey[100] }} onClick={() => setSelected(title)} icon={icon}>
             <Typography>{title}</Typography>
-            <Link to={to} />
+            {/* <Link to={to} /> */}
 
         </MenuItem >
     )
 }
 
 const Sidebar = () => {
+
+    const navigate = useNavigate()
+
+    function movetoCartDetails() {
+        navigate("/cart")
+    }
+
+    function movetoPaymentMethod() {
+        navigate("/payment")
+    }
+
+    function movetoBillAddress() {
+        navigate("/bill")
+    }
+
+    function movetoProdcutDetails() {
+        navigate("/product")
+    }
+
+    function movetoShop1() {
+        navigate("/shop1")
+    }
+
+    function movetoShop2() {
+        navigate("/shop2")
+    }
+
+
+    function movetoCheckOut1() {
+        navigate("/checkout1")
+    }
+
+    function movetoCheckOut2() {
+        navigate("/checkout2")
+    }
+
+    function movetoPaymentComplete1() {
+        navigate("/complete1")
+    }
+
+    function movetoPaymentComplete2() {
+        navigate("/complete2")
+    }
+
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     const [isCollapsed, setIsCollapsed] = useState(false);
@@ -422,7 +466,7 @@ const Sidebar = () => {
                                     margin: "10px 0 10px 12px",
                                     color: colors.grey[100],
                                 }}
-                                to="/cart"
+                                onClick={movetoCartDetails}
                                 icon={<FiberManualRecordIcon />}
                             >Cart</MenuItem>
                             <MenuItem
@@ -430,7 +474,7 @@ const Sidebar = () => {
                                     margin: "10px 0 10px 12px",
                                     color: colors.grey[100],
                                 }}
-                                to="/payment"
+                                onClick={movetoPaymentMethod}
                                 icon={<FiberManualRecordIcon />}
                             >Payment</MenuItem>
                             <MenuItem
@@ -438,7 +482,7 @@ const Sidebar = () => {
                                     margin: "10px 0 10px 12px",
                                     color: colors.grey[100],
                                 }}
-                                // to="/faq"
+                                onClick={movetoBillAddress}
                                 icon={<FiberManualRecordIcon />}
                             >Billing Address</MenuItem>
                             <MenuItem
@@ -446,6 +490,7 @@ const Sidebar = () => {
                                     margin: "10px 0 10px 12px",
                                     color: colors.grey[100],
                                 }}
+                                onClick={movetoProdcutDetails}
                                 // to="/faq"
                                 icon={<FiberManualRecordIcon />}
                             >Product Details</MenuItem>
@@ -454,7 +499,7 @@ const Sidebar = () => {
                                     margin: "10px 0 10px 12px",
                                     color: colors.grey[100],
                                 }}
-                                // to="/faq"
+                                onClick={movetoShop1}
                                 icon={<FiberManualRecordIcon />}
                             >Shop 1</MenuItem>
                             <MenuItem
@@ -462,7 +507,7 @@ const Sidebar = () => {
                                     margin: "10px 0 10px 12px",
                                     color: colors.grey[100],
                                 }}
-                                // to="/faq"
+                                onClick={movetoShop2}
                                 icon={<FiberManualRecordIcon />}
                             >Shop 2</MenuItem>
                             <MenuItem
@@ -470,7 +515,7 @@ const Sidebar = () => {
                                     margin: "10px 0 10px 12px",
                                     color: colors.grey[100],
                                 }}
-                                // to="/faq"
+                                onClick={movetoCheckOut1}
                                 icon={<FiberManualRecordIcon />}
                             >Checkout 1</MenuItem>
                             <MenuItem
@@ -478,7 +523,7 @@ const Sidebar = () => {
                                     margin: "10px 0 10px 12px",
                                     color: colors.grey[100],
                                 }}
-                                // to="/faq"
+                                onClick={movetoCheckOut2}
                                 icon={<FiberManualRecordIcon />}
                             >Checkout 2</MenuItem>
                             <MenuItem
@@ -486,7 +531,7 @@ const Sidebar = () => {
                                     margin: "10px 0 10px 12px",
                                     color: colors.grey[100],
                                 }}
-                                // to="/faq"
+                                onClick={movetoPaymentComplete1}
                                 icon={<FiberManualRecordIcon />}
                             >Payment Complete 1</MenuItem>
                             <MenuItem
@@ -494,7 +539,7 @@ const Sidebar = () => {
                                     margin: "10px 0 10px 12px",
                                     color: colors.grey[100],
                                 }}
-                                // to="/faq"
+                                onClick={movetoPaymentComplete2}
                                 icon={<FiberManualRecordIcon />}>Payment Complete 2</MenuItem>
                         </SubMenu>
 
@@ -506,13 +551,12 @@ const Sidebar = () => {
                             setSelected={setSelected}
                         >
 
-
                             <MenuItem
                                 style={{
                                     margin: "10px 0 10px 12px",
                                     color: colors.grey[100],
                                 }}
-                                // to="/faq"
+                                // onClick={movetoProdcutList}
                                 icon={<FiberManualRecordIcon />}
                             >Product List</MenuItem>
 
