@@ -1,4 +1,4 @@
-import { Box, IconButton, useTheme } from "@mui/material";
+import { Box, IconButton, TextField, useTheme } from "@mui/material";
 import { useContext } from "react";
 import { ColorModeContext, tokens } from '../../theme';
 import InputBase from "@mui/material/InputBase";
@@ -28,6 +28,7 @@ const Topbar = () => {
                     <SearchIcon />
                 </IconButton>
             </Box>
+            <TextField>text</TextField>
             {/* ICONS */}
             <Box display="flex">
                 <IconButton onClick={colorMode.toggleColorMode}>

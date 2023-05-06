@@ -193,21 +193,22 @@ const BillAddress = () => {
                                     maxWidth: '100%',
                                     marginBottom: '20px',
                                     marginTop: "20px",
-                                    color: '#455a79',
+                                    color: 'green',
                                 }}
                             >
 
-                                <TextField fullWidth label="City" id="City" InputLabelProps={{ style: { color: '#2499ef', borderColor: "#2499ef" } }}
+                                <TextField>text</TextField>
+                                <TextField fullWidth label="City" id="City" InputLabelProps={{ style: { color: '#2499ef' } }}
                                     InputProps={{
                                         style: {
                                             borderColor: '#2499ef', // Set the border color
                                         },
                                     }} />
 
-                                <TextField fullWidth label="Country" name="Country" value={country} id="Country" autoComplete="Country" InputLabelProps={{ style: { color: '#2499ef', borderColor: "#2499ef" } }}
+                                <TextField fullWidth label="Country" name="Country" value={country} id="Country" autoComplete="Country" InputLabelProps={{}}
                                     InputProps={{
                                         style: {
-                                            borderColor: '#2499ef', // Set the border color
+                                            // borderColor: '#2499ef', // Set the border color
                                         },
                                     }} />
                             </Box>

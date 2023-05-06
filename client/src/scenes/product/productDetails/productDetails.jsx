@@ -57,9 +57,9 @@ export default function ProductDetails() {
                 }}
             >
                 <Typography><span class="bgcolor5">In Stock</span></Typography>
-                <Typography variant="h4" color="#7c91a6" marginTop="20px">NIKE</Typography>
-                <Typography variant="h2" marginTop="10px"><b>Air Jordan 270</b></Typography>
-                <Typography variant="h4" marginTop="5px" color="#2499ef">$350</Typography>
+                <h4>NIKE</h4>
+                <h2><b>Air Jordan 270</b></h2>
+                <h4>$350</h4>
                 <Typography variant="h5" marginTop="20px"
                     display="flex"
                     flexDirection="space-between"
