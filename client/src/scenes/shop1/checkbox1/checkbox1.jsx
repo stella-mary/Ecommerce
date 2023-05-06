@@ -1,5 +1,7 @@
 import { useTheme } from "@mui/material";
 import { IconButton, Typography } from "@mui/material";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -30,6 +32,23 @@ export default function CheckBox() {
     const handleClose = (value: string) => {
         setOpen(false);
     };
+
+    const outerTheme = createTheme({
+        palette: {
+            primary: {
+                main: '#2499ef',
+            },
+        },
+    });
+
+
+
+    const [selectedCircle, setSelectedCircle] = useState("");
+
+    const handleCircleClick = (circle) => {
+        setSelectedCircle(circle);
+    };
+
 
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
@@ -76,10 +95,10 @@ export default function CheckBox() {
                             defaultValue="female"
                             name="radio-buttons-group"
                         >
-                            <FormControlLabel value="all" control={<Radio />} label="All" />
-                            <FormControlLabel value="shoes" control={<Radio />} label="Shoes" />
-                            <FormControlLabel value="clothing" control={<Radio />} label="Clothing" />
-                            <FormControlLabel value="accessories" control={<Radio />} label="Accessories" />
+                            <FormControlLabel value="all" control={<Radio theme={outerTheme} />} label="All" />
+                            <FormControlLabel theme={outerTheme} value="shoes" control={<Radio theme={outerTheme} />} label="Shoes" />
+                            <FormControlLabel theme={outerTheme} value="clothing" control={<Radio theme={outerTheme} />} label="Clothing" />
+                            <FormControlLabel theme={outerTheme} value="accessories" control={<Radio theme={outerTheme} />} label="Accessories" />
                         </RadioGroup>
                     </FormControl>
                 </ListItemButton>
@@ -88,9 +107,9 @@ export default function CheckBox() {
                     <FormControl>
                         <FormLabel>Gender</FormLabel>
                         <FormGroup>
-                            <FormControlLabel control={<Checkbox defaultChecked />} label="Men" />
-                            <FormControlLabel required control={<Checkbox />} label="Woman" />
-                            <FormControlLabel required control={<Checkbox />} label="Kids" />
+                            <FormControlLabel control={<Checkbox defaultChecked theme={outerTheme} />} label="Men" />
+                            <FormControlLabel control={<Checkbox theme={outerTheme} />} label="Woman" />
+                            <FormControlLabel control={<Checkbox theme={outerTheme} />} label="Kids" />
                         </FormGroup>
                     </FormControl>
                 </ListItemButton>
@@ -100,12 +119,37 @@ export default function CheckBox() {
                 <ListItemButton
                     display="flex"
                     flexDirection="row"
-
                     justifyContent="space-between"
                 >
-                    <div class="circle" /><span class="space1" /><div class="circle1" /><span class="space1" />
-                    <div class="circle2" /><span class="space1" /><div class="circle3" /><span class="space1" />
-                    <div class="circle4" />
+                    <div className="circle" /><span class="space1" /><div className="circle1" /><span class="space1" />
+                    <div className="circle2" /><span class="space1" /><div className="circle3" /><span class="space1" />
+                    <div className="circle4" />
+
+                    {/* <div
+                        className={`circle ${selectedCircle === 'circle' ? 'selected' : ''}`}
+                        onClick={() => handleCircleClick('circle')}
+                    />
+                    <span className="space1" />
+                    <div
+                        className={`circle1 ${selectedCircle === 'circle1' ? 'selected' : ''}`}
+                        onClick={() => handleCircleClick('circle1')}
+                    />
+                    <span className="space1" />
+                    <div
+                        className={`circle2 ${selectedCircle === 'circle2' ? 'selected' : ''}`}
+                        onClick={() => handleCircleClick('circle2')}
+                    />
+                    <span className="space1" />
+                    <div
+                        className={`circle3 ${selectedCircle === 'circle3' ? 'selected' : ''}`}
+                        onClick={() => handleCircleClick('circle3')}
+                    />
+                    <span className="space1" />
+                    <div
+                        className={`circle4 ${selectedCircle === 'circle4' ? 'selected' : ''}`}
+                        onClick={() => handleCircleClick('circle4')}
+                    /> */}
+
                 </ListItemButton>
                 <ListItemButton>
                     Price Range
@@ -127,7 +171,9 @@ export default function CheckBox() {
                     </Stack>
                 </ListItemButton>
                 <ListItemButton>
-                    <button className="buttonC"><RotateLeftOutlinedIcon /> Clear all</button>
+
+                    <button className="buttonC"><RotateLeftOutlinedIcon /><span className="space1" /> Clear all</button>
+
                 </ListItemButton>
             </List>
         </Box >
@@ -153,11 +199,16 @@ export default function CheckBox() {
             >
                 <Button onClick={toggleDrawer("filter", true)}>
 
-                    <div style={{ display: 'flex' }}>
+                    <div style={{ display: 'flex', textTransform: 'none' }}>
+
+                        {/* sx={{  }} */}
                         <Typography>
                             <span className="bgcolorW">
-                                <FilterListOutlinedIcon />
-                                <span className="space1" />Filter
+                                <div class="middle-align">
+                                    <FilterListOutlinedIcon />
+
+                                    <span className="space1" />Filter
+                                </div>
                             </span>
                         </Typography>
                     </div>

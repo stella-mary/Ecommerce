@@ -75,6 +75,8 @@ export const mockDataShop1 = [
         ProductImage: "https://n3.sdlcdn.com/imgs/h/a/5/366-SUPER-02-Multi-Color-SDL424042830-2-e60c6.JPG",
         ProductPrice: "$450",
         ProductStock: "In Stock",
+        ProductDiscount: "30% Off",
+        ProductOffer: "",
         quantity: 0,
     },
     {
@@ -83,6 +85,8 @@ export const mockDataShop1 = [
         ProductImage: "https://tse2.mm.bing.net/th?id=OIP.TIWckpoCSJiDO_8U3qewegHaEh&pid=Api&P=0",
         ProductPrice: "$130",
         ProductStock: "In Stock",
+        ProductDiscount: "",
+        ProductOffer: "New",
         quantity: 0,
     },
     {
@@ -91,6 +95,8 @@ export const mockDataShop1 = [
         ProductImage: "https://n1.sdlcdn.com/imgs/g/s/v/Boltt-Xfit-Running-Shoes-Black-SDL789843251-6-4230e.jpg",
         ProductPrice: "$450",
         ProductStock: "In Stock",
+        ProductDiscount: "",
+        ProductOffer: "",
         quantity: 0,
     },
 
@@ -100,6 +106,8 @@ export const mockDataShop1 = [
         ProductImage: "https://cdn.sweatband.com/wilson_kaos_comp_2.0_ladies_tennis_shoes_wilson_kaos_comp_2.0_ladies_tennis_shoes_-_slant_2000x2000.jpg",
         ProductPrice: "$450",
         ProductStock: "In Stock",
+        ProductDiscount: "",
+        ProductOffer: "",
         quantity: 0,
     },
     {
@@ -108,6 +116,8 @@ export const mockDataShop1 = [
         ProductImage: "https://tse4.mm.bing.net/th?id=OIP.iOBSwP_qneoMEZW5Jw4VaAHaHa&pid=Api&P=0",
         ProductPrice: "$450",
         ProductStock: "In Stock",
+        ProductDiscount: "",
+        ProductOffer: "",
         quantity: 0,
     },
     {
@@ -116,6 +126,8 @@ export const mockDataShop1 = [
         ProductImage: "http://3.bp.blogspot.com/-y6GVrCbfJUk/Ti7w3GCMYDI/AAAAAAAABEQ/S5zHjLH__ik/s1600/Adidas-Shoes--Images1.jpg",
         ProductPrice: "$450",
         ProductStock: "In Stock",
+        ProductDiscount: "",
+        ProductOffer: "",
         quantity: 0,
     },
     {
@@ -124,6 +136,8 @@ export const mockDataShop1 = [
         ProductImage: "https://tse1.mm.bing.net/th?id=OIP.g1mD4lHQl7wlr2-zshVb5wHaHi&pid=Api&P=0",
         ProductPrice: "$450",
         ProductStock: "In Stock",
+        ProductDiscount: "",
+        ProductOffer: "",
         quantity: 0,
     },
     {
@@ -132,6 +146,8 @@ export const mockDataShop1 = [
         ProductImage: "https://tse1.mm.bing.net/th?id=OIP.6plEcJuaAH0RAezPEoFhcAHaFB&pid=Api&P=0",
         ProductPrice: "$450",
         ProductStock: "In Stock",
+        ProductDiscount: "",
+        ProductOffer: "",
         quantity: 0,
     },
     {
@@ -140,6 +156,8 @@ export const mockDataShop1 = [
         ProductImage: "https://wallpapercave.com/wp/3eaIVZM.jpg",
         ProductPrice: "$450",
         ProductStock: "In Stock",
+        ProductDiscount: "",
+        ProductOffer: "",
         quantity: 0,
     },
 ]

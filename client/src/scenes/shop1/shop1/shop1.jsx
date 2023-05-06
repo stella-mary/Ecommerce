@@ -86,6 +86,8 @@ const Shop1 = () => {
                                     <br />
                                     <br />
                                     <span className="color"><b>{item.ProductPrice}</b></span>
+                                    {item.ProductDiscount}
+                                    {item.ProductOffer}
                                 </Typography>
 
 

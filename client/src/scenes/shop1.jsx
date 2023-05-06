@@ -3,6 +3,7 @@ import './payment/paymentMethod/payment.css';
 import Shop1 from './shop1/shop1/shop1';
 import { navigate, useNavigate } from "react-router-dom";
 import CheckBox1 from './shop1/checkbox1/checkbox1';
+import CheckBox2 from './shop1/checkbox2/checkbox2';
 import Shop1Page from './shop1/shop1Page/shop1Page';
 
 const Shop = () => {
@@ -12,6 +13,7 @@ const Shop = () => {
     return (
         <div>
             <CheckBox1 />
+            {/* <CheckBox2 /> */}
 
             <div className='product'>
                 <Shop1 />
