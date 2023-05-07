@@ -2,7 +2,7 @@ import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../../theme";
 import React, { useState } from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
+import { styled } from '@mui/material/styles';
 import { mockDataCart } from "../../../data/mockData";
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -22,6 +22,9 @@ import CheckIcon from '@mui/icons-material/Check';
 
 
 const BillAddress = () => {
+
+
+
 
 
     const outerTheme = createTheme({
@@ -150,15 +153,44 @@ const BillAddress = () => {
                                     maxWidth: '100%',
                                     marginBottom: '20px',
                                     marginTop: "20px",
-                                    color: '#455a79',
+                                    // color: '#455a79',
                                 }}
                             >
-                                <TextField fullWidth label="Full Name" id="Full Name" InputLabelProps={{ style: { color: '#2499ef', borderColor: '#red' } }}
-                                    InputProps={{
-                                        style: {
-                                            borderColor: 'red', // Set the border color
-                                        },
-                                    }} />
+
+
+                                <TextField fullWidth label="Full Name" id="Full Name"
+                                    InputLabelProps=
+                                    {{
+                                        style:
+                                        {
+                                            // minWidth: '500px',
+                                            // border: 'solid 1px white',
+                                            backgroundColor: 'rgb(23, 28, 36)',
+                                            backgroundImage: 'none',
+                                            color: '#2499ef'
+                                        }
+                                    }}
+
+                                    InputProps=
+                                    {{
+                                        style:
+                                        {
+                                            // minWidth: '500px',
+                                            border: 'solid 1px #2499ef',
+                                            outline: 'none',
+                                            backgroundColor: 'rgb(23, 28, 36)',
+                                            backgroundImage: 'none',
+                                            // color: 'red'
+                                        }
+                                    }}
+                                />
+
+                                {/* <CssTextField fullWidth label="Full Name" id="Full Name" /> */}
+
+                                {/* <TextField label="Full Name" id="Full Name" className="textfield" InputLabelProps={{ style: { color: '#2499ef' } }} /> */}
+
+                                {/* <CssTextField fullWidth placeholder="Full Name" variant="standard" /> */}
+
 
                                 <TextField fullWidth label="Phone" id="Phone" InputLabelProps={{ style: { color: '#2499ef', borderColor: "#2499ef" } }}
                                     InputProps={{
@@ -197,7 +229,7 @@ const BillAddress = () => {
                                 }}
                             >
 
-                                <TextField>text</TextField>
+
                                 <TextField fullWidth label="City" id="City" InputLabelProps={{ style: { color: '#2499ef' } }}
                                     InputProps={{
                                         style: {
