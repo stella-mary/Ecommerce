@@ -60,6 +60,17 @@ const outerTheme = createTheme({
 
 const PaymentMethod = () => {
 
+    const [isFocused, setIsFocused] = useState("");
+
+    const handleFocus = (fieldId) => {
+        setIsFocused(fieldId);
+    };
+
+    const handleBlur = () => {
+        setIsFocused("");
+    };
+
+
 
 
     const [selectedValue, setSelectedValue] = useState("a")
@@ -183,20 +194,35 @@ const PaymentMethod = () => {
                             maxWidth: '100%',
                             marginBottom: '20px',
                             marginTop: "20px",
-                            color: '#283b82;',
+
                         }}
                     >
                         <TextField
                             fullWidth
                             label="Card Number"
                             id="Card Number"
-                            InputLabelProps={{ style: { color: '#2499ef' } }}
-                            InputProps={{
+                            InputLabelProps={{
                                 style: {
-                                    borderColor: 'red', // Set the border color
+                                    backgroundColor: '#222b36',
+
+                                    backgroundImage: 'none',
+                                    color: `${isFocused === "Card Number" ? '#2499ef' : '#425673'}`,
                                 },
                             }}
+                            InputProps={{
+                                style: {
+                                    border: `solid 1px ${isFocused === "Card Number" ? '#2499ef' : 'grey'}`,
+                                    outline: 'none',
+                                    backgroundColor: '#222b36',
+                                    backgroundImage: 'none',
+                                    color: isFocused === "Card Number" ? '#2499ef' : '#000000',
+                                }
+                            }}
+                            onFocus={() => handleFocus("Card Number")}
+                            onBlur={handleBlur}
                         />
+
+
                     </Box>
                     <Box
                         sx={{
@@ -212,25 +238,52 @@ const PaymentMethod = () => {
                             fullWidth
                             label="Exp Date"
                             id="Exp Date"
-                            InputLabelProps={{ style: { color: '#2499ef' } }}
-                            InputProps={{
+                            InputLabelProps={{
                                 style: {
-                                    borderColor: 'red', // Set the border color
+                                    backgroundColor: '#222b36',
+                                    backgroundImage: 'none',
+                                    color: `${isFocused === "Exp Date" ? '#2499ef' : '#425673'}`,
                                 },
                             }}
+                            InputProps={{
+                                style: {
+                                    border: `solid 1px ${isFocused === "Exp Date" ? '#2499ef' : 'grey'}`,
+                                    outline: 'none',
+                                    backgroundColor: '#222b36',
+                                    backgroundImage: 'none',
+                                    color: isFocused === "Exp Date" ? '#2499ef' : '#000000',
+                                }
+                            }}
+                            onFocus={() => handleFocus("Exp Date")}
+                            onBlur={handleBlur}
                         />
+
 
                         <TextField
                             fullWidth
                             label="CVC"
                             id="CVC"
-                            InputLabelProps={{ style: { color: '#2499ef' } }}
-                            InputProps={{
+                            InputLabelProps={{
                                 style: {
-                                    borderColor: 'red', // Set the border color
+                                    backgroundColor: '#222b36',
+
+                                    backgroundImage: 'none',
+                                    color: `${isFocused === "CVC" ? '#2499ef' : '#425673'}`,
                                 },
                             }}
+                            InputProps={{
+                                style: {
+                                    border: `solid 1px ${isFocused === "CVC" ? '#2499ef' : 'grey'}`,
+                                    outline: 'none',
+                                    backgroundColor: '#222b36',
+                                    backgroundImage: 'none',
+                                    color: isFocused === "CVC" ? '#2499ef' : '#000000',
+                                }
+                            }}
+                            onFocus={() => handleFocus("CVC")}
+                            onBlur={handleBlur}
                         />
+
                     </Box>
                     <p className="bordertop">&#160;</p>
                     <Typography
