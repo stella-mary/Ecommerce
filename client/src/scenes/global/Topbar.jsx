@@ -28,7 +28,7 @@ const Topbar = () => {
                     <SearchIcon />
                 </IconButton>
             </Box>
-            <TextField>text</TextField>
+
             {/* ICONS */}
             <Box display="flex">
                 <IconButton onClick={colorMode.toggleColorMode}>

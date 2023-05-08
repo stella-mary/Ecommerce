@@ -135,10 +135,14 @@ const BillAddress = () => {
                                 name="radio-buttons"
                                 title="home"
                                 inputProps={{ 'aria-label': 'A' }}
+                                sx={{
+                                    '& .MuiSvgIcon-root': {
+                                        fill: '#2499ef', // Replace 'your-color-here' with the desired color value
+                                    },
+                                }}
                             />
-                            <label>
-                                Home
-                            </label>
+                            <label>Home</label>
+
                             <Radio
                                 theme={outerTheme}
                                 checked={selectedValue === 'b'}
@@ -146,6 +150,11 @@ const BillAddress = () => {
                                 value="b"
                                 name="radio-buttons"
                                 inputProps={{ 'aria-label': 'B' }}
+                                sx={{
+                                    '& .MuiSvgIcon-root': {
+                                        fill: '#2499ef', // Replace 'your-color-here' with the desired color value
+                                    },
+                                }}
                             />
                             <label>
                                 Office
@@ -219,13 +228,15 @@ const BillAddress = () => {
                             <Box
                                 sx={{
                                     width: 500,
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    gap: '10px',
                                     maxWidth: '100%',
                                     marginBottom: '20px',
                                     marginTop: "20px",
-                                    color: '#2499ef',
+                                    // color: '#455a79',
                                 }}
                             >
-
                                 <TextField
                                     fullWidth
                                     label="Address"
@@ -262,7 +273,7 @@ const BillAddress = () => {
                                     maxWidth: '100%',
                                     marginBottom: '20px',
                                     marginTop: "20px",
-                                    color: 'green',
+                                    // color: '#455a79',
                                 }}
                             >
 
@@ -325,6 +336,11 @@ const BillAddress = () => {
                                 checked={checked}
                                 onChange={handleChangeCheck}
                                 inputProps={{ 'aria-label': 'controlled' }}
+                                sx={{
+                                    '& .MuiSvgIcon-root': {
+                                        fill: '#2499ef', // Replace 'your-color-here' with the desired color value
+                                    },
+                                }}
                             />
                             <span>Use this address as default</span>
                         </DialogContentText>

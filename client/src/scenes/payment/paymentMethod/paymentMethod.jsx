@@ -118,6 +118,11 @@ const PaymentMethod = () => {
                             name="radio-buttons"
                             title="PayPal"
                             inputProps={{ 'aria-label': 'A' }}
+                            sx={{
+                                '& .MuiSvgIcon-root': {
+                                    fill: '#2499ef', // Replace 'your-color-here' with the desired color value
+                                },
+                            }}
                         />
                         <label>
                             <span className="bgColor7">Pay</span>
@@ -131,6 +136,11 @@ const PaymentMethod = () => {
                         flexDirection="row"
                         alignItems="center" // Set alignItems to 'center' to vertically align items
                         justifyContent="space-between"
+                        sx={{
+                            '& .MuiSvgIcon-root': {
+                                fill: '#2499ef', // Replace 'your-color-here' with the desired color value
+                            },
+                        }}
                     >
                         <Typography
                             color={colors.grey[100]}
@@ -240,6 +250,11 @@ const PaymentMethod = () => {
                             name="radio-buttons"
                             title="Cash on Delivery"
                             inputProps={{ 'aria-label': 'C' }}
+                            sx={{
+                                '& .MuiSvgIcon-root': {
+                                    fill: '#2499ef', // Replace 'your-color-here' with the desired color value
+                                },
+                            }}
                         />
                         <label>
                             Cash on Delivery
