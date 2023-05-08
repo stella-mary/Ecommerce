@@ -24,8 +24,12 @@ import { tokens } from "../../../theme";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import FilterListOutlinedIcon from '@mui/icons-material/FilterListOutlined';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
+import { yellow } from "@mui/material/colors";
 
 export default function CheckBox() {
+
+
+
 
     const [open, setOpen] = React.useState(false);
 
@@ -41,12 +45,10 @@ export default function CheckBox() {
         },
     });
 
+    const [selectedValue, setSelectedValue] = useState('');
 
-
-    const [selectedCircle, setSelectedCircle] = useState("");
-
-    const handleCircleClick = (circle) => {
-        setSelectedCircle(circle);
+    const handleChange = (event) => {
+        setSelectedValue(event.target.value);
     };
 
 
@@ -87,13 +89,18 @@ export default function CheckBox() {
 
                 <Divider />
 
-                <ListItemButton>
+                <ListItemButton style={{ backgroundColor: 'transparent' }}>
                     <FormControl>
                         <FormLabel id="demo-radio-buttons-group-label">Categories</FormLabel>
                         <RadioGroup
                             aria-labelledby="demo-radio-buttons-group-label"
                             defaultValue="female"
                             name="radio-buttons-group"
+                            sx={{
+                                '& .MuiSvgIcon-root': {
+                                    fill: '#2499ef', // Replace 'your-color-here' with the desired color value
+                                },
+                            }}
                         >
                             <FormControlLabel value="all" control={<Radio theme={outerTheme} />} label="All" />
                             <FormControlLabel theme={outerTheme} value="shoes" control={<Radio theme={outerTheme} />} label="Shoes" />
@@ -103,58 +110,111 @@ export default function CheckBox() {
                     </FormControl>
                 </ListItemButton>
 
-                <ListItemButton>
+                <ListItemButton style={{ backgroundColor: 'transparent' }}>
                     <FormControl>
                         <FormLabel>Gender</FormLabel>
-                        <FormGroup>
+                        <FormGroup
+                        >
                             <FormControlLabel control={<Checkbox defaultChecked theme={outerTheme} />} label="Men" />
                             <FormControlLabel control={<Checkbox theme={outerTheme} />} label="Woman" />
                             <FormControlLabel control={<Checkbox theme={outerTheme} />} label="Kids" />
                         </FormGroup>
                     </FormControl>
                 </ListItemButton>
-                <ListItemButton>
+                <ListItemButton style={{ backgroundColor: 'transparent' }}>
                     Color
                 </ListItemButton>
-                <ListItemButton
+
+
+
+                <div
+                    backgroundColor='transparent'
                     display="flex"
                     flexDirection="row"
                     justifyContent="space-between"
+
                 >
-                    <div className="circle" /><span class="space1" /><div className="circle1" /><span class="space1" />
-                    <div className="circle2" /><span class="space1" /><div className="circle3" /><span class="space1" />
-                    <div className="circle4" />
+                    <FormControlLabel
+                        control={
+                            <Radio
+                                checked={selectedValue === 'a'}
+                                onChange={handleChange}
+                                value="a"
+                                name="radio-buttons"
+                                inputProps={{ 'aria-label': 'A' }}
+                                style={{ display: 'none' }}
+                            />
+                        }
+                        label=""
+                        style={{ backgroundColor: '#fe316f', width: '20px', height: '20px', borderRadius: '50%' }}
+                    />
 
-                    {/* <div
-                        className={`circle ${selectedCircle === 'circle' ? 'selected' : ''}`}
-                        onClick={() => handleCircleClick('circle')}
+                    <FormControlLabel
+                        control={
+                            <Radio
+                                checked={selectedValue === 'b'}
+                                onChange={handleChange}
+                                value="b"
+                                name="radio-buttons"
+                                inputProps={{ 'aria-label': 'B' }}
+                                style={{ display: 'none' }}
+                            />
+                        }
+                        label=""
+                        style={{ backgroundColor: '#fe8969', width: '20px', height: '20px', borderRadius: '50%' }}
                     />
-                    <span className="space1" />
-                    <div
-                        className={`circle1 ${selectedCircle === 'circle1' ? 'selected' : ''}`}
-                        onClick={() => handleCircleClick('circle1')}
-                    />
-                    <span className="space1" />
-                    <div
-                        className={`circle2 ${selectedCircle === 'circle2' ? 'selected' : ''}`}
-                        onClick={() => handleCircleClick('circle2')}
-                    />
-                    <span className="space1" />
-                    <div
-                        className={`circle3 ${selectedCircle === 'circle3' ? 'selected' : ''}`}
-                        onClick={() => handleCircleClick('circle3')}
-                    />
-                    <span className="space1" />
-                    <div
-                        className={`circle4 ${selectedCircle === 'circle4' ? 'selected' : ''}`}
-                        onClick={() => handleCircleClick('circle4')}
-                    /> */}
 
-                </ListItemButton>
-                <ListItemButton>
+                    <FormControlLabel
+                        control={
+                            <Radio
+                                checked={selectedValue === 'c'}
+                                onChange={handleChange}
+                                value="c"
+                                name="radio-buttons"
+                                inputProps={{ 'aria-label': 'C' }}
+                                style={{ display: 'none' }}
+                            />
+                        }
+                        label=""
+                        style={{ backgroundColor: '#8c8dff', width: '20px', height: '20px', borderRadius: '50%' }}
+                    />
+
+                    <FormControlLabel
+                        control={
+                            <Radio
+                                checked={selectedValue === 'd'}
+                                onChange={handleChange}
+                                value="d"
+                                name="radio-buttons"
+                                inputProps={{ 'aria-label': 'D' }}
+                                style={{ display: 'none' }}
+                            />
+                        }
+                        label=""
+                        style={{ backgroundColor: '#2499ef', width: '20px', height: '20px', borderRadius: '50%' }}
+                    />
+                    <FormControlLabel
+                        control={
+                            <Radio
+                                checked={selectedValue === 'd'}
+                                onChange={handleChange}
+                                value="d"
+                                name="radio-buttons"
+                                inputProps={{ 'aria-label': 'D' }}
+                                style={{ display: 'none' }}
+                            />
+                        }
+                        label=""
+                        style={{ backgroundColor: '#27ce88', width: '20px', height: '20px', borderRadius: '50%' }}
+                    />
+
+
+                </div>
+                <ListItemButton style={{ backgroundColor: 'transparent' }}>
                     Price Range
                 </ListItemButton>
                 <ListItemButton
+                    backgroundColor='transparent'
                     display="flex"
                     flexDirection="row"
                     justifyContent="space-between"
@@ -162,15 +222,15 @@ export default function CheckBox() {
                     <button className="buttonC">Min</button><span className="space" />
                     <button className="buttonC">Max</button>
                 </ListItemButton>
-                <ListItemButton>
+                <ListItemButton style={{ backgroundColor: 'transparent' }}>
                     Rating
                 </ListItemButton>
-                <ListItemButton>
+                <ListItemButton style={{ backgroundColor: 'transparent' }}>
                     <Stack spacing={1}>
                         <Rating name="size-large" defaultValue={2} size="large" />
                     </Stack>
                 </ListItemButton>
-                <ListItemButton>
+                <ListItemButton style={{ backgroundColor: 'transparent' }}>
 
                     <button className="buttonC"><RotateLeftOutlinedIcon /><span className="space1" /> Clear all</button>
 

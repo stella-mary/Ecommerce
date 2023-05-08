@@ -204,7 +204,6 @@ const PaymentMethod = () => {
                             InputLabelProps={{
                                 style: {
                                     backgroundColor: '#222b36',
-
                                     backgroundImage: 'none',
                                     color: `${isFocused === "Card Number" ? '#2499ef' : '#425673'}`,
                                 },
@@ -214,7 +213,7 @@ const PaymentMethod = () => {
                                     border: `solid 1px ${isFocused === "Card Number" ? '#2499ef' : 'grey'}`,
                                     outline: 'none',
                                     backgroundColor: '#222b36',
-                                    backgroundImage: 'none',
+
                                     color: isFocused === "Card Number" ? '#2499ef' : '#000000',
                                 }
                             }}
@@ -266,7 +265,6 @@ const PaymentMethod = () => {
                             InputLabelProps={{
                                 style: {
                                     backgroundColor: '#222b36',
-
                                     backgroundImage: 'none',
                                     color: `${isFocused === "CVC" ? '#2499ef' : '#425673'}`,
                                 },

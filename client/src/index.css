@@ -223,12 +223,13 @@ body,
 }
 
 .tick-icon {
-  height: 30px;
-  width: 30px;
+  height: 20px;
+  width: 20px;
   display: block;
   background-color: #2499ef;
   text-align: center;
   border-radius: 50%;
+  /* font-size: 5px; */
   cursor: pointer;
   /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); */
 }
@@ -282,11 +283,6 @@ body,
   line-height: 40px;
 }
 
-.tick-icon span  {
-  font-size: 25px;
-  color: #455a79;
-  line-height: 30px;
-}
 
 
 .Radio-input[type="radio"]:checked {
@@ -364,6 +360,15 @@ margin-left: 30%;
 .bgcolorW{
   color: #fff;
   
+}
+
+.radio-root .MuiIconButton-root {
+  padding: 0;
+  color: transparent;
+}
+
+.radio-checked .MuiIconButton-root {
+  color: transparent;
 }
 
 .circle {

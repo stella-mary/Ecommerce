@@ -33,8 +33,6 @@ const BillAddress = () => {
         setIsFocused("");
     };
 
-
-
     const outerTheme = createTheme({
         palette: {
             primary: {
@@ -191,7 +189,8 @@ const BillAddress = () => {
                                             outline: 'none',
                                             backgroundColor: 'rgb(23, 28, 36)',
                                             backgroundImage: 'none',
-                                            color: isFocused === "fullName" ? '#2499ef' : '#000000',
+                                            color: 'white'
+                                            // color: isFocused === "fullName" ? 'white' : '#000000',
                                         }
                                     }}
                                     onFocus={() => handleFocus("fullName")}
@@ -216,7 +215,8 @@ const BillAddress = () => {
                                             outline: 'none',
                                             backgroundColor: 'rgb(23, 28, 36)',
                                             backgroundImage: 'none',
-                                            color: isFocused === "Phone" ? '#2499ef' : '#000000',
+                                            color: 'white'
+                                            // color: isFocused === "Phone" ? 'white' : '#000000',
                                         }
                                     }}
                                     onFocus={() => handleFocus("Phone")}
@@ -254,7 +254,7 @@ const BillAddress = () => {
                                             outline: 'none',
                                             backgroundColor: 'rgb(23, 28, 36)',
                                             backgroundImage: 'none',
-                                            color: isFocused === "Address" ? '#2499ef' : '#000000',
+                                            color: 'white'
                                         }
                                     }}
                                     onFocus={() => handleFocus("Address")}
@@ -296,7 +296,7 @@ const BillAddress = () => {
                                             outline: 'none',
                                             backgroundColor: 'rgb(23, 28, 36)',
                                             backgroundImage: 'none',
-                                            color: isFocused === "City" ? '#2499ef' : '#000000',
+                                            color: 'white'
                                         }
                                     }}
                                     onFocus={() => handleFocus("City")}
@@ -321,7 +321,7 @@ const BillAddress = () => {
                                             outline: 'none',
                                             backgroundColor: 'rgb(23, 28, 36)',
                                             backgroundImage: 'none',
-                                            color: isFocused === "Country" ? '#2499ef' : '#000000',
+                                            color: 'white'
                                         }
                                     }}
                                     onFocus={() => handleFocus("Country")}
@@ -367,38 +367,32 @@ const BillAddress = () => {
                     backgroundColor={colors.primary[400]}
                 >
                     <Box>
-                        <Typography variant="h5" fontWeight="600" color={colors.grey[100]} >
+                        <Typography variant="h5" fontWeight="600" fontSize="12px" color={colors.grey[100]} >
                             <span className="color"><ApartmentIcon /></span><span class="space1" />Office
                         </Typography>
                         <Box
                             display="flex"
                             justifyContent="space-between"
                             flexDirection="row"
-                            gap="350px"
+                            gap="200px"
                             alignItems="center"
                         // gap="300px"
                         >
-                            <Typography variant="h5" fontWeight="600" fontSize="12px" lineHeight="20px" marginTop="15px" color={colors.grey[100]} >
+                            <Typography variant="h6" fontWeight="600" fontSize="10px" lineHeight="20px" marginTop="15px" color={colors.grey[100]} >
                                 Ap #285-7193 Ullamcorper Avenue
                                 <br />
                                 Amesbury HI 93373
                                 <br />
                                 USA
                             </Typography>
-                            <Typography variant="h5" color={colors.grey[100]} >
+                            <Typography>
                                 <div className="tick-icon">
-                                    <span><CheckIcon /></span>
+                                    {/* line-height: 20px; */}
+
+                                    <CheckIcon style={{ fontSize: '10px', lineHeight: '10px', color: 'black' }} />
                                 </div>
                             </Typography>
-                            {/* <Box
-                                textAlign="center"
-                                marginTop="40px"
-                            >
 
-                                <div style={{ backgroundColor: '#2499ef', borderRadius: '50%', display: 'inline-block', padding: '3px' }}>
-                                    <CheckIcon style={{ fontSize: '10px' }} />
-                                </div>
-                            </Box> */}
                         </Box>
                     </Box >
                 </Box>
@@ -417,15 +411,15 @@ const BillAddress = () => {
                     backgroundColor={colors.primary[400]}
                 >
                     <Box>
-                        <Typography variant="h5" fontWeight="600" color={colors.grey[100]} >
+                        <Typography variant="h5" fontWeight="600" fontSize="12px" color={colors.grey[100]} >
                             <span className="color"><ApartmentIcon /></span><span class="space1" />Office
                         </Typography>
                         <Box
                             display="flex"
                             justifyContent="space-around"
-                            gap="350px"
+                            gap="200px"
                         >
-                            <Typography variant="h5" fontWeight="600" fontSize="12px" lineHeight="20px" marginTop="15px" color={colors.grey[100]} >
+                            <Typography variant="h6" fontWeight="600" fontSize="10px" lineHeight="20px" marginTop="15px" color={colors.grey[100]} >
                                 Ap #285-7193 Ullamcorper Avenue
                                 <br />
                                 Amesbury HI 93373
@@ -456,15 +450,15 @@ const BillAddress = () => {
                     backgroundColor={colors.primary[400]}
                 >
                     <Box>
-                        <Typography variant="h5" fontWeight="600" color={colors.grey[100]} >
+                        <Typography variant="h5" fontWeight="600" fontSize="12px" color={colors.grey[100]} >
                             <span className="color"><ApartmentIcon /></span><span class="space1" />Office
                         </Typography>
                         <Box
                             display="flex"
                             justifyContent="space-around"
-                            gap="350px"
+                            gap="200px"
                         >
-                            <Typography variant="h5" fontWeight="600" fontSize="12px" lineHeight="20px" marginTop="15px" color={colors.grey[100]} >
+                            <Typography variant="h6" fontWeight="600" fontSize="10px" lineHeight="20px" marginTop="15px" color={colors.grey[100]} >
                                 Ap #285-7193 Ullamcorper Avenue
                                 <br />
                                 Amesbury HI 93373
