@@ -33,6 +33,7 @@ export const mockDataCart = [
         ProductSize: "X",
         quantity: 1,
     },
+
 ];
 
 export const mockDataShop1 = [

@@ -6,6 +6,24 @@ import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
 
 
 const PaymentSummary = () => {
+
+    const buttonStyles = {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#2499ef', // Set the desired background color
+        color: '#FFFFFF', // Set the desired text color
+        padding: '10px', // Set the desired padding
+        fontWeight: 600, // Set the desired font weight
+        fontSize: '15px', // Set the desired font size
+        textAlign: 'center', // Set the desired text alignment
+        cursor: 'pointer', // Set the cursor to indicate it's clickable
+        marginTop: '30px',
+        marginLeft: '10px',
+        marginRight: '10px',
+        borderRadius: '5px'
+    };
+
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
@@ -96,15 +114,12 @@ const PaymentSummary = () => {
                 </Box>
 
                 <Box>
-                    <Typography color={colors.greenAccent[100]} variant="h5" fontWeight="600" paddingTop="10px" textAlign="center" marginTop="10px" paddingBottom="20px">
-                        <button className="button">
-
-                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                <AddShoppingCartIcon />
-                                <span class="space1" /> Place Order</div>
-                        </button>
+                    <Typography variant="h6" style={buttonStyles}>
+                        <AddShoppingCartIcon style={{ marginRight: '5px' }} />
+                        Place Order
                     </Typography>
                 </Box>
+
 
             </Box>
 

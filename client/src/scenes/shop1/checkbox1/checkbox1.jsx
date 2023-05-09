@@ -26,9 +26,16 @@ import FilterListOutlinedIcon from '@mui/icons-material/FilterListOutlined';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import { yellow } from "@mui/material/colors";
 
+const NewColors = [
+    { value: 'a', color: '#fe316f' },
+    { value: 'b', color: '#fe8969' },
+    { value: 'c', color: '#8c8dff' },
+    { value: 'd', color: '#2499ef' },
+    { value: 'e', color: '#27ce88' },
+];
+
+
 export default function CheckBox() {
-
-
 
 
     const [open, setOpen] = React.useState(false);
@@ -45,11 +52,13 @@ export default function CheckBox() {
         },
     });
 
-    const [selectedValue, setSelectedValue] = useState('');
+    const [selectedValue, setSelectedValue] = useState("");
 
     const handleChange = (event) => {
         setSelectedValue(event.target.value);
     };
+
+
 
 
     const theme = useTheme();
@@ -69,7 +78,7 @@ export default function CheckBox() {
 
     const list = (anchor) => (
         <Box
-            // sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+            sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
             role="presentation"
             backgroundColor={colors.primary[400]}
             onClick={toggleDrawer(anchor, true)}
@@ -126,88 +135,33 @@ export default function CheckBox() {
                 </ListItemButton>
 
 
-
                 <div
                     backgroundColor='transparent'
                     display="flex"
                     flexDirection="row"
+
                     justifyContent="space-between"
 
                 >
-                    <FormControlLabel
-                        control={
-                            <Radio
-                                checked={selectedValue === 'a'}
-                                onChange={handleChange}
-                                value="a"
-                                name="radio-buttons"
-                                inputProps={{ 'aria-label': 'A' }}
-                                style={{ display: 'none' }}
-                            />
-                        }
-                        label=""
-                        style={{ backgroundColor: '#fe316f', width: '20px', height: '20px', borderRadius: '50%' }}
-                    />
-
-                    <FormControlLabel
-                        control={
-                            <Radio
-                                checked={selectedValue === 'b'}
-                                onChange={handleChange}
-                                value="b"
-                                name="radio-buttons"
-                                inputProps={{ 'aria-label': 'B' }}
-                                style={{ display: 'none' }}
-                            />
-                        }
-                        label=""
-                        style={{ backgroundColor: '#fe8969', width: '20px', height: '20px', borderRadius: '50%' }}
-                    />
-
-                    <FormControlLabel
-                        control={
-                            <Radio
-                                checked={selectedValue === 'c'}
-                                onChange={handleChange}
-                                value="c"
-                                name="radio-buttons"
-                                inputProps={{ 'aria-label': 'C' }}
-                                style={{ display: 'none' }}
-                            />
-                        }
-                        label=""
-                        style={{ backgroundColor: '#8c8dff', width: '20px', height: '20px', borderRadius: '50%' }}
-                    />
-
-                    <FormControlLabel
-                        control={
-                            <Radio
-                                checked={selectedValue === 'd'}
-                                onChange={handleChange}
-                                value="d"
-                                name="radio-buttons"
-                                inputProps={{ 'aria-label': 'D' }}
-                                style={{ display: 'none' }}
-                            />
-                        }
-                        label=""
-                        style={{ backgroundColor: '#2499ef', width: '20px', height: '20px', borderRadius: '50%' }}
-                    />
-                    <FormControlLabel
-                        control={
-                            <Radio
-                                checked={selectedValue === 'd'}
-                                onChange={handleChange}
-                                value="d"
-                                name="radio-buttons"
-                                inputProps={{ 'aria-label': 'D' }}
-                                style={{ display: 'none' }}
-                            />
-                        }
-                        label=""
-                        style={{ backgroundColor: '#27ce88', width: '20px', height: '20px', borderRadius: '50%' }}
-                    />
-
+                    {NewColors.map(({ value, color }) => (
+                        <FormControlLabel
+                            key={value}
+                            control={
+                                <Radio
+                                    checked={selectedValue === value}
+                                    onChange={handleChange}
+                                    onClick={() => console.log(" clicked" + selectedValue)}
+                                    value={value}
+                                    name="radio-buttons"
+                                    inputProps={{ 'aria-label': value }}
+                                    style={{ display: 'none' }}
+                                // sx={{ "& > div": { animation: selectedValue ? "0.2s linear" : "undefined" }, }}
+                                />
+                            }
+                            label=""
+                            style={{ backgroundColor: color, width: '20px', height: '20px', borderRadius: '50%' }}
+                        />
+                    ))}
 
                 </div>
                 <ListItemButton style={{ backgroundColor: 'transparent' }}>
@@ -266,7 +220,6 @@ export default function CheckBox() {
                             <span className="bgcolorW">
                                 <div class="middle-align">
                                     <FilterListOutlinedIcon />
-
                                     <span className="space1" />Filter
                                 </div>
                             </span>

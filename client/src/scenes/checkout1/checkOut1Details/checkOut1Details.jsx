@@ -10,6 +10,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { mockDataCart } from "../../../data/mockData";
+import ChevronLeftOutlinedIcon from '@mui/icons-material/ChevronLeftOutlined';
+
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -24,21 +26,25 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
-    '&:nth-of-type(odd)': {
-        backgroundColor: '#222b36',
-    },
-    '&:nth-child(2)': {
-        backgroundColor: '#222b36',
-    },
+    backgroundColor: '#222b36', // Set the desired background color for all rows
+
     '&:last-child td, &:last-child th': {
         border: 'none',
-        paddingBottom: '0px',
+        paddingBottom: '20px',
     },
     '& td': {
         borderBottom: 'none',
     },
+    '& .icon-wrapper': {
+        display: 'inline-block',
+        borderRadius: '50%',
+        padding: '8px',
+        transition: 'background-color 0.3s',
+    },
+    '& .icon-wrapper:hover': {
+        backgroundColor: '#333c46',
+    },
 }));
-
 
 
 
@@ -57,6 +63,7 @@ function createData(name, calories, fat, carbs, protein) {
 // ];
 
 export default function CustomizedTables() {
+    const [quantity, setQuantity] = useState(0);
 
 
     const [cart, setCart] = useState(mockDataCart);
@@ -170,18 +177,23 @@ export default function CustomizedTables() {
                                     <span className="color22">Available: 12</span>
                                 </StyledTableCell>
 
-                                {/* <StyledTableCell align="right">{item.ProductImage}</StyledTableCell> */}
                                 < StyledTableCell align="left" style={{ fontSize: '12px' }}>{item.ProductPrice}</StyledTableCell>
-
-                                <StyledTableCell align="left"><CloseIcon style={{ color: '#2f4365' }} /></StyledTableCell>
-
+                                <StyledTableCell align="left">
+                                    <div className="icon-wrapper">
+                                        <CloseIcon style={{ color: '#2f4365' }} />
+                                    </div>
+                                </StyledTableCell>
                             </StyledTableRow>
 
                         ))}
                     </TableBody>
                 </Table>
-
             </TableContainer >
+
+            <div style={{ display: 'flex', marginTop: '20px' }}>
+                <ChevronLeftOutlinedIcon />
+                <span className="space1" /> Continue Shopping
+            </div>
         </div >
     );
 }

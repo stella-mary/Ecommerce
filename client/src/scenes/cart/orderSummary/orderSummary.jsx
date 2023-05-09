@@ -33,7 +33,7 @@ const OrderSummary = () => {
                     p="15px"
                 >
 
-                    <Typography color={colors.grey[100]} variant="h2" fontWeight="600" marginBottom="15px" fontSize="20px">
+                    <Typography color={colors.grey[100]} variant="h5" fontWeight="600" fontSize="15px">
                         Order Summery
                     </Typography>
                 </Box>
