@@ -52,19 +52,14 @@ const CartDetails = () => {
                         backgroundColor={colors.primary[400]}
                         key={item.id}
                     >
-                        <Box>
-                            <Typography variant="h5" fontWeight="600" color={colors.grey[100]} >
-                                <div className="productDetails1">
-                                    <img src={item.ProductImage} width={50} height={60} style={{ borderRadius: '10%' }} />
+                        <Box display="flex" alignItems="center" gap="10px">
+                            <img src={item.ProductImage} width={60} height={60} style={{ borderRadius: '15%' }} />
 
-
-                                    <div className='productDetails'>
-                                        <Typography variant="h3" fontWeight="400" fontSize="13px" color={colors.greenAccent[100]} marginBottom="5px">{item.ProductName}</Typography>
-                                        <Typography variant="h3" fontWeight="400" fontSize="13px" color={colors.greenAccent[100]} marginBottom="5px">{item.ProductPrice}</Typography>
-                                        <Typography variant="h3" fontWeight="400" fontSize="13px" color="#455978" marginBottom="5px">{item.ProductStock}</Typography>
-                                    </div>
-                                </div>
-                            </Typography>
+                            <div className='productDetails'>
+                                <Typography variant="h3" fontWeight="400" fontSize="13px" color={colors.greenAccent[100]} marginBottom="5px">{item.ProductName}</Typography>
+                                <Typography variant="h3" fontWeight="400" fontSize="13px" color={colors.greenAccent[100]} marginBottom="5px">{item.ProductPrice}</Typography>
+                                <Typography variant="h3" fontWeight="400" fontSize="13px" color="#455978" marginBottom="5px"><b>{item.ProductStock}</b></Typography>
+                            </div>
                         </Box>
                         {item.quantity >= 1 ? (
                             <Box variant="h3" fontWeight="400" fontSize="15px" color={colors.grey[100]} marginTop="15px">
@@ -75,7 +70,7 @@ const CartDetails = () => {
                                 <button className="bgColor" onClick={() => decrease(item.id)}>-</button>
                             </Box>
                         ) : (
-                            <Box>
+                            <Box marginTop="15px">
                                 <button className="button5" onClick={() => increase(item.id)}>Add to cart</button>
                             </Box>
                         )}

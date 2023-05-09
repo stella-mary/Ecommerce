@@ -1,37 +1,5 @@
 import { tokens } from "../theme";
 
-export const ProductData = [
-    {
-        "id": 1,
-        "productName": "Shirt",
-        "productImage": "https://example.com/shirt.jpg",
-        "productColor": "Red",
-        "productSize": "M",
-        "productPrice": 25.99,
-        "quantity": 5
-    },
-    {
-        "id": 2,
-        "productName": "Jeans",
-        "productImage": "https://example.com/jeans.jpg",
-        "productColor": "Blue",
-        "productSize": "32x34",
-        "productPrice": 49.99,
-        "quantity": 3
-    },
-    {
-        "id": 3,
-        "productName": "Dress",
-        "productImage": "https://example.com/dress.jpg",
-        "productColor": "Yellow",
-        "productSize": "S",
-        "productPrice": 39.99,
-        "quantity": 2
-    }
-
-]
-
-
 
 
 export const mockDataCart = [
@@ -39,18 +7,17 @@ export const mockDataCart = [
         id: 1,
         ProductName: "Nike Pro Max 270",
         ProductImage: "https://n3.sdlcdn.com/imgs/h/a/5/366-SUPER-02-Multi-Color-SDL424042830-2-e60c6.JPG",
-        ProductPrice: "$450",
+        ProductPrice: "$230",
         ProductStock: "In Stock",
         ProductColor: "Yellow",
         ProductSize: "S",
-
         quantity: 1,
     },
     {
         id: 2,
         ProductName: "Nike Lamp Light",
         ProductImage: "https://warisanlighting.com/wp-content/uploads/2016/06/best-table-lamps-1.jpg",
-        ProductPrice: "$450",
+        ProductPrice: "$230",
         ProductStock: "In Stock",
         ProductColor: "Red",
         ProductSize: "XXL",
@@ -60,7 +27,7 @@ export const mockDataCart = [
         id: 3,
         ProductName: "Comfortable Chair",
         ProductImage: "https://3.bp.blogspot.com/-J-ljKrNecXM/TzAPkuOrVCI/AAAAAAAAJYU/KsmKUE4MlTc/s1600/comfortable+office+chairs+designs.+(4).jpg",
-        ProductPrice: "$450",
+        ProductPrice: "$230",
         ProductStock: "In Stock",
         ProductColor: "Blue",
         ProductSize: "X",
