@@ -1,10 +1,15 @@
 import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../../theme";
 import calulator from '../../Img/calulator.svg'
+import PropTypes from 'prop-types';
+
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 
-const OrderSummary = () => {
+const OrderSummary = ({ total }) => {
+
+    console.log("total in orderSummary" + total)
+
 
     const buttonStyles = {
         display: 'flex',
@@ -60,7 +65,7 @@ const OrderSummary = () => {
                     <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" paddingBottom="20px">
                         Items
                     </Typography>
-                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">$230</Typography>
+                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">$ {total}</Typography>
                 </Box>
                 <Box
                     display="flex"
