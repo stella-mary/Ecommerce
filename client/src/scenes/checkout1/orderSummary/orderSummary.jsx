@@ -1,15 +1,21 @@
 import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../../theme";
-import calulator from '../../Img/calulator.svg'
-import PropTypes from 'prop-types';
-
+import React, { useState, useEffect } from 'react';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 
-const OrderSummary = ({ total }) => {
+const OrderSummary = ({ total, vatAmount, calculateVatAmount, calculateTotalAmount }) => {
+    useEffect(() => {
+        calculateVatAmount();
+    }, [total, calculateVatAmount]);
+
+    useEffect(() => {
+        calculateTotalAmount();
+    }, [total, calculateVatAmount, calculateTotalAmount]);
+
+    const TotalAmount = total + vatAmount;
 
     console.log("total in orderSummary" + total)
-
 
     const buttonStyles = {
         display: 'flex',
@@ -27,6 +33,8 @@ const OrderSummary = ({ total }) => {
         marginRight: '10px',
         borderRadius: '5px'
     };
+
+
 
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
@@ -75,9 +83,9 @@ const OrderSummary = ({ total }) => {
                     paddingRight="10px"
                 >
                     <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" paddingBottom="20px">
-                        VATS 0%
+                        VATS 1%
                     </Typography>
-                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">$0</Typography>
+                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">{vatAmount}</Typography>
                 </Box>
                 <Box
                     display="flex"
@@ -90,7 +98,7 @@ const OrderSummary = ({ total }) => {
                     <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" font-Size="20px" paddingBottom="20px">
                         Sub Total
                     </Typography>
-                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">$230</Typography>
+                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">$ {TotalAmount}</Typography>
                 </Box>
 
                 <div className="bordertop">&#160;</div>
@@ -106,7 +114,7 @@ const OrderSummary = ({ total }) => {
                     <Typography color={colors.greenAccent[100]} variant="h5" fontSize="15px" fontWeight="600" paddingBottom="1px">
                         Total
                     </Typography>
-                    <Typography color="#ff316f;" fontWeight="600" fontSize="15px" paddingBottom="1px">$230</Typography>
+                    <Typography color="#ff316f;" fontWeight="600" fontSize="15px" paddingBottom="1px">$ {TotalAmount}</Typography>
                 </Box>
 
                 <div style={{ display: 'flex', justifyContent: 'center', marginTop: '30px', gap: '10px' }}>

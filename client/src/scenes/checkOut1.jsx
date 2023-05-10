@@ -7,30 +7,27 @@ import CheckBox from './checkout1/checkbox/checkbox'
 import StepperBar from './checkout1/stepperBar/stepperBar';
 import { mockDataCart } from "../data/mockData";
 
-
 const CheckOut1 = () => {
 
     const [cart, setCart] = useState(mockDataCart);
 
+    const [vatAmount, setVatAmount] = useState(0);
 
+    const [totalAmount, setTotalAmount] = useState(0);
 
     const navigate = useNavigate();
 
-    // const initialTotal = cart.map((item) => {
-    //     let newTotal = 0;
-    //     newTotal += item.ProductPrice * item.quantity
-    //     return newTotal;
-    // });
+    let initialTotal = 0;
 
-    // let initialTotal = 0;
-    // cart.map((item) => {
-    //     initialTotal += item.ProductPrice * item.quantity
-    //     // return newTotal
-    // })
+    const [total, setTotal] = useState(initialTotal);
 
-    const [total, setTotal] = useState(0);
-
-
+    useEffect(() => {
+        let newTotal = 0;
+        cart.forEach((item) => {
+            newTotal += item.ProductPrice * item.quantity;
+        });
+        setTotal(newTotal);
+    }, [cart]);
 
     const calculateSubtotal = () => {
         let subtotal = 0;
@@ -39,12 +36,25 @@ const CheckOut1 = () => {
 
             subtotal += isNaN(itemSubtotal) ? 0 : itemSubtotal;
         });
-        // return subtotal;
+
         setTotal(subtotal)
     };
     console.log("total in checkout" + total)
 
+    const calculateVatAmount = () => {
+        const vat = total * 0.01;
+        setVatAmount(vat);
+        console.log("checked" + total)
+    };
 
+    useEffect(() => {
+        calculateVatAmount();
+    }, [total]);
+
+    const calculateTotalAmount = () => {
+        const totalAmount = total + vatAmount;
+        setTotalAmount(totalAmount);
+    };
 
     return (
         <div>
@@ -54,7 +64,15 @@ const CheckOut1 = () => {
             <div className='payment'>
                 <CheckOut1Details cart={cart} setCart={setCart} total={total} calculateSubtotal={calculateSubtotal} />
                 <div className='payment1'>
-                    <OrderSummary total={total} />
+                    <OrderSummary
+                        total={total}
+                        vatAmount={vatAmount}
+                        calculateTotalAmount={calculateTotalAmount}
+                        calculateVatAmount={() => {
+                            const vat = total * 0.01;
+                            setVatAmount(vat);
+                        }}
+                    />
                 </div>
             </div>
         </div>

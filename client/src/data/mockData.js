@@ -7,7 +7,7 @@ export const mockDataCart = [
         id: 1,
         ProductName: "Nike Pro Max 270",
         ProductImage: "https://n3.sdlcdn.com/imgs/h/a/5/366-SUPER-02-Multi-Color-SDL424042830-2-e60c6.JPG",
-        ProductPrice: "230",
+        ProductPrice: "500",
         ProductStock: "In Stock",
         ProductColor: "Yellow",
         ProductSize: "S",

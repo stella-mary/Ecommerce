@@ -318,6 +318,63 @@ body,
 }
 
 
+.product-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color:#222b36;
+  margin: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  /* Additional styling properties */
+}
+
+.product-image1 {
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+}
+
+.shoe-image {
+  width: 100px; /* Set the desired width */
+  height: auto; /* Adjust the height proportionally */
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.shoe-image1 {
+  width: 400px;
+  height: auto;
+}
+
+.heart-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: white;
+  transition: color 0.3s;
+  padding: 5px;
+  background-color: #728299;
+ 
+  border-radius: 50%;
+}
+
+/* .heart-icon:hover {
+  color: white;
+  background-color: #728299;
+} */
+
+.product-details {
+  /* Styles for product details */
+}
+
+/* Define other classes for styling other elements */
+
+
 
 .Radio-input[type="radio"]:checked {
   /* This will change the color of the radio button when it's selected */
