@@ -378,7 +378,7 @@ const BillAddress = () => {
                             display="flex"
                             justifyContent="space-between"
                             flexDirection="row"
-                            gap="200px"
+                            gap="230px"
                             alignItems="center"
                         // gap="300px"
                         >
@@ -391,7 +391,6 @@ const BillAddress = () => {
                             </Typography>
                             <Typography>
                                 <div className="tick-icon">
-                                    {/* line-height: 20px; */}
 
                                     <CheckIcon style={{ fontSize: '10px', lineHeight: '10px', color: 'black' }} />
                                 </div>
@@ -421,7 +420,7 @@ const BillAddress = () => {
                         <Box
                             display="flex"
                             justifyContent="space-around"
-                            gap="200px"
+                            gap="250px"
                         >
                             <Typography variant="h6" fontWeight="600" fontSize="10px" lineHeight="20px" marginTop="15px" color={colors.grey[100]} >
                                 Ap #285-7193 Ullamcorper Avenue
@@ -460,7 +459,7 @@ const BillAddress = () => {
                         <Box
                             display="flex"
                             justifyContent="space-around"
-                            gap="200px"
+                            gap="250px"
                         >
                             <Typography variant="h6" fontWeight="600" fontSize="10px" lineHeight="20px" marginTop="15px" color={colors.grey[100]} >
                                 Ap #285-7193 Ullamcorper Avenue

@@ -198,29 +198,29 @@ const PaymentMethod = () => {
                         }}
                     >
                         <TextField
+                            color="secondary"
+                            variant="outlined"
                             fullWidth
                             label="Card Number"
                             id="Card Number"
+
                             InputLabelProps={{
                                 style: {
-                                    backgroundColor: '#222b36',
+
                                     backgroundImage: 'none',
                                     color: `${isFocused === "Card Number" ? '#2499ef' : '#425673'}`,
                                 },
                             }}
                             InputProps={{
                                 style: {
-                                    border: `solid 1px ${isFocused === "Card Number" ? '#2499ef' : 'grey'}`,
                                     outline: 'none',
-                                    backgroundColor: '#222b36',
-
-                                    color: isFocused === "Card Number" ? '#2499ef' : '#000000',
+                                    backgroundImage: 'none',
+                                    color: 'white'
                                 }
                             }}
                             onFocus={() => handleFocus("Card Number")}
                             onBlur={handleBlur}
                         />
-
 
                     </Box>
                     <Box
@@ -234,48 +234,49 @@ const PaymentMethod = () => {
                         }}
                     >
                         <TextField
+                            color="secondary"
+                            variant="outlined"
                             fullWidth
                             label="Exp Date"
                             id="Exp Date"
+
                             InputLabelProps={{
                                 style: {
-                                    backgroundColor: '#222b36',
+
                                     backgroundImage: 'none',
                                     color: `${isFocused === "Exp Date" ? '#2499ef' : '#425673'}`,
                                 },
                             }}
                             InputProps={{
                                 style: {
-                                    border: `solid 1px ${isFocused === "Exp Date" ? '#2499ef' : 'grey'}`,
                                     outline: 'none',
-                                    backgroundColor: '#222b36',
                                     backgroundImage: 'none',
-                                    color: isFocused === "Exp Date" ? '#2499ef' : '#000000',
+                                    color: 'white'
                                 }
                             }}
                             onFocus={() => handleFocus("Exp Date")}
                             onBlur={handleBlur}
                         />
 
-
                         <TextField
+                            color="secondary"
+                            variant="outlined"
                             fullWidth
                             label="CVC"
                             id="CVC"
+
                             InputLabelProps={{
                                 style: {
-                                    backgroundColor: '#222b36',
+
                                     backgroundImage: 'none',
                                     color: `${isFocused === "CVC" ? '#2499ef' : '#425673'}`,
                                 },
                             }}
                             InputProps={{
                                 style: {
-                                    border: `solid 1px ${isFocused === "CVC" ? '#2499ef' : 'grey'}`,
                                     outline: 'none',
-                                    backgroundColor: '#222b36',
                                     backgroundImage: 'none',
-                                    color: isFocused === "CVC" ? '#2499ef' : '#000000',
+                                    color: 'white'
                                 }
                             }}
                             onFocus={() => handleFocus("CVC")}
