@@ -6,6 +6,7 @@ import OrderSummary from './checkout1/orderSummary/orderSummary';
 import CheckBox from './checkout1/checkbox/checkbox'
 import StepperBar from './checkout1/stepperBar/stepperBar';
 import { mockDataCart } from "../data/mockData";
+import CheckOut2Details from './checkout1/checkout2Details/checkout2Details'
 
 const CheckOut1 = () => {
 
@@ -60,6 +61,7 @@ const CheckOut1 = () => {
         <div>
             <CheckBox />
             <StepperBar />
+            {/* <CheckOut2Details /> */}
 
             <div className='payment'>
                 <CheckOut1Details cart={cart} setCart={setCart} total={total} calculateSubtotal={calculateSubtotal} />

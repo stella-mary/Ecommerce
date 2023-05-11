@@ -173,56 +173,57 @@ const BillAddress = () => {
                             >
 
                                 <TextField
+                                    color="secondary"
+                                    variant="outlined"
                                     fullWidth
                                     label="Full Name"
                                     id="Full Name"
+
                                     InputLabelProps={{
                                         style: {
-                                            backgroundColor: 'rgb(23, 28, 36)',
-                                            backgroundImage: 'none',
-                                            color: `${isFocused === "fullName" ? '#2499ef' : '#425673'}`,
-                                        },
-                                    }}
-                                    InputProps={{
-                                        style: {
-                                            border: `solid 1px ${isFocused === "fullName" ? '#2499ef' : 'grey'}`,
-                                            outline: 'none',
-                                            backgroundColor: 'rgb(23, 28, 36)',
-                                            backgroundImage: 'none',
-                                            color: 'white'
-                                            // color: isFocused === "fullName" ? 'white' : '#000000',
-                                        }
-                                    }}
-                                    onFocus={() => handleFocus("fullName")}
-                                    onBlur={handleBlur}
-                                />
 
-
-                                <TextField
-                                    fullWidth
-                                    label="Phone"
-                                    id="Phone"
-                                    InputLabelProps={{
-                                        style: {
-                                            backgroundColor: 'rgb(23, 28, 36)',
                                             backgroundImage: 'none',
                                             color: `${isFocused === "Phone" ? '#2499ef' : '#425673'}`,
                                         },
                                     }}
                                     InputProps={{
                                         style: {
-                                            border: `solid 1px ${isFocused === "Phone" ? '#2499ef' : 'grey'}`,
                                             outline: 'none',
                                             backgroundColor: 'rgb(23, 28, 36)',
                                             backgroundImage: 'none',
                                             color: 'white'
-                                            // color: isFocused === "Phone" ? 'white' : '#000000',
+                                        }
+                                    }}
+                                    onFocus={() => handleFocus("Full Name")}
+                                    onBlur={handleBlur}
+                                />
+
+
+                                <TextField
+                                    color="secondary"
+                                    variant="outlined"
+                                    fullWidth
+                                    label="Phone"
+                                    id="Phone"
+
+                                    InputLabelProps={{
+                                        style: {
+
+                                            backgroundImage: 'none',
+                                            color: `${isFocused === "Phone" ? '#2499ef' : '#425673'}`,
+                                        },
+                                    }}
+                                    InputProps={{
+                                        style: {
+                                            outline: 'none',
+                                            backgroundColor: 'rgb(23, 28, 36)',
+                                            backgroundImage: 'none',
+                                            color: 'white'
                                         }
                                     }}
                                     onFocus={() => handleFocus("Phone")}
                                     onBlur={handleBlur}
                                 />
-
 
                             </Box>
                             <Box
@@ -238,19 +239,21 @@ const BillAddress = () => {
                                 }}
                             >
                                 <TextField
+                                    color="secondary"
+                                    variant="outlined"
                                     fullWidth
                                     label="Address"
                                     id="Address"
+
                                     InputLabelProps={{
                                         style: {
-                                            backgroundColor: 'rgb(23, 28, 36)',
+
                                             backgroundImage: 'none',
                                             color: `${isFocused === "Address" ? '#2499ef' : '#425673'}`,
                                         },
                                     }}
                                     InputProps={{
                                         style: {
-                                            border: `solid 1px ${isFocused === "Address" ? '#2499ef' : 'grey'}`,
                                             outline: 'none',
                                             backgroundColor: 'rgb(23, 28, 36)',
                                             backgroundImage: 'none',
@@ -276,23 +279,22 @@ const BillAddress = () => {
                                     // color: '#455a79',
                                 }}
                             >
-
-
-
                                 <TextField
+                                    color="secondary"
+                                    variant="outlined"
                                     fullWidth
                                     label="City"
                                     id="City"
+
                                     InputLabelProps={{
                                         style: {
-                                            backgroundColor: 'rgb(23, 28, 36)',
+
                                             backgroundImage: 'none',
                                             color: `${isFocused === "City" ? '#2499ef' : '#425673'}`,
                                         },
                                     }}
                                     InputProps={{
                                         style: {
-                                            border: `solid 1px ${isFocused === "City" ? '#2499ef' : 'grey'}`,
                                             outline: 'none',
                                             backgroundColor: 'rgb(23, 28, 36)',
                                             backgroundImage: 'none',
@@ -304,20 +306,23 @@ const BillAddress = () => {
                                 />
 
 
+
                                 <TextField
+                                    color="secondary"
+                                    variant="outlined"
                                     fullWidth
                                     label="Country"
                                     id="Country"
+
                                     InputLabelProps={{
                                         style: {
-                                            backgroundColor: 'rgb(23, 28, 36)',
-                                            backgroundImage: 'Country',
+
+                                            backgroundImage: 'none',
                                             color: `${isFocused === "Country" ? '#2499ef' : '#425673'}`,
                                         },
                                     }}
                                     InputProps={{
                                         style: {
-                                            border: `solid 1px ${isFocused === "Country" ? '#2499ef' : 'grey'}`,
                                             outline: 'none',
                                             backgroundColor: 'rgb(23, 28, 36)',
                                             backgroundImage: 'none',
@@ -327,7 +332,6 @@ const BillAddress = () => {
                                     onFocus={() => handleFocus("Country")}
                                     onBlur={handleBlur}
                                 />
-
 
                             </Box>
 

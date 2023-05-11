@@ -83,12 +83,12 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
     return (
         <div className='checkOut'>
 
-            <TableContainer component={Paper} >
+            <TableContainer component={Paper} sx={{ maxHeight: 400 }}>
 
                 <div align="left" style={{ backgroundColor: '#222b36', padding: '15px' }}>Cart <span className='color'>(3 item)</span></div>
 
 
-                <Table sx={{ minWidth: 500, }} aria-label="customized table">
+                <Table sx={{ minWidth: 500 }} stickyHeader aria-label="sticky table">
                     <TableHead>
                         <TableRow>
                             <StyledTableCell>Product</StyledTableCell>
@@ -96,7 +96,7 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
                             <StyledTableCell align="left">Price</StyledTableCell>
                             <StyledTableCell align="left">Action</StyledTableCell>
                         </TableRow>
-                    </TableHead>
+                    </TableHead >
                     <TableBody>
                         {cart.map((item, idx) => (
 
@@ -177,19 +177,20 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
 
                         ))}
                     </TableBody>
-                </Table>
-            </TableContainer>
+                </Table >
+            </TableContainer >
 
             {/* <h4>Sub Total: {total}</h4>
             <h4>Grand Total
                 <span className='float-end'>{totalCartPrice}</span>
             </h4> */}
 
-            <div style={{ display: 'flex', marginTop: '20px' }}>
+            < div style={{ display: 'flex', marginTop: '20px' }
+            }>
                 <ChevronLeftOutlinedIcon />
                 <span className="space1" /> Continue Shopping
 
-            </div>
+            </div >
         </div >
     );
 }

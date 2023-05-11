@@ -119,24 +119,27 @@ const ProductBox = () => {
 
     return (
         <div className="product-box">
-            <div className="product-image1">
-                <img className="shoe-image" src={shoe} alt="Shoe 1" />
-                <img className="shoe-image" src={shoe} alt="Shoe 2" />
-                <img className="shoe-image" src={shoe} alt="Shoe 3" />
-            </div>
-            <div className="product-details">
-                <div className="image-container">
-                    <img className="shoe-image1" src={shoe} alt="Shoe 4" />
-                    <div className="heart-icon"><FavoriteBorder sx={{ fontSize: "30px", color: "white", textAlign: 'center' }} />
-                        {/* onClick={handleLikeToggle}>
+            <div className="product-box1">
+                <div className="product-image1">
+                    <img className="shoe-image" src={shoe} alt="Shoe 1" />
+                    <img className="shoe-image" src={shoe} alt="Shoe 2" />
+                    <img className="shoe-image" src={shoe} alt="Shoe 3" />
+                </div>
+                <div className="product-details">
+                    <div className="image-container">
+                        <img className="shoe-image1" src={shoe} alt="Shoe 4" />
+                        <div className="heart-icon"><FavoriteBorder sx={{ fontSize: "30px", color: "white", textAlign: 'center' }} />
+                            {/* onClick={handleLikeToggle}>
                         {isLiked ? <Favorite /> : <FavoriteBorder />} */}
+                        </div>
                     </div>
                 </div>
             </div>
             <div className="product-details">
-                <div className="product-name">In Stock</div>
-                <div className="product-name">Nike Air Jordan</div>
-                <div className="product-price">$350</div>
+                <div className="product-name"><span className="product-title">In Stock</span></div>
+                <div className="product-name" style={{ color: '#849ab0', marginTop: '15px' }}><b>NIKE</b></div>
+                <div className="product-name" style={{ fontSize: '30px', color: 'white' }}>Air Jordan 270</div>
+                <div className="product-price" style={{ fontSize: '20px', color: '#2499ef', marginTop: '15px' }}>$350</div>
                 <div className="product-colors">
                     Colors: <span>Red, Blue, Black</span>
                 </div>
@@ -155,7 +158,8 @@ const ProductBox = () => {
                     <Twitter className="icon" />
                 </div>
             </div>
-        </div>
+
+        </div >
     );
 };
 
