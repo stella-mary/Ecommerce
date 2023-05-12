@@ -181,6 +181,13 @@ body,
   border-radius: 5px;
 }
 
+.icon:hover {
+  cursor: pointer;
+  background-color: #3d454e;
+  border-radius: 50%;
+  padding: 20px;
+}
+
 .bgColor1{
   color:  #1f2a40;
 }
@@ -208,19 +215,20 @@ body,
 
 .bgcolor5 {
   background-color: #27ce88;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .bgcolor6 {
   background-color: #2499ef;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -275,14 +283,32 @@ body,
   cursor: pointer;
 }
 
+.social-icon {
+  height: 40px;
+  width: 40px;
+  display: block;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.social-icon:hover {
+  background-color: #3d454e;
+  cursor: pointer; 
+}
+
+.social-icon span  {
+  font-size: 25px;
+  color: #455a79;
+  line-height: 40px;
+}
+
+
 .delete-icon {
   height: 40px;
   width: 40px;
   display: block;
-  /* background-color: #fff; */
   text-align: center;
   border-radius: 50%;
-  /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); */
 }
 
 .tick-icon {
@@ -336,8 +362,7 @@ body,
 
 .delete-icon:hover {
   background-color: gray;
-  cursor: pointer;
- 
+  cursor: pointer; 
 }
 
 .delete-icon span  {

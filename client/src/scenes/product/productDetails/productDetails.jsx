@@ -1,11 +1,16 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
+import { Facebook, Instagram, Twitter } from '@mui/icons-material';
 
 import React, { useState } from 'react';
 import shoe from '../../Img/shoe.jpg'
+import { tokens } from "../../../theme";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function ProductDetails() {
+
+    const theme = useTheme();
+    const colors = tokens(theme.palette.mode);
 
     const [selectedSize, setSelectedSize] = useState('');
 
@@ -21,7 +26,10 @@ export default function ProductDetails() {
                 alignItems: "top",
                 gap: "1%",
                 borderRadius: "10px",
-                padding: "1%",
+                paddingLeft: "1%",
+                paddingRight: '1%',
+                paddingTop: "1%",
+                paddingBottom: "1%",
                 m: "20px",
                 backgroundColor: "#222b36",
             }}
@@ -70,11 +78,11 @@ export default function ProductDetails() {
                     justifyContent: "center",
                 }}
             >
-                <Typography><span class="bgcolor5">In Stock</span></Typography>
+                <Typography marginTop="10px" backgroundColor="#27ce88" padding="5px" width="25%" borderRadius="10px" textAlign="center">In Stock</Typography>
                 <Typography variant="h5" color="#8ca3ba" marginTop="20px">NIKE</Typography>
                 <Typography variant="h3" marginTop="10px"><b>Air Jordan 270</b></Typography>
                 <Typography variant="h3" marginTop="30px" color="#2499ef">$350</Typography>
-                <Typography variant="h5" marginTop="20px"
+                <Typography variant="h6" marginTop="20px"
                     display="flex"
                     flexDirection="space-between"
                 ><b>Colors:</b><span className="space" />
@@ -115,64 +123,97 @@ export default function ProductDetails() {
     }
 `}</style>
                 </div>
-
-                <div
-                    style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        variant: "h3",
-                        fontWeight: 400,
-                        fontSize: "15px",
-                        marginTop: "15px",
-                        border: "2px solid #2f4264",
-                        borderRadius: "6px",
-                        padding: "5px",
-                        width: '100px'
-                    }}
-                >
-                    <button
+                <div style={{ display: 'flex', alignItems: 'center', marginTop: '20px', gap: '20px' }}>
+                    <Typography variant="h6" marginTop="20px"><b>Quantity:</b></Typography>
+                    <div
                         style={{
-                            border: "none",
-                            backgroundColor: "transparent",
-                            cursor: "pointer",
-                            marginRight: "5px",
-                            fontSize: '15px',
-                            color: 'white'
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            variant: "h3",
+                            fontWeight: 400,
+                            fontSize: "15px",
+                            marginTop: "15px",
+                            border: "2px solid #2f4264",
+                            borderRadius: "6px",
+                            padding: "5px",
+                            width: '100px'
                         }}
-                    // onClick={() => {
-                    //     if (item.quantity > 0) {
-                    //         decrease(item.id);
-                    //     }
-                    // }}
                     >
-                        -
-                    </button>
-                    <span style={{ flex: 1, textAlign: "center" }}>0</span>
-                    <button
-                        style={{
-                            border: "none",
-                            backgroundColor: "transparent",
-                            cursor: "pointer",
-                            marginLeft: "5px",
-                            fontSize: '15px',
-                            color: 'white'
-                        }}
-                    // onClick={() => increase(item.id)}
-                    >
-                        +
-                    </button>
+                        <button
+                            style={{
+                                border: "none",
+                                backgroundColor: "transparent",
+                                cursor: "pointer",
+                                marginRight: "5px",
+                                fontSize: '15px',
+                                color: 'white'
+                            }}
+                        // onClick={() => {
+                        //     if (item.quantity > 0) {
+                        //         decrease(item.id);
+                        //     }
+                        // }}
+                        >
+                            -
+                        </button>
+                        <span style={{ flex: 1, textAlign: "center" }}>0</span>
+                        <button
+                            style={{
+                                border: "none",
+                                backgroundColor: "transparent",
+                                cursor: "pointer",
+                                marginLeft: "5px",
+                                fontSize: '15px',
+                                color: 'white'
+                            }}
+                        // onClick={() => increase(item.id)}
+                        >
+                            +
+                        </button>
+                    </div>
+                    <Typography variant="h6" marginTop="20px"><b><span className="color21">Available: 12</span></b></Typography>
                 </div>
 
-                <Typography variant="h5" marginTop="20px">Quantity:</Typography>
                 <Box
                     display="flex"
-                    justifyContent="space-between"
-                    marginTop="20px"
-                    width="50%"
+                    justifyContent="-moz-initial"
+                    marginTop="40px"
+                    gap="20px"
+
                 >
-                    <Typography><span class="bgcolor6">Add to cart</span></Typography>
-                    <Typography><span class="bgcolor5">Buy Now</span></Typography>
+                    <Typography fontSize="10px" >
+                        <span class="bgcolor6" >
+                            <b>Add to cart</b>
+                        </span>
+                    </Typography>
+                    <Typography fontSize="10px" >
+                        <span class="bgcolor5">
+                            <b>Buy Now</b>
+                        </span>
+                    </Typography>
+                </Box>
+
+                <Box
+                    display="flex"
+                    justifyContent="-moz-initial"
+                    marginTop="40px"
+                    gap="10px"
+                >
+
+                    <div className="social-icon">
+                        <span><Facebook style={{
+                            display: "inline-block",
+                            background: "none", boxShadow: "none"
+                        }} /></span>
+                    </div>
+                    <div className="social-icon">
+                        <span><Instagram /></span>
+                    </div>
+                    <div className="social-icon">
+                        <span><Twitter /></span>
+                    </div>
+
                 </Box>
             </Box>
         </Box >
