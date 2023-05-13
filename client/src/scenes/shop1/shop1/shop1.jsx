@@ -1,7 +1,7 @@
 import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../../theme";
 import React, { useState } from 'react';
-import { mockDataShop1 } from "../../../data/mockData";
+import { mockDataProduct } from "../../../data/mockData";
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 
@@ -11,7 +11,7 @@ const Shop1 = () => {
     const colors = tokens(theme.palette.mode);
 
 
-    const [cart, setCart] = useState(mockDataShop1);
+    const [cart, setCart] = useState(mockDataProduct);
 
     const increase = (id) => {
         setCart((prevCart) =>

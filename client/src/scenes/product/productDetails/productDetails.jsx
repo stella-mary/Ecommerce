@@ -26,10 +26,7 @@ export default function ProductDetails() {
                 alignItems: "top",
                 gap: "1%",
                 borderRadius: "10px",
-                paddingLeft: "1%",
-                paddingRight: '1%',
-                paddingTop: "1%",
-                paddingBottom: "1%",
+                padding: "1%",
                 m: "20px",
                 backgroundColor: "#222b36",
             }}
@@ -40,7 +37,7 @@ export default function ProductDetails() {
                     flexDirection: "column",
                     gap: "10px",
                     width: "10%",
-                    // border: "solid 1px red",
+
                 }}
             >
                 <img src={shoe} alt="Shoe 1" />
@@ -71,18 +68,17 @@ export default function ProductDetails() {
                 sx={{
                     // border: "solid 1px green",
                     width: "44%",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "left",
                     marginLeft: "10px",
-                    justifyContent: "center",
+                    alignItems: "top",
+                    // justifyContent: "center",
+
                 }}
             >
-                <Typography marginTop="10px" backgroundColor="#27ce88" padding="5px" width="25%" borderRadius="10px" textAlign="center">In Stock</Typography>
+                <Typography backgroundColor="#27ce88" padding="5px" width="25%" borderRadius="10px" textAlign="center">In Stock</Typography>
                 <Typography variant="h5" color="#8ca3ba" marginTop="20px">NIKE</Typography>
                 <Typography variant="h3" marginTop="10px"><b>Air Jordan 270</b></Typography>
-                <Typography variant="h3" marginTop="30px" color="#2499ef">$350</Typography>
-                <Typography variant="h6" marginTop="20px"
+                <Typography variant="h3" marginTop="10px" color="#2499ef">$350</Typography>
+                <Typography variant="h6" marginTop="10px"
                     display="flex"
                     flexDirection="space-between"
                 ><b>Colors:</b><span className="space" />

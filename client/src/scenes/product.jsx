@@ -4,6 +4,7 @@ import ProductDescription from './product/productDescription/productDescription'
 import ProductDetails from './product/productDetails/productDetails'
 import { navigate, useNavigate } from "react-router-dom";
 import CheckBox from './product/checkbox/checkbox';
+import ProductReview from './product/productReview/productReview'
 
 const Product = () => {
 
@@ -14,7 +15,8 @@ const Product = () => {
             <CheckBox />
             <div className='product'>
                 <ProductDetails />
-                <ProductDescription />
+                <ProductReview />
+                {/* <ProductDescription /> */}
             </div>
         </div>
     )
