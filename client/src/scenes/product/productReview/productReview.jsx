@@ -10,6 +10,8 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import Button from '@material-ui/core/Button';
+import EditIcon from '@material-ui/icons/Edit';
 
 import { mockDataProduct } from "../../../data/mockData";
 
@@ -145,31 +147,50 @@ export default function FloatingActionButtonZoom() {
                         Shoeupper: 54% bovine leather,46% polyurethane. Lining: 65% polyester,35% cotton. Insole: 100% polyurethane. Sole: 100% thermoplastic. Fixing sole: 100% glued
                     </Typography>
                 </TabPanel>
-                <TabPanel value={value} index={1} dir={theme.direction}>
 
-                    {review.map(review => (
-                        <div key={review.id} style={{ marginTop: '10px', display: 'flex', flexDirection: 'row', gap: '40px' }}>
-                            <div style={{ display: 'flex', flexDirection: 'column' }}>
-                                <img src={review.ReviewImage} className="product-image" style={{ borderRadius: '60%' }} />
+                <div style={{ display: 'flex', flexDirection: 'row', gap: '20px', justifyContent: 'space-betwen' }}>
+                    <TabPanel value={value} index={1} dir={theme.direction}>
 
-                                <h2 style={{ fontSize: '15px', marginBottom: '0px', textAlign: 'center' }}>{review.ReviewName}</h2>
-                                <p style={{ fontSize: '12px', color: '#879eb4', textAlign: 'center', marginTop: '0px' }}>{review.ReviewDate}</p>
+                        {review.map(review => (
+                            <div key={review.id} style={{ marginTop: '10px', flex: '1', display: 'flex', flexDirection: 'row', gap: '40px' }}>
+                                <div style={{ display: 'flex', flexDirection: 'column', marginTop: '5px' }}>
+                                    <img src={review.ReviewImage} className="product-image" style={{ borderRadius: '60%' }} />
+
+                                    <h2 style={{ fontSize: '15px', marginBottom: '0px', textAlign: 'center' }}>{review.ReviewName}</h2>
+                                    <p style={{ fontSize: '12px', color: '#879eb4', textAlign: 'center', marginTop: '0px' }}>{review.ReviewDate}</p>
+                                </div>
+                                <div style={{ display: 'flex', flexDirection: 'column', marginTop: '5px', width: '350px' }}>
+                                    <Stack spacing={1}>
+                                        <Rating name="size-medium" defaultValue={2} />
+                                    </Stack>
+                                    {/* <p>{review.ReviewRating}<br /><br /> */}
+                                    <p style={{ fontSize: '12px', lineHeight: '2em' }}>{review.ReviewContent}</p>
+
+                                    <p style={{ fontSize: '12px', color: '#2499ef', display: 'flex', alignItems: 'center', fontWeight: 'bold', marginTop: '1px' }}>
+                                        <ThumbUpIcon style={{ marginRight: '5px' }} /> Thank({review.ReviewLike})
+                                    </p>
+                                </div>
                             </div>
-                            <div style={{ display: 'flex', flexDirection: 'column', marginTop: '10px' }}>
-                                <Stack spacing={1}>
-                                    <Rating name="size-medium" defaultValue={2} />
-                                </Stack>
-                                {/* <p>{review.ReviewRating}<br /><br /> */}
-                                <p style={{ fontSize: '12px' }}>{review.ReviewContent}</p>
-                                <p style={{ fontSize: '12px', color: '#2499ef', display: 'flex', alignItems: 'center', fontWeight: 'bold' }}>
-                                    <ThumbUpIcon style={{ marginRight: '5px' }} /> Thank({review.ReviewLike})
-                                </p>
-                            </div>
-                        </div>
 
-                    ))}
-
-                </TabPanel>
+                        ))}
+                    </TabPanel>
+                    <p style={{ borderRight: '1px solid #656b73' }}></p>
+                    <div style={{ display: 'flex', flexDirection: 'column', marginTop: '15px', alignItems: 'center' }}>
+                        <h2 style={{ fontSize: '15px', marginBottom: '0px', textAlign: 'center' }}>Average rating</h2>
+                        <p style={{ textAlign: 'center', fontSize: '20px', color: '#2499ef' }}><b>4/5</b></p>
+                        <Stack spacing={1}>
+                            <Rating name="size-medium" defaultValue={2} />
+                        </Stack>
+                        <p style={{ textAlign: 'center', color: '#8ca3ba' }}><b>(8.24k reviews)</b></p>
+                        <Button
+                            variant="contained"
+                            color="#2499ef"
+                            startIcon={<EditIcon />}
+                        >
+                            Write Your Review
+                        </Button>
+                    </div>
+                </div>
 
             </Box>
         </Box >
