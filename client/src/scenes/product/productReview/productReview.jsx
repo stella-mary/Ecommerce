@@ -10,13 +10,12 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import Button from '@material-ui/core/Button';
-import EditIcon from '@material-ui/icons/Edit';
-
+import { Button } from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
+import LinearProgress from '@mui/material/LinearProgress';
 import { mockDataProduct } from "../../../data/mockData";
-
-
 import Box from '@mui/material/Box';
+import Slider from '@mui/material/Slider';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -48,8 +47,11 @@ function a11yProps(index) {
     };
 }
 
+function valuetext(value) {
+    return `${value}°C`;
+}
 
-export default function FloatingActionButtonZoom() {
+export default function FloatingActionButtonZoom(progress) {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
@@ -148,7 +150,7 @@ export default function FloatingActionButtonZoom() {
                     </Typography>
                 </TabPanel>
 
-                <div style={{ display: 'flex', flexDirection: 'row', gap: '20px', justifyContent: 'space-betwen' }}>
+                <div style={{ display: 'flex', flexDirection: 'row', gap: '20px', justifyContent: 'space-betwen', maxWidth: "1200px" }}>
                     <TabPanel value={value} index={1} dir={theme.direction}>
 
                         {review.map(review => (
@@ -161,7 +163,7 @@ export default function FloatingActionButtonZoom() {
                                 </div>
                                 <div style={{ display: 'flex', flexDirection: 'column', marginTop: '5px', width: '350px' }}>
                                     <Stack spacing={1}>
-                                        <Rating name="size-medium" defaultValue={2} />
+                                        <Rating name="size-medium" defaultValue={4} />
                                     </Stack>
                                     {/* <p>{review.ReviewRating}<br /><br /> */}
                                     <p style={{ fontSize: '12px', lineHeight: '2em' }}>{review.ReviewContent}</p>
@@ -174,24 +176,125 @@ export default function FloatingActionButtonZoom() {
 
                         ))}
                     </TabPanel>
-                    <p style={{ borderRight: '1px solid #656b73' }}></p>
-                    <div style={{ display: 'flex', flexDirection: 'column', marginTop: '15px', alignItems: 'center' }}>
-                        <h2 style={{ fontSize: '15px', marginBottom: '0px', textAlign: 'center' }}>Average rating</h2>
-                        <p style={{ textAlign: 'center', fontSize: '20px', color: '#2499ef' }}><b>4/5</b></p>
-                        <Stack spacing={1}>
-                            <Rating name="size-medium" defaultValue={2} />
-                        </Stack>
-                        <p style={{ textAlign: 'center', color: '#8ca3ba' }}><b>(8.24k reviews)</b></p>
-                        <Button
-                            variant="contained"
-                            color="#2499ef"
-                            startIcon={<EditIcon />}
-                        >
-                            Write Your Review
-                        </Button>
-                    </div>
-                </div>
 
+                    <p style={{ borderRight: '1px solid #656b73' }}></p>
+                    <TabPanel value={value} index={1} dir={theme.direction}>
+                        <div style={{ display: 'flex', flexDirection: 'column', marginTop: '10px', alignItems: 'center' }}>
+                            <h2 style={{ fontSize: '15px', marginBottom: '0px', textAlign: 'center' }}>Average rating</h2>
+                            <p style={{ textAlign: 'center', fontSize: '20px', color: '#2499ef' }}><b>4/5</b></p>
+                            <Stack spacing={1}>
+                                <Rating name="size-medium" defaultValue={4} />
+                            </Stack>
+                            <p style={{ textAlign: 'center', color: '#8ca3ba' }}><b>(8.24k reviews)</b></p>
+                            <div style={{ display: 'flex', flexDirection: 'row', marginTop: '10px', gap: '20px' }}>
+                                <p style={{ textAlign: 'center', fontSize: '10px' }}><b>5 star</b></p>
+                                <Box sx={{ width: 200 }}>
+                                    <Slider
+                                        aria-label="Temperature"
+                                        defaultValue={30}
+                                        getAriaValueText={valuetext}
+                                        color="secondary"
+                                        sx={{
+                                            '& .MuiSlider-thumb': {
+                                                display: 'none',
+                                            },
+                                        }}
+                                    />
+                                </Box>
+                                <p style={{ textAlign: 'center', fontSize: '10px' }}><b>32K</b></p>
+                            </div>
+
+                            <div style={{ display: 'flex', flexDirection: 'row', marginTop: '10px', gap: '20px' }}>
+                                <p style={{ textAlign: 'center', fontSize: '10px' }}><b>4 star</b></p>
+                                <Box sx={{ width: 200 }}>
+                                    <Slider
+                                        aria-label="Temperature"
+                                        defaultValue={30}
+                                        getAriaValueText={valuetext}
+                                        color="secondary"
+                                        sx={{
+                                            '& .MuiSlider-thumb': {
+                                                display: 'none',
+                                            },
+                                        }}
+                                    />
+                                </Box>
+                                <p style={{ textAlign: 'center', fontSize: '10px' }}><b>32K</b></p>
+                            </div>
+                            <div style={{ display: 'flex', flexDirection: 'row', marginTo: '10px', gap: '20px' }}>
+                                <p style={{ textAlign: 'center', fontSize: '10px' }}><b>3 star</b></p>
+                                <Box sx={{ width: 200 }}>
+                                    <Slider
+                                        aria-label="Temperature"
+                                        defaultValue={30}
+                                        getAriaValueText={valuetext}
+                                        color="secondary"
+                                        sx={{
+                                            '& .MuiSlider-thumb': {
+                                                display: 'none',
+                                            },
+                                        }}
+                                    />
+                                </Box>
+                                <p style={{ textAlign: 'center', fontSize: '10px' }}><b>32K</b></p>
+                            </div>
+                            <div style={{ display: 'flex', flexDirection: 'row', marginTop: '10px', gap: '20px' }}>
+                                <p style={{ textAlign: 'center', fontSize: '10px' }}><b>2 star</b></p>
+                                <Box sx={{ width: 200 }}>
+                                    <Slider
+                                        aria-label="Temperature"
+                                        defaultValue={30}
+                                        getAriaValueText={valuetext}
+                                        color="secondary"
+                                        sx={{
+                                            '& .MuiSlider-thumb': {
+                                                display: 'none',
+                                            },
+                                        }}
+                                    />
+                                </Box>
+                                <p style={{ textAlign: 'center', fontSize: '10px' }}><b>32K</b></p>
+                            </div>
+                            <div style={{ display: 'flex', flexDirection: 'row', marginTop: '10px', gap: '20px' }}>
+                                <p style={{ textAlign: 'center', fontSize: '10px' }}><b>1 star</b></p>
+                                <Box sx={{ width: 200 }}>
+                                    <Slider
+                                        aria-label="Temperature"
+                                        defaultValue={30}
+                                        getAriaValueText={valuetext}
+                                        color="secondary"
+                                        sx={{
+                                            '& .MuiSlider-thumb': {
+                                                display: 'none',
+                                            },
+                                        }}
+                                    />
+                                </Box>
+                                <p style={{ textAlign: 'center', fontSize: '10px' }}><b>32K</b></p>
+                            </div>
+
+
+                            <Button
+                                variant="outlined"  // Change the variant to "outlined" for a different button style
+                                style={{
+                                    color: "#2499ef",
+                                    borderColor: '#2499ef',
+                                    marginTop: '20px'
+                                }}     // Change the color to "primary" for the default theme color
+                                startIcon={< EditIcon />}
+                            >
+                                Write Your Review
+                            </Button>
+                        </div>
+                    </TabPanel>
+                </div>
+                <TabPanel value={value} index={1} dir={theme.direction}>
+                    <h2 style={{ fontSize: '15px', marginLeft: '20px', marginBottom: '0px', textAlign: 'left' }}>Add Review</h2>
+                    <p>Your review about this product:</p>
+                    <Stack spacing={1}>
+                        <Rating name="size-medium" defaultValue={4} />
+                    </Stack>
+                </TabPanel>
             </Box>
         </Box >
     );

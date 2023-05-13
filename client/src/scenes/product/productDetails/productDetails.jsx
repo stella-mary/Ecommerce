@@ -5,6 +5,8 @@ import React, { useState } from 'react';
 import shoe from '../../Img/shoe.jpg'
 import { tokens } from "../../../theme";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function ProductDetails() {
@@ -198,10 +200,7 @@ export default function ProductDetails() {
                 >
 
                     <div className="social-icon">
-                        <span><Facebook style={{
-                            display: "inline-block",
-                            background: "none", boxShadow: "none"
-                        }} /></span>
+                        <span><FontAwesomeIcon icon={faFacebookF} style={{ color: '#455a79' }} /></span>
                     </div>
                     <div className="social-icon">
                         <span><Instagram /></span>
