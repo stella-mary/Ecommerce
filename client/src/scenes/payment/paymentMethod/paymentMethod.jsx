@@ -16,31 +16,6 @@ import Mastercard from '../../Img/Mastercard.png'
 import americanexpress from '../../Img/americanexpress.png'
 
 
-const StyledFormControlLabel = styled((props) => <FormControlLabel {...props} />)(
-    ({ theme, checked }) => ({
-        '.MuiFormControlLabel-label': checked && {
-            color: theme.palette.primary.main,
-        },
-    }),
-);
-
-function MyFormControlLabel(props) {
-    const radioGroup = useRadioGroup();
-
-    let checked = false;
-
-    if (radioGroup) {
-        checked = radioGroup.value === props.value;
-    }
-
-    return <StyledFormControlLabel checked={checked} {...props} />;
-}
-
-MyFormControlLabel.propTypes = {
-
-    value: PropTypes.any,
-};
-
 const outerTheme = createTheme({
     palette: {
         primary: {
@@ -122,7 +97,7 @@ const PaymentMethod = () => {
                     >
 
                         <Radio
-                            theme={outerTheme}
+                            theme={outerTheme} //Replace Outline radio button color change
                             checked={selectedValue === 'a'}
                             onChange={handleChange}
                             value="a"
@@ -161,7 +136,7 @@ const PaymentMethod = () => {
                             paddingBottom="20px"
                         >
                             <Radio
-                                theme={outerTheme}
+                                // theme={outerTheme}
                                 checked={selectedValue === 'b'}
                                 onChange={handleChange}
                                 value="b"
@@ -198,7 +173,7 @@ const PaymentMethod = () => {
                         }}
                     >
                         <TextField
-                            color="secondary"
+                            color="secondary" //secondary theme.js color 
                             variant="outlined"
                             fullWidth
                             label="Card Number"
@@ -210,14 +185,8 @@ const PaymentMethod = () => {
                                     backgroundImage: 'none',
                                     color: `${isFocused === "Card Number" ? '#2499ef' : '#425673'}`,
                                 },
-                            }}
-                            InputProps={{
-                                style: {
-                                    outline: 'none',
-                                    backgroundImage: 'none',
-                                    color: 'white'
-                                }
-                            }}
+                            }} //placeholder color
+
                             onFocus={() => handleFocus("Card Number")}
                             onBlur={handleBlur}
                         />
@@ -247,13 +216,7 @@ const PaymentMethod = () => {
                                     color: `${isFocused === "Exp Date" ? '#2499ef' : '#425673'}`,
                                 },
                             }}
-                            InputProps={{
-                                style: {
-                                    outline: 'none',
-                                    backgroundImage: 'none',
-                                    color: 'white'
-                                }
-                            }}
+
                             onFocus={() => handleFocus("Exp Date")}
                             onBlur={handleBlur}
                         />
@@ -272,13 +235,7 @@ const PaymentMethod = () => {
                                     color: `${isFocused === "CVC" ? '#2499ef' : '#425673'}`,
                                 },
                             }}
-                            InputProps={{
-                                style: {
-                                    outline: 'none',
-                                    backgroundImage: 'none',
-                                    color: 'white'
-                                }
-                            }}
+
                             onFocus={() => handleFocus("CVC")}
                             onBlur={handleBlur}
                         />
