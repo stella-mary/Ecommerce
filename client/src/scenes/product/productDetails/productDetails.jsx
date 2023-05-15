@@ -28,7 +28,9 @@ export default function ProductDetails() {
                 alignItems: "top",
                 gap: "1%",
                 borderRadius: "10px",
-                padding: "1%",
+                paddingLeft: "1%",
+                paddingTop: '1%',
+                paddingRight: '1%',
                 m: "20px",
                 backgroundColor: "#222b36",
             }}
@@ -39,7 +41,6 @@ export default function ProductDetails() {
                     flexDirection: "column",
                     gap: "10px",
                     width: "10%",
-
                 }}
             >
                 <img src={shoe} alt="Shoe 1" />
@@ -195,7 +196,7 @@ export default function ProductDetails() {
                 <Box
                     display="flex"
                     justifyContent="-moz-initial"
-                    marginTop="40px"
+                    marginTop="30px"
                     gap="10px"
                 >
 

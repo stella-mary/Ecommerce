@@ -13,12 +13,12 @@ const Product = () => {
     return (
         <div>
             <CheckBox />
-            <div className='product'>
-                <ProductDetails />
-                <ProductReview />
-                {/* <ProductDescription /> */}
-            </div>
+
+            <ProductDetails />
+            <ProductReview />
+
         </div>
+
     )
 }
 

@@ -1,4 +1,5 @@
 import React, { useState, withStyles } from 'react';
+import TextField from '@mui/material/TextField';
 import PropTypes from 'prop-types';
 import { tokens } from "../../../theme";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -70,6 +71,16 @@ export default function FloatingActionButtonZoom(progress) {
     const transitionDuration = {
         enter: theme.transitions.duration.enteringScreen,
         exit: theme.transitions.duration.leavingScreen,
+    };
+
+    const [isFocused, setIsFocused] = useState("");
+
+    const handleFocus = (fieldId) => {
+        setIsFocused(fieldId);
+    };
+
+    const handleBlur = () => {
+        setIsFocused("");
     };
 
 
@@ -186,7 +197,7 @@ export default function FloatingActionButtonZoom(progress) {
                                 <Rating name="size-medium" defaultValue={4} />
                             </Stack>
                             <p style={{ textAlign: 'center', color: '#8ca3ba' }}><b>(8.24k reviews)</b></p>
-                            <div style={{ display: 'flex', flexDirection: 'row', marginTop: '10px', gap: '20px' }}>
+                            <div style={{ display: 'flex', flexDirection: 'row', marginTop: '5px', gap: '20px' }}>
                                 <p style={{ textAlign: 'center', fontSize: '10px' }}><b>5 star</b></p>
                                 <Box sx={{ width: 200 }}>
                                     <Slider
@@ -198,13 +209,16 @@ export default function FloatingActionButtonZoom(progress) {
                                             '& .MuiSlider-thumb': {
                                                 display: 'none',
                                             },
+                                            '& .MuiSlider-track': {
+                                                background: '#27ce88', // Replace 'red' with your desired border color
+                                            },
                                         }}
                                     />
                                 </Box>
                                 <p style={{ textAlign: 'center', fontSize: '10px' }}><b>32K</b></p>
                             </div>
 
-                            <div style={{ display: 'flex', flexDirection: 'row', marginTop: '10px', gap: '20px' }}>
+                            <div style={{ display: 'flex', flexDirection: 'row', marginTop: '5px', gap: '20px' }}>
                                 <p style={{ textAlign: 'center', fontSize: '10px' }}><b>4 star</b></p>
                                 <Box sx={{ width: 200 }}>
                                     <Slider
@@ -216,12 +230,15 @@ export default function FloatingActionButtonZoom(progress) {
                                             '& .MuiSlider-thumb': {
                                                 display: 'none',
                                             },
+                                            '& .MuiSlider-track': {
+                                                background: '#27ce88', // Replace 'red' with your desired border color
+                                            },
                                         }}
                                     />
                                 </Box>
                                 <p style={{ textAlign: 'center', fontSize: '10px' }}><b>32K</b></p>
                             </div>
-                            <div style={{ display: 'flex', flexDirection: 'row', marginTo: '10px', gap: '20px' }}>
+                            <div style={{ display: 'flex', flexDirection: 'row', marginTo: '5px', gap: '20px' }}>
                                 <p style={{ textAlign: 'center', fontSize: '10px' }}><b>3 star</b></p>
                                 <Box sx={{ width: 200 }}>
                                     <Slider
@@ -233,12 +250,15 @@ export default function FloatingActionButtonZoom(progress) {
                                             '& .MuiSlider-thumb': {
                                                 display: 'none',
                                             },
+                                            '& .MuiSlider-track': {
+                                                background: '#27ce88', // Replace 'red' with your desired border color
+                                            },
                                         }}
                                     />
                                 </Box>
                                 <p style={{ textAlign: 'center', fontSize: '10px' }}><b>32K</b></p>
                             </div>
-                            <div style={{ display: 'flex', flexDirection: 'row', marginTop: '10px', gap: '20px' }}>
+                            <div style={{ display: 'flex', flexDirection: 'row', marginTop: '5px', gap: '20px' }}>
                                 <p style={{ textAlign: 'center', fontSize: '10px' }}><b>2 star</b></p>
                                 <Box sx={{ width: 200 }}>
                                     <Slider
@@ -250,12 +270,15 @@ export default function FloatingActionButtonZoom(progress) {
                                             '& .MuiSlider-thumb': {
                                                 display: 'none',
                                             },
+                                            '& .MuiSlider-track': {
+                                                background: '#27ce88', // Replace 'red' with your desired border color
+                                            },
                                         }}
                                     />
                                 </Box>
                                 <p style={{ textAlign: 'center', fontSize: '10px' }}><b>32K</b></p>
                             </div>
-                            <div style={{ display: 'flex', flexDirection: 'row', marginTop: '10px', gap: '20px' }}>
+                            <div style={{ display: 'flex', flexDirection: 'row', marginTop: '5px', gap: '20px' }}>
                                 <p style={{ textAlign: 'center', fontSize: '10px' }}><b>1 star</b></p>
                                 <Box sx={{ width: 200 }}>
                                     <Slider
@@ -266,6 +289,9 @@ export default function FloatingActionButtonZoom(progress) {
                                         sx={{
                                             '& .MuiSlider-thumb': {
                                                 display: 'none',
+                                            },
+                                            '& .MuiSlider-track': {
+                                                background: '#27ce88', // Replace 'red' with your desired border color
                                             },
                                         }}
                                     />
@@ -289,11 +315,95 @@ export default function FloatingActionButtonZoom(progress) {
                     </TabPanel>
                 </div>
                 <TabPanel value={value} index={1} dir={theme.direction}>
-                    <h2 style={{ fontSize: '15px', marginLeft: '20px', marginBottom: '0px', textAlign: 'left' }}>Add Review</h2>
-                    <p>Your review about this product:</p>
-                    <Stack spacing={1}>
-                        <Rating name="size-medium" defaultValue={4} />
-                    </Stack>
+                    <h2 style={{ fontSize: '15px', marginBottom: '0px', textAlign: 'left' }}>Add Review</h2>
+                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px' }}>
+                        <p>Your review about this product:</p>
+                        <Stack spacing={1}>
+                            <Rating name="size-medium" defaultValue={2} />
+                        </Stack>
+                    </div>
+
+                    <Box
+                        sx={{
+                            width: 900,
+                            maxWidth: '100%',
+
+                        }}
+                    >
+
+                        <TextField
+                            color="secondary" //secondary theme.js color 
+                            variant="outlined"
+                            fullWidth
+                            id="Review"
+                            placeholder="Review"
+                            multiline
+                            rows={4} // Increase the number of rows as desired
+                            InputLabelProps={{
+                                style: {
+
+                                    backgroundImage: 'none',
+                                    color: `${isFocused === "Review" ? '#2499ef' : '#425673'}`,
+                                },
+                            }} //placeholder color
+
+                            onFocus={() => handleFocus("Review")}
+                            onBlur={handleBlur}
+                        />
+
+                    </Box>
+                    <Box
+                        sx={{
+                            width: 900,
+                            maxWidth: '100%',
+                            marginTop: '20px'
+                        }}
+                    >
+
+
+                        <TextField
+                            color="secondary" //secondary theme.js color 
+                            variant="outlined"
+                            fullWidth
+                            id="Name"
+                            placeholder="Name"
+                            InputLabelProps={{
+                                style: {
+
+                                    backgroundImage: 'none',
+                                    color: `${isFocused === "Name" ? '#2499ef' : '#425673'}`,
+                                },
+                            }} //placeholder color
+
+                            onFocus={() => handleFocus("Name")}
+                            onBlur={handleBlur}
+                        />
+                    </Box>
+                    <Box
+                        sx={{
+                            width: 900,
+                            maxWidth: '100%',
+                            marginTop: '20px'
+                        }}
+                    >
+                        <TextField
+                            color="secondary" //secondary theme.js color 
+                            variant="outlined"
+                            fullWidth
+                            id="Email"
+                            placeholder="Email"
+                            InputLabelProps={{
+                                style: {
+
+                                    backgroundImage: 'none',
+                                    color: `${isFocused === "Email" ? '#2499ef' : '#425673'}`,
+                                },
+                            }} //placeholder color
+
+                            onFocus={() => handleFocus("Email")}
+                            onBlur={handleBlur}
+                        />
+                    </Box>
                 </TabPanel>
             </Box>
         </Box >

@@ -5,12 +5,12 @@ import { navigate, useNavigate } from "react-router-dom";
 import OrderSummary from './checkout1/orderSummary/orderSummary';
 import CheckBox from './checkout1/checkbox/checkbox'
 import StepperBar from './checkout1/stepperBar/stepperBar';
-import { mockDataCart } from "../data/mockData";
+import { mockDataProduct } from "../data/mockData";
 import CheckOut2Details from './checkout1/checkout2Details/checkout2Details'
 
 const CheckOut1 = () => {
 
-    const [cart, setCart] = useState(mockDataCart);
+    const [cart, setCart] = useState(mockDataProduct);
 
     const [vatAmount, setVatAmount] = useState(0);
 
