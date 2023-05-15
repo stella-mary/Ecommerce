@@ -8,6 +8,7 @@ import Payment from './scenes/payment'
 import Bill from './scenes/bill'
 import Product from './scenes/product'
 import Shop1 from './scenes/shop1'
+import Shop2 from './scenes/shop2'
 import CheckOut1 from './scenes/checkOut1'
 import CheckOut2 from './scenes/checkOut2'
 import PaymentComplete1 from "./scenes/paymentComplete1";
@@ -36,6 +37,7 @@ function App() {
               <Route path="bill" element={<Bill />} />
               <Route path="product" element={<Product />} />
               <Route path="shop1" element={<Shop1 />} />
+              <Route path="shop2" element={<Shop2 />} />
               <Route path="checkout1" element={<CheckOut1 />} />
               <Route path="checkout2" element={<CheckOut2 />} />
               <Route path="Complete1" element={<PaymentComplete1 />} />

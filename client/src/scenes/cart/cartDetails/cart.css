@@ -4,6 +4,12 @@
    grid-template-columns:  1.5fr 1fr;
 }
 
+.shop2 {
+    display: grid;
+    padding: 2%;
+   grid-template-columns:  1.5fr 3.5fr;
+}
+
 .product {
     display: grid;
    grid-template-rows:  2fr 1fr;
