@@ -12,6 +12,11 @@ body,
   font-family: 'Montserrat', sans-serif;
 }
 
+/* .content{
+  height: 100vh;
+  overflow: auto;
+} */
+
 /* .textfield_label{
   color: aliceblue !important;
 

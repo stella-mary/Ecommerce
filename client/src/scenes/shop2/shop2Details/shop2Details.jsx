@@ -52,7 +52,7 @@ const Shop1 = () => {
                     < Box
                         marginBottom="15px"
                         display="grid"
-                        gridTemplateRows="2fr 1fr"
+                        gridTemplateRows="1fr 1fr"
                         borderRadius="10px"
                         backgroundColor={colors.primary[400]}
                         key={item.id}
@@ -60,7 +60,7 @@ const Shop1 = () => {
                     >
                         <Box
                             width="100%"
-                            // height="100%"
+                            height="100%"
                             display="flex"
                             justifyContent="center"
                             borderRadius='15px 15px 0px 0px'
@@ -77,34 +77,44 @@ const Shop1 = () => {
 
                         <Box
                             display="flex"
-                            justifyContent="space-between"
-                            flexDirection="row"
+                            flexDirection="column"
+                            gap="10px"
                         >
-                            <Typography variant="h3" fontWeight="400" marginBottom="30px" marginTop="10px" fontSize="13px" marginLeft="20px" color={colors.greenAccent[100]}>
-                                {item.ProductName}
-                                <br />
-                                <span className="color"><b>{item.ProductContent}</b></span>
-                                <br />
-                                <br />
-                            </Typography>
-                            <Typography variant="h3" fontWeight="400" marginBottom="30px" marginTop="10px" fontSize="13px" marginLeft="20px" color={colors.greenAccent[100]}>
-                                <Stack spacing={1}>
-                                    <Rating name="size-medium" defaultValue={1} max={1} />
-                                </Stack>
-                                <span className="color"><b>{item.ReviewRating}</b></span>
-                                <br /><br />
-                            </Typography>
-                        </Box>
-                        <Box
-                            display="flex"
-                            justifyContent="space-between"
-                            flexDirection="row"
-                        >
-                            <Typography variant="h3" fontWeight="400" marginBottom="30px" marginTop="10px" fontSize="13px" marginLeft="20px" color={colors.greenAccent[100]}>
 
-                                <span className="bgColor9"><b>$ {item.ProductPrice}</b></span>
-                            </Typography>
+                            <Box
+                                display="flex"
+                                justifyContent="space-between"
+                                flexDirection="row"
+                                alignItems="center"
+                                margin="10px"
+                            >
+                                <Typography variant="h3" fontWeight="400" fontSize="13px" >
+                                    {item.ProductName}
+                                    <br />
+                                    <span className="color"><b>{item.ProductContent}</b></span>
+                                </Typography>
+                                <Box display="flex" gap="10px">
+                                    <Stack spacing={1}>
+                                        <Rating name="size-medium" defaultValue={1} max={1} />
+                                    </Stack>
+                                    <span className="color"><b>{item.ReviewRating}</b></span>
 
+                                </Box>
+                            </Box>
+                            <Box
+                                display="flex"
+                                justifyContent="space-between"
+                                flexDirection="row"
+                                margin="10px"
+                            >
+                                <Typography variant="h3" fontWeight="400" fontSize="13px" color={colors.greenAccent[100]}>
+                                    <span className="bgColor9"><b>$ {item.ProductPrice}</b></span>
+                                </Typography>
+                                <Box>
+                                    <button>_</button>
+                                    <button>+</button>
+                                </Box>
+                            </Box>
                         </Box>
 
                     </Box>

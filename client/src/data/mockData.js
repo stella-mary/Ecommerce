@@ -71,7 +71,7 @@ export const mockDataProduct = [
         ReviewContent: "Thank you very fast shipping from Poland only 3days. Very Greateful. Was this review helpful to you?.",
         ReviewLike: 5,
         ProductName: "Comfortable Chair",
-        ProductImage: "https://pngimg.com/uploads/running_shoes/running_shoes_PNG5787.png",
+        ProductImage: "http://clipart-library.com/images_k/shoe-transparent-background/shoe-transparent-background-12.png",
         ProductPrice: "500",
         ProductStock: "In Stock",
         ProductColor: "Blue",
