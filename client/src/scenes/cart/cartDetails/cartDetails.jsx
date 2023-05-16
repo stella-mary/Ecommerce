@@ -53,7 +53,24 @@ const CartDetails = () => {
                         key={item.id}
                     >
                         <Box display="flex" alignItems="center" gap="10px">
-                            <img src={item.ProductImage} width={60} height={60} style={{ borderRadius: '15%' }} />
+
+                            {/* <Box
+                            width="100%"
+                            // height="100%"
+                            display="flex"
+                            justifyContent="center"
+                            borderRadius='15px 15px 0px 0px'
+                            // alignItems="center"
+
+                            style={{
+                                backgroundColor: 'white', // Set the background color to white
+                                backgroundImage: `url(${item.ProductImage})`, // Set the image URL
+                                backgroundPosition: 'center',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: '50%',
+                            }}
+                        /> */}
+                            <img src={item.ProductImage} width={60} height={60} style={{ borderRadius: '15%', backgroundColor: 'white' }} />
 
                             <div className='productDetails'>
                                 <Typography variant="h3" fontWeight="400" fontSize="13px" color={colors.greenAccent[100]} marginBottom="5px">{item.ProductName}</Typography>

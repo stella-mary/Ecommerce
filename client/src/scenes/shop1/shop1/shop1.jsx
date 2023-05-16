@@ -58,13 +58,30 @@ const Shop1 = () => {
                         backgroundColor={colors.primary[400]}
                         key={item.id}
                     >
-                        <Box
+                        {/* <Box
                             width="100%"
                             height="100%"
                             display="flex"
                             justifyContent="center"
                             alignItems="center"
                             style={{ backgroundImage: `url(${item.ProductImage})`, backgroundSize: 'cover' }}
+                        /> */}
+
+                        <Box
+                            width="100%"
+                            // height="100%"
+                            display="flex"
+                            justifyContent="center"
+                            borderRadius='15px 15px 0px 0px'
+                            // alignItems="center"
+
+                            style={{
+                                backgroundColor: 'white', // Set the background color to white
+                                backgroundImage: `url(${item.ProductImage})`, // Set the image URL
+                                backgroundPosition: 'center',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: '100%',
+                            }}
                         />
 
 
