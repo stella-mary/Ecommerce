@@ -5,13 +5,34 @@ import { mockDataProduct } from "../../../data/mockData";
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import Rating from '@mui/material/Rating';
-
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 
 
 const Shop1 = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+    const [isHovered, setIsHovered] = useState(false);
+
+    const divStyle = {
+        marginRight: '15px',
+        paddingLeft: '10px',
+        paddingRight: '10px',
+        paddingTop: '5px',
+        paddingBottom: '5px',
+        borderRadius: '50%',
+        color: isHovered ? '#595959' : '#595959',
+        backgroundColor: isHovered ? '#455a79' : '#171c24',
+        cursor: 'pointer',
+    };
+
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
 
 
     const [cart, setCart] = useState(mockDataProduct);
@@ -86,7 +107,10 @@ const Shop1 = () => {
                                 justifyContent="space-between"
                                 flexDirection="row"
                                 alignItems="center"
-                                margin="10px"
+                                marginLeft="10px"
+                                marginRight="10px"
+                                marginBottom="0px"
+                                marginTop="10px"
                             >
                                 <Typography variant="h3" fontWeight="400" fontSize="13px" >
                                     {item.ProductName}
@@ -104,16 +128,27 @@ const Shop1 = () => {
                             <Box
                                 display="flex"
                                 justifyContent="space-between"
+                                alignItems="center"
                                 flexDirection="row"
-                                margin="10px"
+                                marginLeft="10px"
+                                marginRight="10px"
+                                marginBottom="10px"
+                                marginTop="0px"
                             >
                                 <Typography variant="h3" fontWeight="400" fontSize="13px" color={colors.greenAccent[100]}>
                                     <span className="bgColor9"><b>$ {item.ProductPrice}</b></span>
                                 </Typography>
-                                <Box>
-                                    <button>_</button>
-                                    <button>+</button>
+                                <Box display="flex" gap="2px" alignItems="center">
+                                    <div
+                                        style={divStyle}
+                                        onMouseEnter={handleMouseEnter}
+                                        onMouseLeave={handleMouseLeave}
+                                    >
+                                        <FavoriteIcon />
+                                    </div>
+                                    <div style={{ fontSize: '20px', paddingLeft: '10px', paddingRight: "10px", paddingTop: '5px', paddingBottom: '5px', borderRadius: '50%', backgroundColor: '#2499ef', color: 'white', textAlign: 'center', cursor: 'pointer' }}>+</div>
                                 </Box>
+
                             </Box>
                         </Box>
 

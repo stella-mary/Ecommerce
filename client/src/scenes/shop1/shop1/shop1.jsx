@@ -94,6 +94,7 @@ const Shop1 = () => {
                                     </div>
                                 </div>
                             </div>
+
                             <Box
                                 display="flex"
                                 justifyContent="space-between"
@@ -136,18 +137,14 @@ const Shop1 = () => {
                                     <Box variant="h3" fontWeight="400"
                                         fontSize="25px"
                                         color={colors.grey[100]}
-                                        // border="solid 2px #2f4365"
                                         borderRadius="10px"
-                                        // justifyContent="space-between"
                                         marginTop="1px"
-                                        marginRight="5px"
+                                        marginRight="15px"
                                         textAlign="right"
-                                        width="100px"
-                                        height="40px"
                                         cursor="pointer"
                                         padding="5px"
                                     >
-                                        <button className="bgColor" onClick={() => increase(item.id)}>+</button>
+                                        <button className="bgColor25" onClick={() => increase(item.id)}>+</button>
                                     </Box>
                                 )}
 

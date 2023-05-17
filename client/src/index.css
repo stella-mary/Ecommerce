@@ -186,6 +186,19 @@ body,
   border-radius: 5px;
 }
 
+.bgColor25 {
+  background-color: #222b36;
+  border-radius: 1px;
+  color: white;
+  cursor: pointer;
+  border: solid 1px #3d454e;
+  outline: none; 
+  width: 150%;
+  height: 60%;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
 .icon:hover {
   cursor: pointer;
   background-color: #3d454e;

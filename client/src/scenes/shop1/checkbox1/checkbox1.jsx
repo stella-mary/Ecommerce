@@ -1,7 +1,6 @@
 import { useTheme } from "@mui/material";
 import { IconButton, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -37,12 +36,13 @@ const NewColors = [
 
 export default function CheckBox() {
 
+    const [open, setOpen] = useState(false);
 
-    const [open, setOpen] = React.useState(false);
-
-    const handleClose = (value: string) => {
+    const handleClose = () => {
         setOpen(false);
+        // Add any other code or state updates for closing the sidebar
     };
+
 
     const outerTheme = createTheme({
         palette: {
@@ -57,8 +57,6 @@ export default function CheckBox() {
     const handleChange = (event) => {
         setSelectedValue(event.target.value);
     };
-
-
 
 
     const theme = useTheme();
@@ -89,11 +87,12 @@ export default function CheckBox() {
                     display="flex"
                     flexDirection="row"
                     justifyContent="space-between"
-                    font-size="20px"
-
-                >
+                    font-size="20px">
                     Filter<span className="space2" />
-                    <Button open={open} onClose={handleClose}><ClearSharpIcon /></Button>
+
+                    <IconButton onClick={handleClose}>
+                        <ClearSharpIcon />
+                    </IconButton>
                 </ListItemButton>
 
                 <Divider />
@@ -111,7 +110,7 @@ export default function CheckBox() {
                                 },
                             }}
                         >
-                            <FormControlLabel value="all" control={<Radio theme={outerTheme} />} label="All" />
+                            <FormControlLabel theme={outerTheme} value="all" control={<Radio theme={outerTheme} />} label="All" />
                             <FormControlLabel theme={outerTheme} value="shoes" control={<Radio theme={outerTheme} />} label="Shoes" />
                             <FormControlLabel theme={outerTheme} value="clothing" control={<Radio theme={outerTheme} />} label="Clothing" />
                             <FormControlLabel theme={outerTheme} value="accessories" control={<Radio theme={outerTheme} />} label="Accessories" />
