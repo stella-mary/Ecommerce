@@ -49,8 +49,14 @@ export default function CheckBox() {
             primary: {
                 main: '#2499ef',
             },
+
+            customColor: {
+                main: '#656b73', // Replace with your desired color value
+            },
         },
     });
+
+
 
     const [selectedValue, setSelectedValue] = useState("");
 
@@ -58,6 +64,10 @@ export default function CheckBox() {
         setSelectedValue(event.target.value);
     };
 
+    const handleClick = (value) => {
+        setSelectedValue(value);
+        console.log("clicked" + value)
+    };
 
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
@@ -83,27 +93,24 @@ export default function CheckBox() {
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                <ListItemButton
+                <div
                     display="flex"
                     flexDirection="row"
                     justifyContent="space-between"
-                    font-size="20px">
-                    Filter<span className="space2" />
+                    font-size="20px"
+                >
+                    Filter
 
                     <IconButton onClick={handleClose}>
                         <ClearSharpIcon />
                     </IconButton>
-                </ListItemButton>
-
+                </div>
                 <Divider />
 
-                <ListItemButton style={{ backgroundColor: 'transparent' }}>
+                <div style={{ marginLeft: '10px' }}>
                     <FormControl>
-                        <FormLabel id="demo-radio-buttons-group-label">Categories</FormLabel>
+                        <div style={{ marginTop: '20px' }}><b>Categories</b></div>
                         <RadioGroup
-                            aria-labelledby="demo-radio-buttons-group-label"
-                            defaultValue="female"
-                            name="radio-buttons-group"
                             sx={{
                                 '& .MuiSvgIcon-root': {
                                     fill: '#2499ef', // Replace 'your-color-here' with the desired color value
@@ -116,79 +123,174 @@ export default function CheckBox() {
                             <FormControlLabel theme={outerTheme} value="accessories" control={<Radio theme={outerTheme} />} label="Accessories" />
                         </RadioGroup>
                     </FormControl>
-                </ListItemButton>
+                </div>
 
-                <ListItemButton style={{ backgroundColor: 'transparent' }}>
+                <div style={{ marginLeft: '10px' }}>
                     <FormControl>
-                        <FormLabel>Gender</FormLabel>
+                        <div style={{ marginTop: '20px' }}><b>Gender</b></div>
                         <FormGroup
+                            sx={{
+                                '& .MuiSvgIcon-root': {
+                                    fill: '#2499ef', // Replace '#2499ef' with the desired color value
+                                },
+                                // '& .Mui-checked': {
+                                //     color: '#656b73', // Replace '#656b73' with the desired color value
+                                //     borderColor: '#656b73', // Replace '#656b73' with the desired color value for the checkbox outline color
+                                // },
+                            }}
                         >
-                            <FormControlLabel control={<Checkbox defaultChecked theme={outerTheme} />} label="Men" />
+                            <FormControlLabel control={<Checkbox theme={outerTheme} />} label="Men" />
                             <FormControlLabel control={<Checkbox theme={outerTheme} />} label="Woman" />
                             <FormControlLabel control={<Checkbox theme={outerTheme} />} label="Kids" />
                         </FormGroup>
                     </FormControl>
-                </ListItemButton>
-                <ListItemButton style={{ backgroundColor: 'transparent' }}>
-                    Color
-                </ListItemButton>
-
+                </div>
+                <div style={{ marginTop: '20px', marginLeft: '10px', marginBottom: '10px' }}><b>Colors</b></div>
 
                 <div
-                    backgroundColor='transparent'
-                    display="flex"
-                    flexDirection="row"
-
-                    justifyContent="space-between"
-
+                    style={{
+                        backgroundColor: 'transparent',
+                        display: 'flex',
+                        flexDirection: 'row',
+                        marginLeft: '20px',
+                        marginRight: '20px',
+                        justifyContent: 'space-between',
+                    }}
                 >
+
                     {NewColors.map(({ value, color }) => (
-                        <FormControlLabel
+
+                        <div
+                            key={value}
+                            // onClick={() => handleChange(value)}
+                            onClick={() => handleClick(value)}
+                            style={{
+                                backgroundColor: color,
+                                width: selectedValue === value ? '24px' : '20px',
+                                height: selectedValue === value ? '24px' : '20px',
+                                borderRadius: '50%',
+                                transition: 'all 0.3s',
+                                cursor: 'pointer',
+                                boxShadow: selectedValue === value ? 'inset 0px 0px 0px 2px black' : 'none',
+                                // padding: selectedValue === value ? '4px' : '0'
+                            }}
+                        />
+                    ))}
+                </div>
+                {/* <FormControlLabel
                             key={value}
                             control={
                                 <Radio
                                     checked={selectedValue === value}
                                     onChange={handleChange}
-                                    onClick={() => console.log(" clicked" + selectedValue)}
+                                    onClick={() => console.log(" clicked" + value)}
                                     value={value}
                                     name="radio-buttons"
                                     inputProps={{ 'aria-label': value }}
-                                    style={{ display: 'none' }}
-                                // sx={{ "& > div": { animation: selectedValue ? "0.2s linear" : "undefined" }, }}
+                                //    style = {{ marginRight: '30px' }}
                                 />
                             }
                             label=""
-                            style={{ backgroundColor: color, width: '20px', height: '20px', borderRadius: '50%' }}
+                            style={{
+                                backgroundColor: selectedValue === value ? 'your-selected-color' : color,
+                                width: '20px',
+                                height: '20px',
+                                borderRadius: '50%',
+                                // transition: 'background-color 0.3s',
+                                cursor: 'pointer',
+
+                            }}
+
                         />
                     ))}
 
+                </div> */}
+                <div style={{ marginTop: '20px', marginLeft: '10px' }}><b>Price Range</b></div>
+
+
+                <div style={{ display: 'flex', justifyContent: 'left', marginLeft: '10px', marginTop: '10px', gap: '10px' }}>
+                    <input
+                        type="text" // Set the desired text field type
+                        className="input-field" // Add a class name for the input field
+                        style={{
+                            borderColor: '#3d454e',
+                            padding: '10px',
+                            background: '#222b36',
+                            borderRadius: '10px',
+                            borderWidth: '1px',
+                            borderStyle: 'solid',
+                            width: '110px',
+                            outline: 'none',
+                            fontWeight: 'bold'
+
+                        }}
+                        placeholder="Min" // Optional: Add a placeholder text
+                        onFocus={(e) => {
+                            e.target.style.color = 'white'; // Change the text color to white when clicked
+                        }}
+                        onBlur={(e) => {
+                            e.target.style.color = '#2f4365'; // Change the text color back to the original color when focus is lost
+                        }}
+                    />
+
+                    <input
+                        type="text" // Set the desired text field type
+                        className="input-field" // Add a class name for the input field
+                        style={{
+                            borderColor: '#3d454e',
+                            padding: '10px',
+                            background: '#222b36',
+                            borderRadius: '10px',
+                            borderWidth: '1px',
+                            borderStyle: 'solid',
+                            width: '110px',
+                            outline: 'none',
+                            fontWeight: 'bold'
+                        }}
+                        placeholder="Max" // Optional: Add a placeholder text
+                        onFocus={(e) => {
+                            e.target.style.color = 'white'; // Change the text color to white when clicked
+                        }}
+                        onBlur={(e) => {
+                            e.target.style.color = '#2f4365'; // Change the text color back to the original color when focus is lost
+                        }}
+                    />
                 </div>
-                <ListItemButton style={{ backgroundColor: 'transparent' }}>
-                    Price Range
-                </ListItemButton>
-                <ListItemButton
-                    backgroundColor='transparent'
-                    display="flex"
-                    flexDirection="row"
-                    justifyContent="space-between"
-                >
-                    <button className="buttonC">Min</button><span className="space" />
-                    <button className="buttonC">Max</button>
-                </ListItemButton>
-                <ListItemButton style={{ backgroundColor: 'transparent' }}>
-                    Rating
-                </ListItemButton>
-                <ListItemButton style={{ backgroundColor: 'transparent' }}>
+
+
+                <div style={{ marginTop: '20px', marginLeft: '10px' }}><b>Rating</b></div>
+                <div style={{ marginLeft: '10px', marginTop: '10px' }}>
                     <Stack spacing={1}>
                         <Rating name="size-large" defaultValue={2} size="large" />
                     </Stack>
-                </ListItemButton>
-                <ListItemButton style={{ backgroundColor: 'transparent' }}>
+                </div>
 
-                    <button className="buttonC"><RotateLeftOutlinedIcon /><span className="space1" /> Clear all</button>
+                <div
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        borderColor: '#3d454e',
+                        padding: '8px',
+                        background: '#222b36',
+                        borderRadius: '5px',
+                        borderWidth: '1px',
+                        borderStyle: 'solid',
+                        width: '230px',
+                        marginLeft: '10px',
+                        marginRight: '5px',
+                        marginTop: '40px',
+                        marginBottom: '20px',
+                        outline: 'none',
+                        textAlign: 'center',
+                        fontWeight: 'bold'
+                    }}
+                >
+                    <RotateLeftOutlinedIcon />
+                    <span className="space1" style={{ marginLeft: '5px' }} /> Clear all
+                </div>
 
-                </ListItemButton>
-            </List>
+            </List >
         </Box >
     );
 
