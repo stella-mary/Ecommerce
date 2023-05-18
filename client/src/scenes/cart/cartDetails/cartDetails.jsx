@@ -40,7 +40,7 @@ const CartDetails = () => {
                 gridRow="span 2"
             > */}
 
-            {cart.map((item) => (
+            {cart.slice(0, 3).map((item) => (
                 <div key={item.id}>
 
                     < Box

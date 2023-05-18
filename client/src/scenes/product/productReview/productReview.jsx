@@ -165,8 +165,7 @@ export default function FloatingActionButtonZoom(progress) {
 
                     <div style={{ display: 'flex', flexDirection: 'row', gap: '20px', justifyContent: 'space-between', maxWidth: "1200px" }}>
                         <TabPanel value={value} index={1} dir={theme.direction}>
-
-                            {review.map(review => (
+                            {review.slice(0, 3).map((review) => (
                                 <div key={review.id} style={{ marginTop: '10px', flex: '1', display: 'flex', flexDirection: 'row', gap: '40px' }}>
                                     <div style={{ display: 'flex', flexDirection: 'column', marginTop: '5px' }}>
                                         <img src={review.ReviewImage} className="product-image" style={{ borderRadius: '60%' }} />

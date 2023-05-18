@@ -106,7 +106,7 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
                             <StyledTableRow key={item.id} style={{ marginBottom: '20px' }}>
                                 <StyledTableCell>
                                     <div className="product-container">
-                                        <img src={item.ProductImage} className="product-image" style={{ borderRadius: '10%' }} />
+                                        <img src={item.ProductImage} className="product-image" style={{ borderRadius: '10%', backgroundColor: 'white' }} />
                                         <div>
                                             <div>{item.ProductName}</div>
                                             <div><span className="color21">Color:</span> {item.ProductColor}</div>

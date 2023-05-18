@@ -166,12 +166,12 @@ export default function CheckBox() {
                             onClick={() => handleClick(value)}
                             style={{
                                 backgroundColor: color,
-                                width: selectedValue === value ? '24px' : '20px',
-                                height: selectedValue === value ? '24px' : '20px',
+                                width: selectedValue === value ? '30px' : '24px',
+                                height: selectedValue === value ? 'px' : '24px',
                                 borderRadius: '50%',
-                                transition: 'all 0.3s',
+                                // transition: 'all 0.3s',
                                 cursor: 'pointer',
-                                boxShadow: selectedValue === value ? 'inset 0px 0px 0px 2px black' : 'none',
+                                boxShadow: selectedValue === value ? 'inset 0px 0px 0px 3px black' : 'none',
                                 // padding: selectedValue === value ? '4px' : '0'
                             }}
                         />

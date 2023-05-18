@@ -44,6 +44,16 @@ MyFormControlLabel.propTypes = {
 
 const CheckForm = () => {
 
+
+    const [isFocused, setIsFocused] = useState("");
+
+    const handleFocus = (fieldId) => {
+        setIsFocused(fieldId);
+    };
+
+    const handleBlur = () => {
+        setIsFocused("");
+    };
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
@@ -74,66 +84,97 @@ const CheckForm = () => {
                         >
                             <Box
                                 sx={{
-                                    width: 300,
+                                    width: 350,
                                     maxWidth: '100%',
                                     marginBottom: '20px',
                                     marginTop: "20px",
-                                    color: '#455a79',
+
                                 }}
                             >
-
                                 <TextField
+                                    color="secondary" //secondary theme.js color 
+                                    variant="outlined"
                                     fullWidth
                                     label="Card Number"
                                     id="Card Number"
-                                    InputLabelProps={{ style: { color: '#2499ef' } }}
-                                    InputProps={{
+
+                                    InputLabelProps={{
                                         style: {
-                                            borderColor: 'red', // Set the border color
+
+                                            backgroundImage: 'none',
+                                            color: `${isFocused === "Card Number" ? '#2499ef' : '#425673'}`,
                                         },
-                                    }}
+                                    }} //placeholder color
+
+                                    onFocus={() => handleFocus("Card Number")}
+                                    onBlur={handleBlur}
                                 />
 
-                                {/* <TextField fullWidth label="Card Number" id="Card Number" InputLabelProps={{ style: { color: "#2499ef" } }} /> */}
+                            </Box>
+                            <Box
+                                sx={{
+                                    width: 350,
+                                    maxWidth: '100%',
+                                    marginBottom: '20px',
+                                    marginTop: "20px",
 
-                                {/* <TextField fullWidth label="Card Number" id="Card Number" /> */}
+                                }}
+                            >
+                                <TextField
+                                    color="secondary" //secondary theme.js color 
+                                    variant="outlined"
+                                    fullWidth
+                                    label="Expiration"
+                                    id="Expiration"
+
+                                    InputLabelProps={{
+                                        style: {
+
+                                            backgroundImage: 'none',
+                                            color: `${isFocused === "Expiration" ? '#2499ef' : '#425673'}`,
+                                        },
+                                    }} //placeholder color
+
+                                    onFocus={() => handleFocus("Expiration")}
+                                    onBlur={handleBlur}
+                                />
+
                             </Box>
                             <Box
                                 sx={{
-                                    width: 300,
+                                    width: 350,
                                     maxWidth: '100%',
                                     marginBottom: '20px',
                                     marginTop: "20px",
-                                    color: '#455a79',
+
                                 }}
                             >
-                                <TextField fullWidth label="Expiration" id="Expiration" InputLabelProps={{ style: { color: '#2499ef' } }}
-                                    InputProps={{
+                                <TextField
+                                    color="secondary" //secondary theme.js color 
+                                    variant="outlined"
+                                    fullWidth
+                                    label="Secure Code"
+                                    id="Secure Code"
+
+                                    InputLabelProps={{
                                         style: {
-                                            borderColor: 'red', // Set the border color
+
+                                            backgroundImage: 'none',
+                                            color: `${isFocused === "Secure Code" ? '#2499ef' : '#425673'}`,
                                         },
-                                    }} />
-                            </Box>
-                            <Box
-                                sx={{
-                                    width: 300,
-                                    maxWidth: '100%',
-                                    marginBottom: '20px',
-                                    marginTop: "20px",
-                                    color: '#455a79',
-                                }}
-                            >
-                                <TextField fullWidth label="Secure Code" id="Secure Code"
-                                    InputLabelProps={{ style: { color: '#2499ef', borderColor: 'red' } }}
-                                    InputProps={{
-                                        style: {
-                                            borderColor: 'red', // Set the border color
-                                        },
-                                    }} />
+                                    }} //placeholder color
+
+                                    onFocus={() => handleFocus("Secure Code")}
+                                    onBlur={handleBlur}
+                                />
+
                             </Box>
                         </Box>
 
-                        <div className="image"><img src={ATM} width={150} height={200} /></div>
+                        <div className="image">
+                            <img src={`https://uko-react.vercel.app/static/illustration/payment-page.svg`} width={200} height={200} style={{ cursor: 'pointer' }} />
+
+                        </div>
                     </Box>
                 </Box>
 
@@ -149,47 +190,93 @@ const CheckForm = () => {
 
                     <Box
                         sx={{
-                            width: 500,
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            gap: '10px',
+                            width: 350,
                             maxWidth: '100%',
                             marginBottom: '20px',
                             marginTop: "20px",
-                            color: '#455a79',
+
                         }}
                     >
-                        <TextField fullWidth label="Address" id="Address" InputLabelProps={{ style: { color: '#2499ef' } }}
-                            InputProps={{
-                                style: {
-                                    borderColor: 'red', // Set the border color
-                                },
-                            }} />
+                        <TextField
+                            color="secondary" //secondary theme.js color 
+                            variant="outlined"
+                            fullWidth
+                            label="Address"
+                            id="Address"
 
-                        <TextField fullWidth label="Town/City" id="Town/City" InputLabelProps={{ style: { color: '#2499ef' } }}
-                            InputProps={{
+                            InputLabelProps={{
                                 style: {
-                                    borderColor: 'red', // Set the border color
+
+                                    backgroundImage: 'none',
+                                    color: `${isFocused === "Address" ? '#2499ef' : '#425673'}`,
                                 },
-                            }} />
+                            }} //placeholder color
+
+                            onFocus={() => handleFocus("Address")}
+                            onBlur={handleBlur}
+                        />
+
                     </Box>
                     <Box
                         sx={{
-                            width: 500,
+                            width: 350,
                             maxWidth: '100%',
                             marginBottom: '20px',
                             marginTop: "20px",
-                            color: '#2499ef',
+
                         }}
                     >
-                        <TextField fullWidth label="Mobile Number" id="Mobile Number" InputLabelProps={{ style: { color: '#2499ef' } }}
-                            InputProps={{
+                        <TextField
+                            color="secondary" //secondary theme.js color 
+                            variant="outlined"
+                            fullWidth
+                            label="Town/City"
+                            id="Town/City"
+
+                            InputLabelProps={{
                                 style: {
-                                    borderColor: 'red', // Set the border color
+
+                                    backgroundImage: 'none',
+                                    color: `${isFocused === "Town/City" ? '#2499ef' : '#425673'}`,
                                 },
-                            }} />
+                            }} //placeholder color
+
+                            onFocus={() => handleFocus("Town/City")}
+                            onBlur={handleBlur}
+                        />
+
+
                     </Box>
 
+                    <Box
+                        sx={{
+                            width: 350,
+                            maxWidth: '100%',
+                            marginBottom: '20px',
+                            marginTop: "20px",
+
+                        }}
+                    >
+                        <TextField
+                            color="secondary" //secondary theme.js color 
+                            variant="outlined"
+                            fullWidth
+                            label="Mobile Number"
+                            id="Mobile Number"
+
+                            InputLabelProps={{
+                                style: {
+
+                                    backgroundImage: 'none',
+                                    color: `${isFocused === "Mobile Number" ? '#2499ef' : '#425673'}`,
+                                },
+                            }} //placeholder color
+
+                            onFocus={() => handleFocus("Mobile Number")}
+                            onBlur={handleBlur}
+                        />
+
+                    </Box>
 
                 </Box>
             </Box>
