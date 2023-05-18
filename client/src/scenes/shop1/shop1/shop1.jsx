@@ -57,6 +57,7 @@ const Shop1 = () => {
                         borderRadius="20px"
                         backgroundColor={colors.primary[400]}
                         key={item.id}
+                        position="relative"
                     >
                         {/* <Box
                             width="100%"
@@ -82,7 +83,18 @@ const Shop1 = () => {
                                 backgroundRepeat: 'no-repeat',
                                 backgroundSize: '100%',
                             }}
-                        />
+                        >
+                            <Box
+                                position="absolute"
+                                // marginTop="-250px"
+                                backgroundColor="red"
+                                marginLeft="65%"
+                                marginTop="10%"
+                            // objectFit="cover"
+                            >
+                                {item.ProductDiscount}</Box>
+                        </Box>
+
 
 
                         <Box>
@@ -104,10 +116,12 @@ const Shop1 = () => {
                                     <br />
                                     <br />
                                     <span className="color"><b>{item.ProductPrice}</b></span>
-                                    {item.ProductDiscount}
-                                    {item.ProductOffer}
+
                                 </Typography>
 
+                                <Box>
+                                    {item.ProductOffer}
+                                </Box>
 
                                 {item.quantity >= 1 ? (
                                     // <Box variant="h3" fontWeight="400" fontSize="15px" color={colors.grey[100]} marginTop="10px">

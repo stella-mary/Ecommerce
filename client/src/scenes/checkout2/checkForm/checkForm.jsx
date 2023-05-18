@@ -172,7 +172,7 @@ const CheckForm = () => {
                         </Box>
 
                         <div className="image">
-                            <img src={`https://uko-react.vercel.app/static/illustration/payment-page.svg`} width={200} height={200} style={{ cursor: 'pointer' }} />
+                            <img src={`https://uko-react.vercel.app/static/illustration/payment-page.svg`} width={200} height={300} style={{ cursor: 'pointer' }} />
 
                         </div>
                     </Box>
@@ -181,16 +181,17 @@ const CheckForm = () => {
                 <Box
                     display="flex"
                     justifyContent="space-between"
-                    flexDirection="column"
+                    flexDirection="coloumn"
                     marginBottom="15px"
                     borderRadius="10px"
                     padding="15px"
+                    gap="10px"
                     backgroundColor={colors.primary[400]}
                 >
 
                     <Box
                         sx={{
-                            width: 350,
+                            width: 300,
                             maxWidth: '100%',
                             marginBottom: '20px',
                             marginTop: "20px",
@@ -219,7 +220,7 @@ const CheckForm = () => {
                     </Box>
                     <Box
                         sx={{
-                            width: 350,
+                            width: 300,
                             maxWidth: '100%',
                             marginBottom: '20px',
                             marginTop: "20px",
@@ -247,40 +248,45 @@ const CheckForm = () => {
 
 
                     </Box>
+                </Box>
 
-                    <Box
-                        sx={{
-                            width: 350,
-                            maxWidth: '100%',
-                            marginBottom: '20px',
-                            marginTop: "20px",
 
-                        }}
-                    >
-                        <TextField
-                            color="secondary" //secondary theme.js color 
-                            variant="outlined"
-                            fullWidth
-                            label="Mobile Number"
-                            id="Mobile Number"
 
-                            InputLabelProps={{
-                                style: {
 
-                                    backgroundImage: 'none',
-                                    color: `${isFocused === "Mobile Number" ? '#2499ef' : '#425673'}`,
-                                },
-                            }} //placeholder color
+                <Box
+                    sx={{
+                        width: 350,
+                        maxWidth: '100%',
+                        marginBottom: '20px',
+                        marginTop: "20px",
+                        backgroundColor: '{colors.primary[400]'
 
-                            onFocus={() => handleFocus("Mobile Number")}
-                            onBlur={handleBlur}
-                        />
+                    }}
+                >
+                    <TextField
+                        color="secondary" //secondary theme.js color 
+                        variant="outlined"
+                        fullWidth
+                        label="Mobile Number"
+                        id="Mobile Number"
 
-                    </Box>
+                        InputLabelProps={{
+                            style: {
+
+                                backgroundImage: 'none',
+                                color: `${isFocused === "Mobile Number" ? '#2499ef' : '#425673'}`,
+                            },
+                        }} //placeholder color
+
+                        onFocus={() => handleFocus("Mobile Number")}
+                        onBlur={handleBlur}
+                    />
 
                 </Box>
-            </Box>
 
+
+
+            </Box>
 
 
         </Box >

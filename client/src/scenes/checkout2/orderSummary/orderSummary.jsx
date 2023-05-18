@@ -33,79 +33,79 @@ const OrderSummary = () => {
                     p="15px"
                 >
 
-                    <Typography color={colors.grey[100]} variant="h5" fontWeight="600" fontSize="20px">
+                    <Typography color={colors.grey[100]} variant="h5" fontWeight="600" fontSize="15px">
                         Order Summery
                     </Typography>
                 </Box>
 
                 <Box
-                    // key={`${transaction.txId}-${i}`}
                     display="flex"
                     justifyContent="space-between"
                     alignItems="center"
-                    borderBottom={`4px solid ${colors.primary[500]}`}
-                    p="15px"
+                    paddingLeft="15px"
+                    paddingRight="10px"
                 >
-                    <Box>
-                        <Typography color={colors.greenAccent[100]} variant="h5" fontWeight="600" fontSize="15px" paddingBottom="20px">
-                            SubTotal
-                        </Typography>
-                        <Typography color={colors.greenAccent[100]} variant="h5" fontWeight="600" fontSize="15px" paddingBottom="20px">
-                            Discount
-                        </Typography>
-                        <Typography color={colors.greenAccent[100]} variant="h5" fontWeight="600" fontSize="15px" font-Size="20px" paddingBottom="20px">
-                            Shipping Cost
-                        </Typography>
-
-
-                    </Box>
-                    {/* <Box color={colors.grey[100]}>
-                                {transaction.date}
-                            </Box> */}
-                    <Box p="2px 2px" >
-                        {/* ${transaction.cost} */}
-                        <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">$215</Typography>
-
-                        {/* ${transaction.cost} */}
-                        <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">15%</Typography>
-                        {/* ${transaction.cost} */}
-                        <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">$50</Typography>
-                    </Box>
+                    <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" paddingBottom="20px">
+                        SubTotal
+                    </Typography>
+                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">$215</Typography>
                 </Box>
-
                 <Box
-                    // key={`${transaction.txId}-${i}`}
                     display="flex"
                     justifyContent="space-between"
                     alignItems="center"
-                    p="15px"
+                    paddingLeft="15px"
+                    paddingRight="10px"
                 >
-                    <Box>
-                        <Typography color={colors.greenAccent[100]} variant="h5" fontSize="15px" fontWeight="600" paddingBottom="10px">
-                            Total
-                        </Typography>
-                    </Box>
-                    <Box p="5px 10px" >
-                        {/* ${transaction.cost} */}
-                        <Typography color="#2499ee;" fontWeight="600" fontSize="15px" paddingBottom="5px">$285</Typography>
-                    </Box>
+                    <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" paddingBottom="20px">
+                        Discount
+                    </Typography>
+                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">15%</Typography>
+                </Box>
+                <Box
+                    display="flex"
+                    justifyContent="space-between"
+                    alignItems="center"
+                    paddingLeft="15px"
+                    paddingRight="10px"
+                >
+
+                    <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" font-Size="20px" paddingBottom="20px">
+                        Shipping Cost
+                    </Typography>
+                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">$50</Typography>
                 </Box>
 
+                <div className="bordertop">&#160;</div>
 
                 <Box
-                    gridColumn="span 4"
-                    gridRow="span 2"
-                    backgroundColor={colors.primary[400]}
-                // overflow="auto"
+                    display="flex"
+                    justifyContent="space-between"
+                    alignItems="center"
+                    paddingLeft="15px"
+                    paddingRight="10px"
                 >
 
-                    <Typography color={colors.greenAccent[100]} variant="h5" fontWeight="600" paddingTop="1px" textAlign="center" paddingBottom="20px">
+                    <Typography color={colors.greenAccent[100]} variant="h5" fontSize="15px" fontWeight="600" paddingBottom="1px">
+                        Total
+                    </Typography>
+                    <Typography color="#2499ee;" fontWeight="600" fontSize="15px" paddingBottom="1px">$285</Typography>
+                </Box>
+
+                <Box>
+                    <Typography color={colors.greenAccent[100]} variant="h5" fontWeight="600" paddingTop="10px" textAlign="center" paddingBottom="0px">
                         <button className="button">Order</button>
                     </Typography>
                 </Box>
-                <img src={calulator} alt="" width={200}></img>
+                <div className="image1">
+                    <img src={`https://uko-react.vercel.app/static/illustration/cart-page.svg`} width={200} style={{ cursor: 'pointer', marginTop: '0px' }} />
+                </div>
+                {/* <div className="image1"><img src={calulator} alt="" width={200}></img></div> */}
+
             </Box>
+
         </Box >
+
 
     );
 };

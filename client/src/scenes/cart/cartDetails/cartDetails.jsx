@@ -35,10 +35,7 @@ const CartDetails = () => {
     return (
         <Box m="20px">
 
-            {/* <Box
-                gridColumn="span 4"
-                gridRow="span 2"
-            > */}
+
 
             {cart.slice(0, 3).map((item) => (
                 <div key={item.id}>

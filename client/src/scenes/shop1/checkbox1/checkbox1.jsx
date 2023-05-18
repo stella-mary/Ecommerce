@@ -89,8 +89,7 @@ export default function CheckBox() {
             sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
             role="presentation"
             backgroundColor={colors.primary[400]}
-            onClick={toggleDrawer(anchor, true)}
-            onKeyDown={toggleDrawer(anchor, false)}
+
         >
             <List>
                 <div
@@ -102,7 +101,7 @@ export default function CheckBox() {
                     Filter
 
                     <IconButton onClick={handleClose}>
-                        <ClearSharpIcon />
+                        <ClearSharpIcon onClick={toggleDrawer(anchor, false)} />
                     </IconButton>
                 </div>
                 <Divider />
