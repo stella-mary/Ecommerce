@@ -70,29 +70,31 @@ const Shop1 = () => {
 
                         <Box
                             width="100%"
-                            // height="100%"
                             display="flex"
                             justifyContent="center"
                             borderRadius='15px 15px 0px 0px'
-                            // alignItems="center"
 
                             style={{
                                 backgroundColor: 'white', // Set the background color to white
                                 backgroundImage: `url(${item.ProductImage})`, // Set the image URL
                                 backgroundPosition: 'center',
                                 backgroundRepeat: 'no-repeat',
-                                backgroundSize: '100%',
+                                backgroundSize: '60%',
                             }}
                         >
                             <Box
                                 position="absolute"
-                                // marginTop="-250px"
-                                backgroundColor="red"
+                                backgroundColor="#ffebf1"
+                                color="#ff316f"
                                 marginLeft="65%"
                                 marginTop="10%"
-                            // objectFit="cover"
+                                borderRadius="10px"
+                                padding="5px"
                             >
-                                {item.ProductDiscount}</Box>
+                                {item.ProductDiscount}
+                                {item.ProductOffer}
+
+                            </Box>
                         </Box>
 
 
@@ -115,13 +117,11 @@ const Shop1 = () => {
                                     {item.ProductName}
                                     <br />
                                     <br />
-                                    <span className="color"><b>{item.ProductPrice}</b></span>
+                                    <span className="color"><b>$ {item.ProductPrice}</b></span>
 
                                 </Typography>
 
-                                <Box>
-                                    {item.ProductOffer}
-                                </Box>
+
 
                                 {item.quantity >= 1 ? (
                                     // <Box variant="h3" fontWeight="400" fontSize="15px" color={colors.grey[100]} marginTop="10px">
@@ -161,8 +161,6 @@ const Shop1 = () => {
                                         <button className="bgColor25" onClick={() => increase(item.id)}>+</button>
                                     </Box>
                                 )}
-
-
                             </Box>
                         </Box>
                     </Box>

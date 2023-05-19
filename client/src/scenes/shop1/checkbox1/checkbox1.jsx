@@ -93,12 +93,18 @@ export default function CheckBox() {
         >
             <List>
                 <div
-                    display="flex"
-                    flexDirection="row"
-                    justifyContent="space-between"
-                    font-size="20px"
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'space-between',
+                        fontSize: '20px',
+                        marginLeft: '10px',
+                        marginTop: '10px',
+                        marginBottom: '10px',
+                        fontWeight: 'bold',
+                    }}
                 >
-                    Filter
+                    <span style={{ marginRight: '10px' }}>Filter</span>
 
                     <IconButton onClick={handleClose}>
                         <ClearSharpIcon onClick={toggleDrawer(anchor, false)} />
@@ -165,12 +171,12 @@ export default function CheckBox() {
                             onClick={() => handleClick(value)}
                             style={{
                                 backgroundColor: color,
-                                width: selectedValue === value ? '30px' : '24px',
-                                height: selectedValue === value ? 'px' : '24px',
+                                width: selectedValue === value ? '30px' : '30px',
+                                height: selectedValue === value ? '30px' : '30px',
                                 borderRadius: '50%',
                                 // transition: 'all 0.3s',
                                 cursor: 'pointer',
-                                boxShadow: selectedValue === value ? 'inset 0px 0px 0px 3px black' : 'none',
+                                boxShadow: selectedValue === value ? 'inset 0px 0px 0px 2px white' : 'none',
                                 // padding: selectedValue === value ? '4px' : '0'
                             }}
                         />

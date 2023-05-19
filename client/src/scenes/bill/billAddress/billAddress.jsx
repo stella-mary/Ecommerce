@@ -81,8 +81,7 @@ const BillAddress = () => {
     return (
         <Box m="20px">
             <Box
-            // gridColumn="span 8"
-            // gridRow="span 2"
+
             >
                 <Typography
                     fontWeight="500"
