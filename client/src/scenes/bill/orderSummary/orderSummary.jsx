@@ -123,7 +123,7 @@ function BillSummary() {
     return (
         <div>
             {/* Other JSX */}
-            <OrderSummary />
+            <OrderSummary firstTitle='items' secondTitle='VATS 0%' thirdTitle='Sub Total' fourthTitle="Payment" />
             {/* Other JSX */}
         </div>
     );

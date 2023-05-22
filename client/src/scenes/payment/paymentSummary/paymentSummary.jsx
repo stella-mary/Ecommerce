@@ -145,7 +145,7 @@ function PaymentSummary() {
     return (
         <div>
             {/* Other JSX */}
-            <OrderSummary orderData='items' SubHeading='vats2' />
+            <OrderSummary firstTitle='items' secondTitle='VATS 0%' thirdTitle='Sub Total' fourthTitle="Place Order" />
             {/* Other JSX */}
         </div>
     );

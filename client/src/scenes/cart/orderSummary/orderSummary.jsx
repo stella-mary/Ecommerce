@@ -3,7 +3,7 @@ import { tokens } from "../../../theme";
 import calulator from '../../Img/calulator.svg'
 
 
-const OrderSummary = ({ orderData, SubHeading }) => {
+const OrderSummary = ({ firstTitle, secondTitle, thirdTitle, fourthTitle }) => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
@@ -36,7 +36,7 @@ const OrderSummary = ({ orderData, SubHeading }) => {
                     paddingRight="10px"
                 >
                     <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" paddingBottom="20px">
-                        {orderData}
+                        {firstTitle}
                     </Typography>
                     <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">$215</Typography>
                 </Box>
@@ -48,7 +48,7 @@ const OrderSummary = ({ orderData, SubHeading }) => {
                     paddingRight="10px"
                 >
                     <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" paddingBottom="20px">
-                        {SubHeading}
+                        {secondTitle}
                     </Typography>
                     <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">15%</Typography>
                 </Box>
@@ -61,7 +61,7 @@ const OrderSummary = ({ orderData, SubHeading }) => {
                 >
 
                     <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" font-Size="20px" paddingBottom="20px">
-                        Shipping Cost
+                        {thirdTitle}
                     </Typography>
                     <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">$50</Typography>
                 </Box>
@@ -84,7 +84,7 @@ const OrderSummary = ({ orderData, SubHeading }) => {
 
                 <Box>
                     <Typography color={colors.greenAccent[100]} variant="h5" fontWeight="600" paddingTop="10px" textAlign="center" paddingBottom="20px">
-                        <button className="button">Proceed to payment</button>
+                        <button className="button">{fourthTitle}</button>
                     </Typography>
                 </Box>
                 <div className="image1">

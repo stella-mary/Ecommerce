@@ -12,7 +12,7 @@ const Cart = () => {
 
         <div className='cart'>
             <CartDetails />
-            <OrderSummary orderData="subtotal" SubHeading="discount1" />
+            <OrderSummary firstTitle="Subtotal" secondTitle="Discount" thirdTitle="Shipping Cost" fourthTitle="Proceed to payment" />
         </div >
     )
 }

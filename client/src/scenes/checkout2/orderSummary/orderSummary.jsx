@@ -119,9 +119,8 @@ import OrderSummary from '../../cart/orderSummary/orderSummary'
 function CheckOut2Summary() {
     return (
         <div>
-            {/* Other JSX */}
-            <OrderSummary />
-            {/* Other JSX */}
+
+            <OrderSummary firstTitle='Subtotal' secondTitle='Discount' thirdTitle='Shipping Cost' fourthTitle='Order' />
         </div>
     );
 }
