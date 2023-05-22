@@ -180,6 +180,7 @@ const CheckForm = () => {
 
                 <Box
                     backgroundColor='#222b36'
+                    padding='10px'
                 >
 
                     <Box
@@ -187,10 +188,9 @@ const CheckForm = () => {
                             width: 600,
                             display: 'flex',
                             justifyContent: 'space-between',
-                            gap: '10px',
+                            gap: '20px',
                             maxWidth: '100%',
                             marginBottom: '20px',
-
                             marginTop: "20px",
                             // color: '#455a79',
                         }}
@@ -204,20 +204,15 @@ const CheckForm = () => {
                             label="Address"
                             id="Address"
 
+
                             InputLabelProps={{
                                 style: {
+
                                     backgroundImage: 'none',
                                     color: `${isFocused === "Address" ? '#2499ef' : '#425673'}`,
                                 },
-                            }}
-                            InputProps={{
-                                style: {
-                                    outline: 'none',
-                                    backgroundColor: 'rgb(23, 28, 36)',
-                                    backgroundImage: 'none',
-                                    color: 'white'
-                                }
-                            }}
+                            }} //placeholder color
+
                             onFocus={() => handleFocus("Address")}
                             onBlur={handleBlur}
                         />
@@ -230,21 +225,15 @@ const CheckForm = () => {
                             label="Town/City"
                             id="Town/City"
 
+
                             InputLabelProps={{
                                 style: {
 
                                     backgroundImage: 'none',
                                     color: `${isFocused === "Town/City" ? '#2499ef' : '#425673'}`,
                                 },
-                            }}
-                            InputProps={{
-                                style: {
-                                    outline: 'none',
-                                    backgroundColor: 'rgb(23, 28, 36)',
-                                    backgroundImage: 'none',
-                                    color: 'white'
-                                }
-                            }}
+                            }} //placeholder color
+
                             onFocus={() => handleFocus("Town/City")}
                             onBlur={handleBlur}
                         />
@@ -252,7 +241,7 @@ const CheckForm = () => {
                     </Box>
                     <Box
                         sx={{
-                            width: 500,
+                            width: 290,
                             display: 'flex',
                             justifyContent: 'space-between',
                             gap: '10px',
@@ -269,21 +258,15 @@ const CheckForm = () => {
                             label="Mobile Number"
                             id="Mobile Number"
 
+
                             InputLabelProps={{
                                 style: {
 
                                     backgroundImage: 'none',
                                     color: `${isFocused === "Mobile Number" ? '#2499ef' : '#425673'}`,
                                 },
-                            }}
-                            InputProps={{
-                                style: {
-                                    outline: 'none',
-                                    backgroundColor: 'rgb(23, 28, 36)',
-                                    backgroundImage: 'none',
-                                    color: 'white'
-                                }
-                            }}
+                            }} //placeholder color
+
                             onFocus={() => handleFocus("Mobile Number")}
                             onBlur={handleBlur}
                         />

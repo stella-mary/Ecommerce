@@ -3,26 +3,16 @@ import { tokens } from "../../../theme";
 import calulator from '../../Img/calulator.svg'
 
 
-const OrderSummary = () => {
+const OrderSummary = ({ orderData, SubHeading }) => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
     return (
         <Box m="20px">
 
-            {/* <Box
-                display="grid"
-                gridTemplateColumns="repeat(12, 1fr)"
-                gridAutoRows="140px"
-                gap="20px"
-            > */}
-
             <Box
-                // gridColumn="span 4"
-                // gridRow="span 2"
                 backgroundColor={colors.primary[400]}
                 borderRadius="10px"
-            // overflow="auto"
             >
 
                 <Box
@@ -46,7 +36,7 @@ const OrderSummary = () => {
                     paddingRight="10px"
                 >
                     <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" paddingBottom="20px">
-                        SubTotal
+                        {orderData}
                     </Typography>
                     <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">$215</Typography>
                 </Box>
@@ -58,7 +48,7 @@ const OrderSummary = () => {
                     paddingRight="10px"
                 >
                     <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" paddingBottom="20px">
-                        Discount
+                        {SubHeading}
                     </Typography>
                     <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">15%</Typography>
                 </Box>
@@ -97,13 +87,11 @@ const OrderSummary = () => {
                         <button className="button">Proceed to payment</button>
                     </Typography>
                 </Box>
-                <div className="image1"><img src={calulator} alt="" width={200}></img></div>
-
+                <div className="image1">
+                    <img src={`https://uko-react.vercel.app/static/illustration/cart-page.svg`} width={200} style={{ cursor: 'pointer', marginTop: '0px' }} />
+                </div>
             </Box>
-
         </Box >
-
-
     );
 };
 

@@ -28,7 +28,7 @@ const PaymentComplete2 = () => {
                 >
 
                     <div style={{ backgroundColor: '#2499ef', borderRadius: '50%', display: 'inline-block', padding: '25px', width: '10%' }}>
-                        <CheckIcon style={{ fontSize: '30px' }} />
+                        <CheckIcon style={{ fontSize: '40px' }} />
                     </div>
                 </Box>
                 <Typography variant="h2"

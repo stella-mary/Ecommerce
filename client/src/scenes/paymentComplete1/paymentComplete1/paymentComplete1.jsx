@@ -31,7 +31,9 @@ const PaymentComplete1 = () => {
                 padding="15px"
                 backgroundColor={colors.primary[400]}
             >
-                <div className="image1"><img src={thanks} width={300} /></div>
+                <div className="image1">
+                    <img src={`https://uko-react.vercel.app/static/illustration/payment-complete.svg`} width={400} style={{ cursor: 'pointer', marginTop: '0px' }} />
+                </div>
                 <Typography variant="h2"
                     fontWeight="600"
                     fontSize="20px"
@@ -55,15 +57,13 @@ const PaymentComplete1 = () => {
                     We will contact you soon<br />when the shipment arrives</Typography>
                 <p className="borderbottom">&#160;</p>
                 <Box
-                    // display="flex"
                     marginTop="20px"
-                    // flexDirection="row"
                     marginLeft="30%"
                 >
 
-                    <button className="button2"><KeyboardArrowLeftOutlinedIcon /> Continue Shopping</button>
+                    <button className="button2"><KeyboardArrowLeftOutlinedIcon style={{ verticalAlign: "middle" }} /> Continue Shopping</button>
                     <span className="space" />
-                    <button className="button1"><FileDownloadOutlinedIcon /> Download as PDF</button>
+                    <button className="button1"><FileDownloadOutlinedIcon style={{ verticalAlign: "middle" }} /> Download as PDF</button>
                 </Box>
             </Box>
         </Box>
