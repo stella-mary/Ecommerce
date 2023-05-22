@@ -6,13 +6,14 @@ import { navigate, useNavigate } from "react-router-dom";
 
 const Cart = () => {
 
+
     const navigate = useNavigate();
 
     return (
 
         <div className='cart'>
             <CartDetails />
-            <OrderSummary firstTitle="Subtotal" secondTitle="Discount" thirdTitle="Shipping Cost" fourthTitle="Proceed to payment" />
+            <OrderSummary firstTitle="Subtotal" secondTitle="Discount" thirdTitle="Shipping Cost" fourthTitle="Proceed to payment" firstTitleAmount="230" SecondTitleAmount="15" ThirdTitleAmount="50" fourthTitleAmount="285" fourthTitleAmountColor="#2499ee;" />
         </div >
     )
 }

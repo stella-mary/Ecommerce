@@ -7,6 +7,7 @@ import StepperBar from './payment/stepperBar/stepperBar';
 
 const Bill = () => {
 
+
     const navigate = useNavigate();
 
     return (

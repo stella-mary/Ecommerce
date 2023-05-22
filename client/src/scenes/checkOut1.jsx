@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import './payment/paymentMethod/payment.css';
 import CheckOut1Details from './checkout1/checkOut1Details/checkOut1Details';
 import { navigate, useNavigate } from "react-router-dom";
-import OrderSummary from './checkout1/orderSummary/orderSummary';
+import OrderSummary from './orderSummary/orderSummary';
 import CheckBox from './checkout1/checkbox/checkbox'
 import StepperBar from './checkout1/stepperBar/stepperBar';
 import { mockDataProduct } from "../data/mockData";

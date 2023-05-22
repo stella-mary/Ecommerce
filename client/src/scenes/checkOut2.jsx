@@ -7,6 +7,11 @@ import OrderSummary from './checkout2/orderSummary/orderSummary';
 
 const CheckOut2 = () => {
 
+    const [firstTitleAmount, setFirstTitleAmount] = useState(0);
+    const [secondTitleAmount, setSecondTitleAmount] = useState(0);
+    const [thirdTitleAmount, setThirdTitleAmount] = useState(0);
+    const [fourthTitleAmount, setFourthTitleAmount] = useState(0);
+
     const navigate = useNavigate();
 
     return (
@@ -15,7 +20,7 @@ const CheckOut2 = () => {
         <div className='payment'>
             <CheckOut />
             <div className='payment1'>
-                <OrderSummary />
+                <OrderSummary firstTitleAmount={firstTitleAmount} SecondTitleAmount={secondTitleAmount} ThirdTitleAmount={thirdTitleAmount} fourthTitleAmount={fourthTitleAmount} />
             </div>
         </div>
     )

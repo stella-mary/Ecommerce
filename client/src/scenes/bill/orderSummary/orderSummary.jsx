@@ -123,7 +123,7 @@ function BillSummary() {
     return (
         <div>
             {/* Other JSX */}
-            <OrderSummary firstTitle='items' secondTitle='VATS 0%' thirdTitle='Sub Total' fourthTitle="Payment" />
+            {/* <OrderSummary firstTitle='Items' secondTitle='VATS 0%' thirdTitle='Sub Total' fourthTitle="Payment" firstTitleAmount={firstTitleAmount} SecondTitleAmount={secondTitleAmount} ThirdTitleAmount={thirdTitleAmount} fourthTitleAmount={fourthTitleAmount} fourthTitleAmountColor="#ff316f;" /> */}
             {/* Other JSX */}
         </div>
     );

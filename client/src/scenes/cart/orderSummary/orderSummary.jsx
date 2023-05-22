@@ -3,7 +3,7 @@ import { tokens } from "../../../theme";
 import calulator from '../../Img/calulator.svg'
 
 
-const OrderSummary = ({ firstTitle, secondTitle, thirdTitle, fourthTitle }) => {
+const OrderSummary = ({ firstTitle, secondTitle, thirdTitle, fourthTitle, firstTitleAmount, SecondTitleAmount, ThirdTitleAmount, fourthTitleAmount }) => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
@@ -38,7 +38,7 @@ const OrderSummary = ({ firstTitle, secondTitle, thirdTitle, fourthTitle }) => {
                     <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" paddingBottom="20px">
                         {firstTitle}
                     </Typography>
-                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">$215</Typography>
+                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">${firstTitleAmount}</Typography>
                 </Box>
                 <Box
                     display="flex"
@@ -50,7 +50,7 @@ const OrderSummary = ({ firstTitle, secondTitle, thirdTitle, fourthTitle }) => {
                     <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" paddingBottom="20px">
                         {secondTitle}
                     </Typography>
-                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">15%</Typography>
+                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">{SecondTitleAmount}%</Typography>
                 </Box>
                 <Box
                     display="flex"
@@ -63,7 +63,7 @@ const OrderSummary = ({ firstTitle, secondTitle, thirdTitle, fourthTitle }) => {
                     <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" font-Size="20px" paddingBottom="20px">
                         {thirdTitle}
                     </Typography>
-                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">$50</Typography>
+                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">${ThirdTitleAmount}</Typography>
                 </Box>
 
                 <div className="bordertop">&#160;</div>
@@ -79,7 +79,7 @@ const OrderSummary = ({ firstTitle, secondTitle, thirdTitle, fourthTitle }) => {
                     <Typography color={colors.greenAccent[100]} variant="h5" fontSize="15px" fontWeight="600" paddingBottom="1px">
                         Total
                     </Typography>
-                    <Typography color="#2499ee;" fontWeight="600" fontSize="15px" paddingBottom="1px">$285</Typography>
+                    <Typography color="#ff316f;" fontWeight="600" fontSize="15px" paddingBottom="1px">${fourthTitleAmount}</Typography>
                 </Box>
 
                 <Box>

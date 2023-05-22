@@ -11,7 +11,6 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { mockDataProduct } from "../../../data/mockData";
 import ChevronLeftOutlinedIcon from '@mui/icons-material/ChevronLeftOutlined';
-import OrderSummary from '../orderSummary/orderSummary';
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({

@@ -120,7 +120,7 @@ function CheckOut2Summary() {
     return (
         <div>
 
-            <OrderSummary firstTitle='Subtotal' secondTitle='Discount' thirdTitle='Shipping Cost' fourthTitle='Order' />
+            <OrderSummary firstTitle='Subtotal' secondTitle='Discount' thirdTitle='Shipping Cost' fourthTitle='Order' firstTitleAmount="215" SecondTitleAmount="15" ThirdTitleAmount="50" fourthTitleAmount="285" fourthTitleAmountColor="#2499ee;;" />
         </div>
     );
 }
