@@ -137,16 +137,9 @@ import OrderSummary from '../../cart/orderSummary/orderSummary'
 
 function PaymentSummary() {
 
-    // const orderData = {
-    //     // items: 'Custom Items', // Update the items content here
-    //     // Other relevant data
-    // };
-
     return (
         <div>
-            {/* Other JSX */}
             <OrderSummary firstTitle='Items' secondTitle='VATS 0%' thirdTitle='Sub Total' fourthTitle="Place Order" />
-            {/* Other JSX */}
         </div>
     );
 }

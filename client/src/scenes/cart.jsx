@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './cart/cartDetails/cart.css';
 import CartDetails from './cart/cartDetails/cartDetails';
-import OrderSummary from './cart/orderSummary/orderSummary'
+import OrderSummary from '../scenes/orderSummary/orderSummary'
 import { navigate, useNavigate } from "react-router-dom";
 
 const Cart = () => {
@@ -13,7 +13,7 @@ const Cart = () => {
 
         <div className='cart'>
             <CartDetails />
-            <OrderSummary firstTitle="Subtotal" secondTitle="Discount" thirdTitle="Shipping Cost" fourthTitle="Proceed to payment" firstTitleAmount="230" SecondTitleAmount="15" ThirdTitleAmount="50" fourthTitleAmount="285" fourthTitleAmountColor="#2499ee;" />
+            <OrderSummary firstTitleAmount="230" secondTitleAmount="15" thirdTitleAmount="50" fourthTitleAmount="285" />
         </div >
     )
 }

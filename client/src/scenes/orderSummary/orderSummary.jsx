@@ -4,14 +4,14 @@ import React, { useState, useEffect } from 'react';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 
-const OrderSummary = ({ total, vatAmount, calculateVatAmount, calculateTotalAmount }) => {
-    useEffect(() => {
-        calculateVatAmount();
-    }, [total, calculateVatAmount]);
+const OrderSummary = ({ firstTitleAmount, secondTitleAmount, thirdTitleAmount, fourthTitleAmount, total, vatAmount, calculateVatAmount, calculateTotalAmount }) => {
+    // useEffect(() => {
+    //     calculateVatAmount();
+    // }, [total, calculateVatAmount]);
 
-    useEffect(() => {
-        calculateTotalAmount();
-    }, [total, calculateVatAmount, calculateTotalAmount]);
+    // useEffect(() => {
+    //     calculateTotalAmount();
+    // }, [total, calculateVatAmount, calculateTotalAmount]);
 
     const TotalAmount = total + vatAmount;
 
@@ -73,7 +73,7 @@ const OrderSummary = ({ total, vatAmount, calculateVatAmount, calculateTotalAmou
                     <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" paddingBottom="20px">
                         Items
                     </Typography>
-                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">$ {total}</Typography>
+                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">$ {total} {firstTitleAmount}</Typography>
                 </Box>
                 <Box
                     display="flex"
@@ -85,7 +85,7 @@ const OrderSummary = ({ total, vatAmount, calculateVatAmount, calculateTotalAmou
                     <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" paddingBottom="20px">
                         VATS 1%
                     </Typography>
-                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">{vatAmount}</Typography>
+                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">{vatAmount} {secondTitleAmount}</Typography>
                 </Box>
                 <Box
                     display="flex"
@@ -98,7 +98,7 @@ const OrderSummary = ({ total, vatAmount, calculateVatAmount, calculateTotalAmou
                     <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" font-Size="20px" paddingBottom="20px">
                         Sub Total
                     </Typography>
-                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">$ {TotalAmount}</Typography>
+                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">$ {TotalAmount} </Typography>
                 </Box>
 
                 <div className="bordertop">&#160;</div>
@@ -169,16 +169,3 @@ const OrderSummary = ({ total, vatAmount, calculateVatAmount, calculateTotalAmou
 
 export default OrderSummary;
 
-// import React from 'react';
-// import OrderSummary from '../../cart/orderSummary/orderSummary'
-
-// function CheckOut1Summary() {
-//     return (
-//         <div>
-
-//             <OrderSummary firstTitle='Items' secondTitle='VATS 0%' thirdTitle='Sub Total' fourthTitle='< <AddShoppingCartIcon /> Check Out Now' firstTitleAmount="230" SecondTitleAmount="0" ThirdTitleAmount="230" fourthTitleAmount="230" fourthTitleAmountColor="#ff316f;" />
-//         </div>
-//     );
-// }
-
-// export default CheckOut1Summary;

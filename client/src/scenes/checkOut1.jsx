@@ -25,7 +25,7 @@ const CheckOut1 = () => {
     useEffect(() => {
         let newTotal = 0;
         cart.forEach((item) => {
-            newTotal += item.ProductPrice * item.quantity;
+            newTotal += (item.ProductPrice * item.quantity);
         });
         setTotal(newTotal);
     }, [cart]);
@@ -71,7 +71,7 @@ const CheckOut1 = () => {
                         vatAmount={vatAmount}
                         calculateTotalAmount={calculateTotalAmount}
                         calculateVatAmount={() => {
-                            const vat = total * 0.01;
+                            let vat = total * 0.01;
                             setVatAmount(vat);
                         }}
                     />
