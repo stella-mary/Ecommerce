@@ -50,7 +50,6 @@ const Cart = () => {
                 secondTitleAmount="15"
                 TotalAmount="50"
                 fourthTitleAmount="285"
-
             />
         </div>
     );
