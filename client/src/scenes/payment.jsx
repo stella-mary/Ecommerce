@@ -8,10 +8,7 @@ import StepperBar from './payment/stepperBar/stepperBar';
 
 const Payment = () => {
 
-    const [firstTitleAmount, setFirstTitleAmount] = useState(0);
-    const [secondTitleAmount, setSecondTitleAmount] = useState(0);
-    const [thirdTitleAmount, setThirdTitleAmount] = useState(0);
-    const [fourthTitleAmount, setFourthTitleAmount] = useState(0);
+
 
     const navigate = useNavigate();
 
@@ -23,7 +20,7 @@ const Payment = () => {
                 <PaymentMethod />
                 <div className='payment1'>
                     <PaymentBill />
-                    <PaymentSummary firstTitleAmount={firstTitleAmount} SecondTitleAmount={secondTitleAmount} ThirdTitleAmount={thirdTitleAmount} fourthTitleAmount={fourthTitleAmount} />
+                    <PaymentSummary />
                 </div>
             </div >
         </div>

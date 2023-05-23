@@ -18,6 +18,9 @@ const CheckOut1 = () => {
 
     const navigate = useNavigate();
 
+
+
+
     let initialTotal = 0;
 
     const [total, setTotal] = useState(initialTotal);
@@ -57,6 +60,8 @@ const CheckOut1 = () => {
         setTotalAmount(totalAmount);
     };
 
+    const TotalAmount = total + vatAmount;
+
     return (
         <div>
             <CheckBox />
@@ -68,6 +73,7 @@ const CheckOut1 = () => {
                 <div className='payment1'>
                     <OrderSummary
                         total={total}
+                        TotalAmount={TotalAmount}
                         vatAmount={vatAmount}
                         calculateTotalAmount={calculateTotalAmount}
                         calculateVatAmount={() => {

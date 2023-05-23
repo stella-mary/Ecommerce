@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 
-const OrderSummary = ({ firstTitleAmount, secondTitleAmount, thirdTitleAmount, fourthTitleAmount, total, vatAmount, calculateVatAmount, calculateTotalAmount }) => {
+const OrderSummary = ({ firstTitleAmount, secondTitleAmount, thirdTitleAmount, fourthTitleAmount, TotalAmount, total, vatAmount, calculateVatAmount, calculateTotalAmount }) => {
     // useEffect(() => {
     //     calculateVatAmount();
     // }, [total, calculateVatAmount]);
@@ -13,7 +13,9 @@ const OrderSummary = ({ firstTitleAmount, secondTitleAmount, thirdTitleAmount, f
     //     calculateTotalAmount();
     // }, [total, calculateVatAmount, calculateTotalAmount]);
 
-    const TotalAmount = total + vatAmount;
+    // const TotalAmount = total + vatAmount;
+
+    console.log("vatamount" + vatAmount)
 
     console.log("total in orderSummary" + total)
 
@@ -98,7 +100,11 @@ const OrderSummary = ({ firstTitleAmount, secondTitleAmount, thirdTitleAmount, f
                     <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" font-Size="20px" paddingBottom="20px">
                         Sub Total
                     </Typography>
-                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">$ {TotalAmount} </Typography>
+
+                    <Typography fontWeight="600" fontSize="15px" paddingBottom="20px">
+                        $ {TotalAmount}
+                    </Typography>
+
                 </Box>
 
                 <div className="bordertop">&#160;</div>
