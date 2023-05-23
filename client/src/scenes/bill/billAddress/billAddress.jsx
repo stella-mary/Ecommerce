@@ -19,8 +19,6 @@ import Checkbox from '@mui/material/Checkbox';
 import CheckIcon from '@mui/icons-material/Check';
 
 
-
-
 const BillAddress = () => {
 
     const [isFocused, setIsFocused] = useState("");
@@ -80,15 +78,14 @@ const BillAddress = () => {
 
     return (
         <Box m="20px">
-            <Box
-
-            >
+            <Box >
                 <Typography
                     fontWeight="500"
                     display="flex"
                     flexDirection="row"
                     justifyContent="space-between"
                     marginBottom="20px"
+
                     color={colors.grey[100]}
                 >
                     Billing & Address
@@ -97,6 +94,7 @@ const BillAddress = () => {
                         sx={{ textTransform: 'none', padding: '10px' }}
                         variant="outlined"
                         onClick={handleClickOpen}
+
                         style={{ color: 'white', background: '#2499ef' }}
                     >
                         + Add New Address
@@ -108,22 +106,23 @@ const BillAddress = () => {
                     onClose={handleClose}
                     aria-labelledby="alert-dialog-title"
                     aria-describedby="alert-dialog-description"
+
                     PaperProps={{
                         style:
                         {
+                            backgroundColor: '{colors.primary[400] }',
                             minWidth: '500px',
                             border: 'solid 1px white',
-                            backgroundColor: 'rgb(23, 28, 36)',
+                            // backgroundColor: 'rgb(23, 28, 36)',
                             backgroundImage: 'none',
                         }
                     }}
                 >
-                    <DialogTitle id="alert-dialog-title">
+                    <DialogTitle id="alert-dialog-title" >
                         {"Add new Address"}
                     </DialogTitle>
                     <DialogContent>
                         <DialogContentText id="alert-dialog-description">
-
                             <Radio
                                 theme={outerTheme}
                                 checked={selectedValue === 'a'}
@@ -167,6 +166,7 @@ const BillAddress = () => {
                                     maxWidth: '100%',
                                     marginBottom: '20px',
                                     marginTop: "20px",
+                                    backgroundColor: colors.primary[400],
                                     // color: '#455a79',
                                 }}
                             >
@@ -188,7 +188,8 @@ const BillAddress = () => {
                                     InputProps={{
                                         style: {
                                             outline: 'none',
-                                            backgroundColor: 'rgb(23, 28, 36)',
+                                            backgroundColor: colors.primary[400],
+                                            // backgroundColor: 'rgb(23, 28, 36)',
                                             backgroundImage: 'none',
                                             color: 'white'
                                         }

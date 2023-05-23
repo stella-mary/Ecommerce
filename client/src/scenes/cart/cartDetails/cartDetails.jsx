@@ -35,12 +35,9 @@ const CartDetails = () => {
     return (
         <Box m="20px">
 
-
-
             {cart.slice(0, 3).map((item) => (
                 <div key={item.id}>
-
-                    < Box
+                    <Box
                         display="flex"
                         justifyContent="space-between"
                         marginBottom="15px"
