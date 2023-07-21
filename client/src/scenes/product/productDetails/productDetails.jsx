@@ -23,6 +23,11 @@ export default function ProductDetails() {
 
     const [cart, setCart] = useState(mockDataProduct);
 
+
+
+    const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
+
+
     const increase = (id) => {
         setCart((prevCart) =>
             prevCart.map((item) =>
@@ -30,9 +35,6 @@ export default function ProductDetails() {
             )
         );
     };
-
-    const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
-
 
     const decrease = (id) => {
         setCart((prevCart) =>
@@ -47,9 +49,9 @@ export default function ProductDetails() {
         );
     };
 
-
     return (
         <div>
+
 
             <Box
                 sx={{
@@ -152,72 +154,83 @@ export default function ProductDetails() {
     }
 `}</style>
                     </div>
+
                     <div style={{ display: 'flex', alignItems: 'center', marginTop: '20px', gap: '20px' }}>
                         <Typography variant="h6" marginTop="20px"><b>Quantity:</b></Typography>
-
                         <div>
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    variant: 'h3',
-                                    fontWeight: 400,
-                                    fontSize: '15px',
-                                    marginTop: '15px',
-                                    border: '2px solid #2f4264',
-                                    borderRadius: '6px',
-                                    padding: '5px',
-                                    width: '100px',
-                                }}
-                            >
-                                <button
-                                    style={{
-                                        border: 'none',
-                                        backgroundColor: 'transparent',
-                                        cursor: 'pointer',
-                                        marginRight: '5px',
-                                        fontSize: '15px',
-                                        color: 'white',
-                                    }}
-                                    onClick={() => {
-                                        if (totalQuantity > 0) {
-                                            setCart((prevCart) =>
-                                                prevCart.map((item) =>
-                                                    item.quantity > 0 ? { ...item, quantity: item.quantity - 1 } : item
-                                                )
-                                            );
-                                        }
-                                    }}
-                                >
-                                    -
-                                </button>
-                                <span style={{ flex: 1, textAlign: 'center', color: 'white' }}>{totalQuantity}</span>
-                                <button
-                                    style={{
-                                        border: 'none',
-                                        backgroundColor: 'transparent',
-                                        cursor: 'pointer',
-                                        marginLeft: '5px',
-                                        fontSize: '15px',
-                                        color: 'white',
-                                    }}
-                                    onClick={() => {
-                                        setCart((prevCart) =>
-                                            prevCart.map((item) => ({ ...item, quantity: item.quantity + 1 }))
-                                        );
-                                    }}
-                                >
-                                    +
-                                </button>
-                            </div>
+                            {cart.slice(0, 1).map((item) => (
+                                <div key={item.id}>
+
+                                    <div
+                                        style={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            variant: 'h3',
+                                            fontWeight: 400,
+                                            fontSize: '15px',
+                                            marginTop: '15px',
+                                            border: '2px solid #2f4264',
+                                            borderRadius: '6px',
+                                            padding: '5px',
+                                            width: '100px',
+                                        }}
+                                    >
+                                        <button
+                                            style={{
+                                                border: 'none',
+                                                backgroundColor: 'transparent',
+                                                cursor: 'pointer',
+                                                marginRight: '5px',
+                                                fontSize: '15px',
+                                                color: 'white',
+                                            }}
+                                            // onClick={() => {
+                                            //     if (totalQuantity > 0) {
+                                            //         setCart((prevCart) =>
+                                            //             prevCart.map((item) =>
+                                            //                 item.quantity > 0 ? { ...item, quantity: item.quantity - 1 } : item
+                                            //             )
+                                            //         );
+                                            //     }
+                                            // }}
+                                            onClick={() => decrease(item.id)}
+                                        >
+                                            -
+                                        </button>
+                                        <span style={{ flex: 1, textAlign: 'center', color: 'white' }}>{totalQuantity}</span>
+                                        <button
+                                            style={{
+                                                border: 'none',
+                                                backgroundColor: 'transparent',
+                                                cursor: 'pointer',
+                                                marginLeft: '5px',
+                                                fontSize: '15px',
+                                                color: 'white',
+                                            }}
+                                            // onClick={() => {
+                                            //     setCart((prevCart) =>
+                                            //         prevCart.map((item) => ({ ...item, quantity: item.quantity + 1 }))
+                                            //     );
+                                            // }}
+                                            onClick={() => increase(item.id)}
+                                        >
+                                            +
+                                        </button>
+
+                                    </div>
+                                </div>
+                            ))
+                            }
+
                         </div>
-                        <Typography variant="h6" marginTop="20px">
-                            <b>
-                                <span className="color21">Available: 12</span>
-                            </b>
-                        </Typography>
                     </div>
+                    <Typography variant="h6" marginTop="20px">
+                        <b>
+                            <span className="color21">Available: 12</span>
+                        </b>
+                    </Typography>
+
 
                     <Box
                         display="flex"
@@ -258,7 +271,8 @@ export default function ProductDetails() {
                     </Box>
                 </Box>
             </Box >
-        </div>
+        </div >
+
     );
 }
 
