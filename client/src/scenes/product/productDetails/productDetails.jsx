@@ -101,12 +101,9 @@ export default function ProductDetails() {
 
                 <Box
                     sx={{
-                        // border: "solid 1px green",
                         width: "44%",
                         marginLeft: "10px",
                         alignItems: "top",
-                        // justifyContent: "center",
-
                     }}
                 >
                     <Typography backgroundColor="#27ce88" padding="5px" width="25%" borderRadius="10px" textAlign="center">In Stock</Typography>
@@ -143,7 +140,7 @@ export default function ProductDetails() {
                             }}
                         >
 
-                            <option style={{ color: 'black' }} value="40">40</option>
+                            <option style={{ color: 'black' }} value="40">70</option>
                             <option style={{ color: 'black' }} value="41">41</option>
                             <option style={{ color: 'black' }} value="42">42</option>
                         </select>
