@@ -14,6 +14,8 @@ export default function ProductDetails() {
 
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+    const [selectedColor, setSelectedColor] = useState("circle"); // Default color is "circle"
+
 
     const [selectedSize, setSelectedSize] = useState('');
 
@@ -24,10 +26,6 @@ export default function ProductDetails() {
     const [cart, setCart] = useState(mockDataProduct);
 
 
-
-    const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
-
-
     const increase = (id) => {
         setCart((prevCart) =>
             prevCart.map((item) =>
@@ -35,6 +33,7 @@ export default function ProductDetails() {
             )
         );
     };
+
 
     const decrease = (id) => {
         setCart((prevCart) =>
@@ -48,6 +47,8 @@ export default function ProductDetails() {
             )
         );
     };
+
+
 
     return (
         <div>
@@ -75,7 +76,7 @@ export default function ProductDetails() {
                         width: "10%",
                     }}
                 >
-                    <img src={shoe} alt="Shoe 1" />
+                    <img src={shoe} alt="Shoe 1" width="100%" className={selectedColor} />
                     <img src={shoe} alt="Shoe 2" />
                     <img src={shoe} alt="Shoe 3" />
                 </Box>
@@ -110,15 +111,17 @@ export default function ProductDetails() {
                     <Typography variant="h5" color="#8ca3ba" marginTop="20px">NIKE</Typography>
                     <Typography variant="h3" marginTop="10px"><b>Air Jordan 270</b></Typography>
                     <Typography variant="h3" marginTop="10px" color="#2499ef">$350</Typography>
-                    <Typography variant="h6" marginTop="10px"
-                        display="flex"
-                        flexDirection="space-between"
-                    ><b>Colors:</b><span className="space" />
-                        <div class="circle" /> <span class="space1" /><div class="circle1" /><span class="space1" />
-                        <div class="circle2" /> <span class="space1" />
-                        <div class="circle4" />
+                    <Typography variant="h6" marginTop="10px" display="flex" flexDirection="space-between">
+                        <b>Colors:</b>
+                        <span className="space" />
+                        <div className={`circle ${selectedColor === "circle" ? "selected" : ""}`} onClick={() => setSelectedColor("circle")} />
+                        <span className="space1" />
+                        <div className={`circle1 ${selectedColor === "circle1" ? "selected" : ""}`} onClick={() => setSelectedColor("circle1")} />
+                        <span className="space1" />
+                        <div className={`circle2 ${selectedColor === "circle2" ? "selected" : ""}`} onClick={() => setSelectedColor("circle2")} />
+                        <span className="space1" />
+                        <div className={`circle4 ${selectedColor === "circle4" ? "selected" : ""}`} onClick={() => setSelectedColor("circle4")} />
                     </Typography>
-
 
                     <div style={{ display: 'flex', alignItems: 'center', marginTop: '20px', gap: '10px' }}>
                         <label htmlFor="sizeSelect" style={{ marginRight: '10px' }}>
@@ -140,7 +143,7 @@ export default function ProductDetails() {
                             }}
                         >
 
-                            <option style={{ color: 'black' }} value="40">70</option>
+                            <option style={{ color: 'black' }} value="40">40</option>
                             <option style={{ color: 'black' }} value="41">41</option>
                             <option style={{ color: 'black' }} value="42">42</option>
                         </select>
@@ -182,20 +185,16 @@ export default function ProductDetails() {
                                                 fontSize: '15px',
                                                 color: 'white',
                                             }}
-                                            // onClick={() => {
-                                            //     if (totalQuantity > 0) {
-                                            //         setCart((prevCart) =>
-                                            //             prevCart.map((item) =>
-                                            //                 item.quantity > 0 ? { ...item, quantity: item.quantity - 1 } : item
-                                            //             )
-                                            //         );
-                                            //     }
-                                            // }}
-                                            onClick={() => decrease(item.id)}
+
+                                            onClick={() => {
+                                                if (item.quantity > 0) {
+                                                    decrease(item.id);
+                                                }
+                                            }}
                                         >
                                             -
                                         </button>
-                                        <span style={{ flex: 1, textAlign: 'center', color: 'white' }}>{totalQuantity}</span>
+                                        <span style={{ flex: 1, textAlign: 'center', color: 'white' }}>{item.quantity}</span>
                                         <button
                                             style={{
                                                 border: 'none',
@@ -205,11 +204,7 @@ export default function ProductDetails() {
                                                 fontSize: '15px',
                                                 color: 'white',
                                             }}
-                                            // onClick={() => {
-                                            //     setCart((prevCart) =>
-                                            //         prevCart.map((item) => ({ ...item, quantity: item.quantity + 1 }))
-                                            //     );
-                                            // }}
+
                                             onClick={() => increase(item.id)}
                                         >
                                             +

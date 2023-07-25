@@ -352,13 +352,46 @@ body,
 }
 
 .circle {
-  /* width: 200px;
-  height: 200px; */
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.circle1 {
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.circle2 {
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.circle4 {
+  width: 20px;
+  height: 20px;
+  background-color: purple;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.selected {
+  border: 2px solid white; /* Add a border to show that it's selected */
+}
+
+/* .circle {
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: white; */
   border: 2px solid white;
 }
 
@@ -369,7 +402,7 @@ body,
 .circle-right {
   margin-left: -20px;
   background-color: yellow;
-}
+} */
 
 
 .billClick{
