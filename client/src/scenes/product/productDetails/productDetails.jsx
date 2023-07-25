@@ -49,10 +49,8 @@ export default function ProductDetails() {
     };
 
 
-
     return (
         <div>
-
 
             <Box
                 sx={{
@@ -76,7 +74,7 @@ export default function ProductDetails() {
                         width: "10%",
                     }}
                 >
-                    <img src={shoe} alt="Shoe 1" width="100%" className={selectedColor} />
+                    <img src={shoe} alt="Shoe 1" />
                     <img src={shoe} alt="Shoe 2" />
                     <img src={shoe} alt="Shoe 3" />
                 </Box>
