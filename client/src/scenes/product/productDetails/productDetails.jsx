@@ -14,6 +14,7 @@ export default function ProductDetails() {
 
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+
     const [selectedColor, setSelectedColor] = useState("circle"); // Default color is "circle"
 
 
@@ -53,18 +54,17 @@ export default function ProductDetails() {
         <div>
 
             <Box
-                sx={{
-                    display: "flex",
-                    width: "97%",
-                    alignItems: "top",
-                    gap: "1%",
-                    borderRadius: "10px",
-                    paddingLeft: "1%",
-                    paddingTop: '1%',
-                    paddingRight: '1%',
-                    m: "20px",
-                    backgroundColor: "#222b36",
-                }}
+
+                display="flex"
+                width="97%"
+                alignItems="top"
+                gap="1%"
+                borderRadius="10px"
+                paddingLeft="1%"
+                paddingTop='1%'
+                paddingRight='1%'
+                m="20px"
+                backgroundColor={colors.primary[400]}
             >
                 <Box
                     sx={{
