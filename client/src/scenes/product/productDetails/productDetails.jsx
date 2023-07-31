@@ -109,7 +109,7 @@ export default function ProductDetails() {
                     <Typography variant="h5" color="#8ca3ba" marginTop="20px">NIKE</Typography>
                     <Typography variant="h3" marginTop="10px"><b>Air Jordan 270</b></Typography>
                     <Typography variant="h3" marginTop="10px" color="#2499ef">$350</Typography>
-                    <Typography variant="h6" marginTop="10px" display="flex" flexDirection="space-between">
+                    {/* <Typography variant="h6" marginTop="10px" display="flex" flexDirection="space-between">
                         <b>Colors:</b>
                         <span className="space" />
                         <div className={`circle ${selectedColor === "circle" ? "selected" : ""}`} onClick={() => setSelectedColor("circle")} />
@@ -119,7 +119,7 @@ export default function ProductDetails() {
                         <div className={`circle2 ${selectedColor === "circle2" ? "selected" : ""}`} onClick={() => setSelectedColor("circle2")} />
                         <span className="space1" />
                         <div className={`circle4 ${selectedColor === "circle4" ? "selected" : ""}`} onClick={() => setSelectedColor("circle4")} />
-                    </Typography>
+                    </Typography> */}
 
                     <div style={{ display: 'flex', alignItems: 'center', marginTop: '20px', gap: '10px' }}>
                         <label htmlFor="sizeSelect" style={{ marginRight: '10px' }}>
@@ -141,9 +141,9 @@ export default function ProductDetails() {
                             }}
                         >
 
-                            <option style={{ color: 'black' }} value="40">40</option>
-                            <option style={{ color: 'black' }} value="41">41</option>
-                            <option style={{ color: 'black' }} value="42">42</option>
+                            <option style={{ color: 'black' }} value="M">M</option>
+                            <option style={{ color: 'black' }} value="S">S</option>
+                            <option style={{ color: 'black' }} value="L">L</option>
                         </select>
 
                         <style>{`
