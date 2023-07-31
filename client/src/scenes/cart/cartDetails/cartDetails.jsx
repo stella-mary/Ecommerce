@@ -97,3 +97,55 @@ const CartDetails = () => {
 };
 
 export default CartDetails;
+
+
+// import React, { useState, useEffect } from 'react';
+// import { Box, Typography, useTheme } from "@mui/material";
+// import { tokens } from "../../../theme";
+// import { mockDataProduct } from "../../../data/mockData";
+
+
+// const CartDetails = () => {
+//     const theme = useTheme();
+//     const colors = tokens(theme.palette.mode);
+
+//     const [cartItems, setCartItems] = useState([]);
+
+//     useEffect(() => {
+//         const cartItemsFromLocalStorage = localStorage.getItem('cartItems');
+//         if (cartItemsFromLocalStorage) {
+//             setCartItems(JSON.parse(cartItemsFromLocalStorage));
+//         }
+//     }, []);
+
+//     const selectedSize = localStorage.getItem('selectedSize'); // Retrieve the selected size from local storage
+
+
+//     return (
+//         <Box m="20px">
+//             {cartItems.map((cartItem) => (
+//                 <div key={cartItem.id}>
+//                     <Box
+//                         display="flex"
+//                         justifyContent="space-between"
+//                         marginBottom="15px"
+//                         borderRadius="10px"
+//                         padding="25px"
+//                         backgroundColor={colors.primary[400]}
+//                         key={cartItem.id}
+//                     >
+//                         <div className='productDetails'>
+//                             <Typography variant="h3" fontWeight="400" fontSize="13px" color={colors.greenAccent[100]} marginBottom="5px">
+//                                 Size: {cartItem.size}<br />
+//                                 Quantity: {cartItem.quantity}
+//                             </Typography>
+//                         </div>
+//                     </Box>
+//                 </div>
+//             ))}
+//         </Box>
+//     )
+// }
+
+
+// export default CartDetails;

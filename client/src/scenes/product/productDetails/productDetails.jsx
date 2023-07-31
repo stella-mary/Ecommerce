@@ -1,7 +1,7 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import { Facebook, Instagram, Twitter } from '@mui/icons-material';
 import { mockDataProduct } from "../../../data/mockData";
-
+import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import shoe from '../../Img/shoe.jpg'
 import { tokens } from "../../../theme";
@@ -11,6 +11,21 @@ import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function ProductDetails() {
+
+    const navigate = useNavigate();
+
+    const handleAddToCart = () => {
+        const itemToAdd = {
+            id: cart[0].id, // Assuming the first item in the cart array is the current product
+            size: selectedSize,
+            quantity: cart[0].quantity
+        };
+        const existingCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const updatedCartItems = [...existingCartItems, itemToAdd];
+        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+        localStorage.setItem('selectedSize', selectedSize); // Store the selected size in local storage
+        navigate('/cart'); // Navigate to the CartDetails component
+    };
 
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
@@ -145,12 +160,11 @@ export default function ProductDetails() {
                             <option style={{ color: 'black' }} value="S">S</option>
                             <option style={{ color: 'black' }} value="L">L</option>
                         </select>
-
                         <style>{`
-    select#sizeSelect option:checked {
-        border-color: #3d454e;
-    }
-`}</style>
+          select#sizeSelect option:checked {
+            border-color: #3d454e;
+          }
+        `}</style>
                     </div>
 
                     <div style={{ display: 'flex', alignItems: 'center', marginTop: '20px', gap: '20px' }}>
@@ -230,7 +244,7 @@ export default function ProductDetails() {
 
                     >
                         <Typography fontSize="10px" >
-                            <span class="bgcolor6" >
+                            <span class="bgcolor6" onClick={handleAddToCart}>
                                 <b>Add to cart</b>
                             </span>
                         </Typography>
