@@ -103,9 +103,11 @@ import React, { useState, useEffect } from 'react';
 import { Box, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../../theme";
 import { mockDataProduct } from "../../../data/mockData";
+import shoe from '../../Img/shoe.jpg'
 
 
-const CartDetails = () => {
+
+const CartDetails = ({ shoeImage, productTitle }) => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
@@ -136,6 +138,7 @@ const CartDetails = () => {
                     >
                         <div className='productDetails'>
                             <Typography variant="h3" fontWeight="400" fontSize="13px" color={colors.greenAccent[100]} marginBottom="5px">
+
                                 Size: {cartItem.size}<br />
                                 Quantity: {cartItem.quantity}
                             </Typography>
