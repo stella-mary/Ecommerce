@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 import './cart/cartDetails/cart.css';
 import CartDetails from './cart/cartDetails/cartDetails';
-import OrderSummary from '../scenes/orderSummary/orderSummary';
+import CartDetails1 from './cart/cartDetails1/cartDetails1';
+import OrderSummary from './orderSummary/orderSummary';
+
+// import OrderSummary from '../scenes/orderSummary/orderSummary';
 import { navigate, useNavigate } from "react-router-dom";
 import { mockDataProduct } from "../data/mockData";
 
@@ -27,6 +30,12 @@ const Cart = () => {
         setTotal(newTotal);
     }, [cart]);
 
+    const calculateTotalAmount = () => {
+        const totalAmount = total + vatAmount;
+        setTotalAmount(totalAmount);
+    };
+
+
     const calculateSubtotal = () => {
         let subtotal = 0;
         cart.map((item) => {
@@ -44,12 +53,17 @@ const Cart = () => {
 
     return (
         <div className='cart'>
-            <CartDetails />
+            {/* <CartDetails /> */}
+            <CartDetails1 cart={cart} setCart={setCart} total={total} calculateSubtotal={calculateSubtotal} />
             <OrderSummary
-                firstTitleAmount="230"
-                secondTitleAmount="15"
-                TotalAmount="50"
-                fourthTitleAmount="285"
+                total={total}
+                TotalAmount={TotalAmount}
+                vatAmount={vatAmount}
+                calculateTotalAmount={calculateTotalAmount}
+                calculateVatAmount={() => {
+                    let vat = total * 0.01;
+                    setVatAmount(vat);
+                }}
             />
         </div>
     );

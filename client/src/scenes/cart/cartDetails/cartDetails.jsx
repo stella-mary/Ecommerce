@@ -106,7 +106,6 @@ import { mockDataProduct } from "../../../data/mockData";
 import shoe from '../../Img/shoe.jpg'
 
 
-
 const CartDetails = ({ shoeImage, productTitle }) => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
