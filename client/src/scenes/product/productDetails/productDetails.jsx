@@ -18,7 +18,11 @@ export default function ProductDetails() {
         const itemToAdd = {
             id: cart[0].id, // Assuming the first item in the cart array is the current product
             size: selectedSize,
-            quantity: cart[0].quantity
+            quantity: cart[0].quantity,
+            title: 'Nike Pro Max 270',
+            price: '350',
+            image: shoe,
+
         };
         const existingCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
         const updatedCartItems = [...existingCartItems, itemToAdd];

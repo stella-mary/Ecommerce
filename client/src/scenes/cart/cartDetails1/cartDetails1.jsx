@@ -1,7 +1,7 @@
 
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import TableBody from '@mui/material/TableBody';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
@@ -63,8 +63,6 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
         calculateSubtotal();
     };
 
-
-
     const decrease = (id) => {
         setCart((prevCart) =>
             prevCart.map((item) =>
@@ -79,6 +77,20 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
         calculateSubtotal();
     };
 
+    const [cartItems, setCartItems] = useState([]);
+
+    useEffect(() => {
+        const cartItemsFromLocalStorage = localStorage.getItem('cartItems');
+        if (cartItemsFromLocalStorage) {
+            setCartItems(JSON.parse(cartItemsFromLocalStorage));
+        }
+    }, []);
+
+    const removeFromCart = (id) => {
+        setCartItems((prevCartItems) =>
+            prevCartItems.filter((item) => item.id !== id)
+        );
+    };
 
 
 
@@ -87,7 +99,7 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
 
             <TableContainer component={Paper} sx={{ maxHeight: 400 }}>
 
-                {/* <div align="left" style={{ backgroundColor: '#222b36', padding: '15px' }}>Cart <span className='color'>(3 item)</span></div> */}
+                <div align="left" style={{ backgroundColor: '#222b36', padding: '15px' }}>Cart <span className='color'>(3 item)</span></div>
 
 
                 <Table sx={{ minWidth: 500 }} stickyHeader aria-label="sticky table">
@@ -100,19 +112,20 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
                         </TableRow>
                     </TableHead >
                     <TableBody>
-                        {cart.map((item, idx) => (
+                        {cartItems.map((cartItem) => (
+                            // {cart.map((item, idx) => (
 
                             // totalCartPrice += item.ProductPrice * item.quantity;
 
                             // <tr key={idx} >
-                            <StyledTableRow key={item.id} style={{ marginBottom: '20px' }}>
+                            <StyledTableRow key={cartItem.id} style={{ marginBottom: '20px' }}>
                                 <StyledTableCell>
                                     <div className="product-container">
-                                        <img src={item.ProductImage} className="product-image" style={{ borderRadius: '10%', backgroundColor: 'white' }} />
+                                        <img src={cartItem.image} className="product-image" style={{ borderRadius: '10%', backgroundColor: 'white' }} />
                                         <div>
-                                            <div>{item.ProductName}</div>
-                                            <div><span className="color21">Color:</span> {item.ProductColor}</div>
-                                            <div><span className="color21">Size:</span> {item.ProductSize}</div>
+                                            <div>{cartItem.title}</div>
+                                            <div><span className="color21">Quantity:</span> {cartItem.quantity}</div>
+                                            <div><span className="color21">Size:</span> {cartItem.size}</div>
                                         </div>
                                     </div>
                                 </StyledTableCell>
@@ -143,14 +156,14 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
                                                 color: 'white'
                                             }}
                                             onClick={() => {
-                                                if (item.quantity > 0) {
-                                                    decrease(item.id);
+                                                if (cartItem.quantity > 0) {
+                                                    decrease(cartItem.id);
                                                 }
                                             }}
                                         >
                                             -
                                         </button>
-                                        <span style={{ flex: 1, textAlign: "center" }}>{item.quantity}</span>
+                                        <span style={{ flex: 1, textAlign: "center" }}>{cartItem.quantity}</span>
                                         <button
                                             style={{
                                                 border: "none",
@@ -160,7 +173,7 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
                                                 fontSize: '15px',
                                                 color: 'white'
                                             }}
-                                            onClick={() => increase(item.id)}
+                                            onClick={() => increase(cartItem.id)}
                                         >
                                             +
                                         </button>
@@ -168,12 +181,11 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
                                     <span className="color22">Available: 12</span>
                                 </StyledTableCell>
 
-                                <StyledTableCell align="left" style={{ fontSize: '12px' }}>$ {item.ProductPrice}</StyledTableCell>
+                                <StyledTableCell align="left" style={{ fontSize: '12px' }}>$ {cartItem.price}</StyledTableCell>
                                 {/* < StyledTableCell align="left">{item.ProductPrice * item.quantity}</StyledTableCell> */}
                                 <StyledTableCell align="left">
-                                    <div className="icon-wrapper">
+                                    <div className="icon-wrapper" onClick={() => removeFromCart(cartItem.id)}>
                                         <CloseIcon style={{ color: '#2f4365' }} />
-
                                     </div>
                                 </StyledTableCell>
                             </StyledTableRow>
