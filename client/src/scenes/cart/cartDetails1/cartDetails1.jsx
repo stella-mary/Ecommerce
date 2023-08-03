@@ -63,6 +63,8 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
         calculateSubtotal();
     };
 
+
+
     const decrease = (id) => {
         setCart((prevCart) =>
             prevCart.map((item) =>
@@ -78,12 +80,14 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
     };
 
 
+
+
     return (
         <div className='checkOut'>
 
             <TableContainer component={Paper} sx={{ maxHeight: 400 }}>
 
-                <div align="left" style={{ backgroundColor: '#222b36', padding: '15px' }}>Cart <span className='color'>(3 item)</span></div>
+                {/* <div align="left" style={{ backgroundColor: '#222b36', padding: '15px' }}>Cart <span className='color'>(3 item)</span></div> */}
 
 
                 <Table sx={{ minWidth: 500 }} stickyHeader aria-label="sticky table">
@@ -169,6 +173,7 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
                                 <StyledTableCell align="left">
                                     <div className="icon-wrapper">
                                         <CloseIcon style={{ color: '#2f4365' }} />
+
                                     </div>
                                 </StyledTableCell>
                             </StyledTableRow>
@@ -183,12 +188,7 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
                 <span className='float-end'>{totalCartPrice}</span>
             </h4> */}
 
-            < div style={{ display: 'flex', marginTop: '20px' }
-            }>
-                <ChevronLeftOutlinedIcon />
-                <span className="space1" /> Continue Shopping
 
-            </div >
         </div >
     );
 }
