@@ -86,11 +86,6 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
         }
     }, []);
 
-    const removeFromCart = (id) => {
-        setCartItems((prevCartItems) =>
-            prevCartItems.filter((item) => item.id !== id)
-        );
-    };
 
 
 
@@ -184,7 +179,7 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
                                 <StyledTableCell align="left" style={{ fontSize: '12px' }}>$ {cartItem.price}</StyledTableCell>
                                 {/* < StyledTableCell align="left">{item.ProductPrice * item.quantity}</StyledTableCell> */}
                                 <StyledTableCell align="left">
-                                    <div className="icon-wrapper" onClick={() => removeFromCart(cartItem.id)}>
+                                    <div className="icon-wrapper">
                                         <CloseIcon style={{ color: '#2f4365' }} />
                                     </div>
                                 </StyledTableCell>
@@ -200,7 +195,12 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
                 <span className='float-end'>{totalCartPrice}</span>
             </h4> */}
 
+            < div style={{ display: 'flex', marginTop: '20px' }
+            }>
+                <ChevronLeftOutlinedIcon />
+                <span className="space1" /> Continue Shopping
 
+            </div >
         </div >
     );
 }
