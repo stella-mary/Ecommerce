@@ -1,23 +1,36 @@
 import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
+const OrderSummary = ({ vatAmount, calculateTotalAmount }) => {
 
-const OrderSummary = ({ firstTitleAmount, secondTitleAmount, thirdTitleAmount, fourthTitleAmount, TotalAmount, total, vatAmount, calculateVatAmount, calculateTotalAmount }) => {
-    // useEffect(() => {
-    //     calculateVatAmount();
-    // }, [total, calculateVatAmount]);
+    const [cartItems, setCartItems] = useState([]);
+    const [itemstotal, setItemstotal] = useState(0);
+    const [subtotal, setSubtotal] = useState(0);
+    const [totalAmount, setTotalAmount] = useState(0);
+    useEffect(() => {
+        const cartItemsFromLocalStorage = localStorage.getItem('cartItems');
+        if (cartItemsFromLocalStorage) {
+            setCartItems(JSON.parse(cartItemsFromLocalStorage));
+        }
+    }, [cartItems]);
+    useEffect(() => {
+        let newItemsTotal = 0;
+        cartItems.forEach((item) => {
+            newItemsTotal += item.quantity * item.price;
+        });
+        setItemstotal(newItemsTotal);
 
-    // useEffect(() => {
-    //     calculateTotalAmount();
-    // }, [total, calculateVatAmount, calculateTotalAmount]);
+        // Calculate subtotal and totalAmount here
+        const newSubtotal = newItemsTotal + vatAmount;
+        setSubtotal(newSubtotal);
+        setTotalAmount(newSubtotal);
+    }, [cartItems, vatAmount]);
 
-    // const TotalAmount = total + vatAmount;
-
-    console.log("vatamount" + vatAmount)
-
-    console.log("total in orderSummary" + total)
+    useEffect(() => {
+        calculateTotalAmount(totalAmount);
+    }, [totalAmount, calculateTotalAmount]);
 
     const buttonStyles = {
         display: 'flex',
@@ -73,9 +86,9 @@ const OrderSummary = ({ firstTitleAmount, secondTitleAmount, thirdTitleAmount, f
                     paddingRight="10px"
                 >
                     <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" paddingBottom="20px">
-                        Items
+                        Items Total
                     </Typography>
-                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">$ {total} {firstTitleAmount}</Typography>
+                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">$ {itemstotal}</Typography>
                 </Box>
                 <Box
                     display="flex"
@@ -87,7 +100,7 @@ const OrderSummary = ({ firstTitleAmount, secondTitleAmount, thirdTitleAmount, f
                     <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" paddingBottom="20px">
                         VATS 1%
                     </Typography>
-                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">{vatAmount} {secondTitleAmount}</Typography>
+                    <Typography fontWeight="600" font-Size="15px" paddingBottom="20px">{vatAmount} </Typography>
                 </Box>
                 <Box
                     display="flex"
@@ -97,12 +110,12 @@ const OrderSummary = ({ firstTitleAmount, secondTitleAmount, thirdTitleAmount, f
                     paddingRight="10px"
                 >
 
-                    <Typography color={colors.greenAccent[100]} variant="h6" fontWeight="600" font-Size="20px" paddingBottom="20px">
+                    <Typography color={colors.greenAccent[100]} variant="h6" font-Size="20px" fontWeight="600" paddingBottom="20px">
                         Sub Total
                     </Typography>
 
                     <Typography fontWeight="600" fontSize="15px" paddingBottom="20px">
-                        $ {TotalAmount}
+                        $ {subtotal}
                     </Typography>
 
                 </Box>
@@ -120,7 +133,7 @@ const OrderSummary = ({ firstTitleAmount, secondTitleAmount, thirdTitleAmount, f
                     <Typography color={colors.greenAccent[100]} variant="h5" fontSize="15px" fontWeight="600" paddingBottom="1px">
                         Total
                     </Typography>
-                    <Typography color="#ff316f;" fontWeight="600" fontSize="15px" paddingBottom="1px">$ {TotalAmount}</Typography>
+                    <Typography color="#ff316f;" fontWeight="600" fontSize="15px" paddingBottom="1px">$ {totalAmount}</Typography>
                 </Box>
 
                 <div style={{ display: 'flex', justifyContent: 'center', marginTop: '30px', gap: '10px' }}>

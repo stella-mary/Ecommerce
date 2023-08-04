@@ -62,25 +62,37 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
                 item.id === id ? { ...item, quantity: item.quantity + 1 } : item
             )
         );
-        calculateSubtotal();
+
+        // Get the updated cart items from the state after increasing the quantity
+        const updatedCartItems = cartItems.map((item) =>
+            item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+        );
+
+        // Save the updated cart items in the local storage
+        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
     };
+
 
     const decrease = (id) => {
-        console.log("display Id" + id)
         setCartItems((prevCart) =>
-            //    {console.log("prevcart" + JSON.stringify(prevCart))}
             prevCart.map((item) =>
-                item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+                item.id === id
+                    ? { ...item, quantity: item.quantity - 1, show: item.quantity === 2 }
+                    : item
+            )
+        );
 
-            )
+        // Get the updated cart items from the state after decreasing the quantity
+        const updatedCartItems = cartItems.map((item) =>
+            item.id === id
+                ? { ...item, quantity: item.quantity - 1, show: item.quantity === 2 }
+                : item
         );
-        setCartItems((prevCart) =>
-            prevCart.map((item) =>
-                item.id === id && item.quantity === 1 ? { ...item, show: true } : item
-            )
-        );
-        calculateSubtotal();
+
+        // Save the updated cart items in the local storage
+        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
     };
+
 
 
 
@@ -90,6 +102,16 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
             setCartItems(JSON.parse(cartItemsFromLocalStorage));
         }
     }, []);
+
+    const deleteItem = (id) => {
+        setCartItems((prevCart) => prevCart.filter((item) => item.id !== id));
+
+        // Get the updated cart items from the state after removing the item
+        const updatedCartItems = cartItems.filter((item) => item.id !== id);
+
+        // Save the updated cart items in the local storage
+        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+    };
 
 
 
@@ -184,7 +206,7 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
                                 <StyledTableCell align="left" style={{ fontSize: '12px' }}>$ {cartItem.price}</StyledTableCell>
                                 {/* < StyledTableCell align="left">{item.ProductPrice * item.quantity}</StyledTableCell> */}
                                 <StyledTableCell align="left">
-                                    <div className="icon-wrapper">
+                                    <div className="icon-wrapper" onClick={() => deleteItem(cartItem.id)}>
                                         <CloseIcon style={{ color: '#2f4365' }} />
                                     </div>
                                 </StyledTableCell>

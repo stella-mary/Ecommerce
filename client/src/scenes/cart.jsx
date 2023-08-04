@@ -10,7 +10,7 @@ import { mockDataProduct } from "../data/mockData";
 
 const Cart = () => {
 
-    const [cart, setCart] = useState(mockDataProduct);
+    const [cartItems, setCartItems] = useState([]);
 
     const [vatAmount, setVatAmount] = useState(0);
 
@@ -21,14 +21,19 @@ const Cart = () => {
     let initialTotal = 0;
 
     const [total, setTotal] = useState(initialTotal);
-
+    useEffect(() => {
+        const cartItemsFromLocalStorage = localStorage.getItem('cartItems');
+        if (cartItemsFromLocalStorage) {
+            setCartItems(JSON.parse(cartItemsFromLocalStorage));
+        }
+    }, []);
     useEffect(() => {
         let newTotal = 0;
-        cart.forEach((item) => {
+        cartItems.forEach((item) => {
             newTotal += (item.ProductPrice * item.quantity);
         });
         setTotal(newTotal);
-    }, [cart]);
+    }, [cartItems]);
 
     const calculateTotalAmount = () => {
         const totalAmount = total + vatAmount;
@@ -38,7 +43,7 @@ const Cart = () => {
 
     const calculateSubtotal = () => {
         let subtotal = 0;
-        cart.map((item) => {
+        cartItems.map((item) => {
             const itemSubtotal = item.quantity * item.ProductPrice;
 
             subtotal += isNaN(itemSubtotal) ? 0 : itemSubtotal;
@@ -54,8 +59,9 @@ const Cart = () => {
     return (
         <div className='cart'>
             {/* <CartDetails /> */}
-            <CartDetails1 cart={cart} setCart={setCart} total={total} calculateSubtotal={calculateSubtotal} />
+            <CartDetails1 cart={cartItems} setCart={setCartItems} total={total} calculateSubtotal={calculateSubtotal} />
             <OrderSummary
+                cart={cartItems}
                 total={total}
                 TotalAmount={TotalAmount}
                 vatAmount={vatAmount}

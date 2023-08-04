@@ -37,9 +37,6 @@ export default function ProductDetails() {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
-    const [selectedColor, setSelectedColor] = useState("circle"); // Default color is "circle"
-
-
     const [selectedSize, setSelectedSize] = useState('');
 
     const [selectedQuantity, setSelectedQuantity] = useState(1);
@@ -53,27 +50,6 @@ export default function ProductDetails() {
     const [cart, setCart] = useState(mockDataProduct);
 
 
-    const increase = (id) => {
-        setCart((prevCart) =>
-            prevCart.map((item) =>
-                item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-            )
-        );
-    };
-
-
-    const decrease = (id) => {
-        setCart((prevCart) =>
-            prevCart.map((item) =>
-                item.id === id ? { ...item, quantity: item.quantity - 1 } : item
-            )
-        );
-        setCart((prevCart) =>
-            prevCart.map((item) =>
-                item.id === id && item.quantity === 1 ? { ...item, show: true } : item
-            )
-        );
-    };
 
 
     return (
@@ -135,17 +111,7 @@ export default function ProductDetails() {
                     <Typography variant="h5" color="#8ca3ba" marginTop="20px">NIKE</Typography>
                     <Typography variant="h3" marginTop="10px"><b>Air Jordan 270</b></Typography>
                     <Typography variant="h3" marginTop="10px" color="#2499ef">$350</Typography>
-                    {/* <Typography variant="h6" marginTop="10px" display="flex" flexDirection="space-between">
-                        <b>Colors:</b>
-                        <span className="space" />
-                        <div className={`circle ${selectedColor === "circle" ? "selected" : ""}`} onClick={() => setSelectedColor("circle")} />
-                        <span className="space1" />
-                        <div className={`circle1 ${selectedColor === "circle1" ? "selected" : ""}`} onClick={() => setSelectedColor("circle1")} />
-                        <span className="space1" />
-                        <div className={`circle2 ${selectedColor === "circle2" ? "selected" : ""}`} onClick={() => setSelectedColor("circle2")} />
-                        <span className="space1" />
-                        <div className={`circle4 ${selectedColor === "circle4" ? "selected" : ""}`} onClick={() => setSelectedColor("circle4")} />
-                    </Typography> */}
+
 
                     <div style={{ display: 'flex', alignItems: 'center', marginTop: '20px', gap: '10px' }}>
                         <label htmlFor="sizeSelect" style={{ marginRight: '10px' }}>
@@ -181,63 +147,63 @@ export default function ProductDetails() {
                     <div style={{ display: 'flex', alignItems: 'center', marginTop: '20px', gap: '20px' }}>
                         <Typography variant="h6" marginTop="20px"><b>Quantity:</b></Typography>
                         <div>
-                            {cart.slice(0, 1).map((item) => (
-                                <div key={item.id}>
+                            {/* {cart.slice(0, 1).map((item) => (
+                                <div key={item.id}> */}
 
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            variant: 'h3',
-                                            fontWeight: 400,
-                                            fontSize: '15px',
-                                            marginTop: '15px',
-                                            border: '2px solid #2f4264',
-                                            borderRadius: '6px',
-                                            padding: '5px',
-                                            width: '100px',
-                                        }}
-                                    >
-                                        <button
-                                            style={{
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    variant: 'h3',
+                                    fontWeight: 400,
+                                    fontSize: '15px',
+                                    marginTop: '15px',
+                                    border: '2px solid #2f4264',
+                                    borderRadius: '6px',
+                                    padding: '5px',
+                                    width: '100px',
+                                }}
+                            >
+                                <button
+                                    style={{
 
-                                                border: 'none',
-                                                backgroundColor: 'transparent',
-                                                cursor: 'pointer',
-                                                marginRight: '5px',
-                                                fontSize: '15px',
-                                                color: 'white',
-                                            }}
+                                        border: 'none',
+                                        backgroundColor: 'transparent',
+                                        cursor: 'pointer',
+                                        marginRight: '5px',
+                                        fontSize: '15px',
+                                        color: 'white',
+                                    }}
 
-                                            onClick={() => {
-                                                setSelectedQuantity(selectedQuantity - 1)
-                                            }}
-                                        >
-                                            -
-                                        </button>
-                                        <span style={{ flex: 1, textAlign: 'center', color: 'white' }}>{selectedQuantity}</span>
-                                        <button
-                                            style={{
-                                                border: 'none',
-                                                backgroundColor: 'transparent',
-                                                cursor: 'pointer',
-                                                marginLeft: '5px',
-                                                fontSize: '15px',
-                                                color: 'white',
-                                            }}
+                                    onClick={() => {
+                                        setSelectedQuantity(selectedQuantity - 1)
+                                    }}
+                                >
+                                    -
+                                </button>
+                                <span style={{ flex: 1, textAlign: 'center', color: 'white' }}>{selectedQuantity}</span>
+                                <button
+                                    style={{
+                                        border: 'none',
+                                        backgroundColor: 'transparent',
+                                        cursor: 'pointer',
+                                        marginLeft: '5px',
+                                        fontSize: '15px',
+                                        color: 'white',
+                                    }}
 
-                                            onClick={() => {
-                                                setSelectedQuantity(selectedQuantity + 1)
-                                            }}
-                                        >
-                                            +
-                                        </button>
+                                    onClick={() => {
+                                        setSelectedQuantity(selectedQuantity + 1)
+                                    }}
+                                >
+                                    +
+                                </button>
 
-                                    </div>
-                                </div>
+                            </div>
+                            {/* </div>
                             ))
-                            }
+                            } */}
 
                         </div>
                     </div>
