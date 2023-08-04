@@ -62,7 +62,7 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
                 item.id === id ? { ...item, quantity: item.quantity + 1 } : item
             )
         );
-        // calculateSubtotal();
+        calculateSubtotal();
     };
 
     const decrease = (id) => {
@@ -79,7 +79,7 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
                 item.id === id && item.quantity === 1 ? { ...item, show: true } : item
             )
         );
-        // calculateSubtotal();
+        calculateSubtotal();
     };
 
 
