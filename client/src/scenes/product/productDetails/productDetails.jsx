@@ -15,18 +15,21 @@ export default function ProductDetails() {
     const navigate = useNavigate();
 
     const handleAddToCart = () => {
+        const existingCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const nextId = existingCartItems.length > 0 ? existingCartItems[existingCartItems.length - 1].id + 1 : 1;
+
         const itemToAdd = {
-            id: cart[0].id, // Assuming the first item in the cart array is the current product
+            id: nextId,
             size: selectedSize,
-            quantity: cart[0].quantity,
+            quantity: selectedQuantity,
             title: 'Nike Pro Max 270',
             price: '350',
             image: shoe,
-
         };
-        const existingCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
         const updatedCartItems = [...existingCartItems, itemToAdd];
         localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+        localStorage.setItem('selectedQuantity', selectedQuantity); // Store the selected size in local storage
         localStorage.setItem('selectedSize', selectedSize); // Store the selected size in local storage
         navigate('/cart'); // Navigate to the CartDetails component
     };
@@ -38,6 +41,10 @@ export default function ProductDetails() {
 
 
     const [selectedSize, setSelectedSize] = useState('');
+
+    const [selectedQuantity, setSelectedQuantity] = useState(1);
+    console.log("selectedQuantity" + selectedQuantity)
+
 
     const handleSizeChange = (event) => {
         setSelectedSize(event.target.value);
@@ -194,6 +201,7 @@ export default function ProductDetails() {
                                     >
                                         <button
                                             style={{
+
                                                 border: 'none',
                                                 backgroundColor: 'transparent',
                                                 cursor: 'pointer',
@@ -203,14 +211,12 @@ export default function ProductDetails() {
                                             }}
 
                                             onClick={() => {
-                                                if (item.quantity > 0) {
-                                                    decrease(item.id);
-                                                }
+                                                setSelectedQuantity(selectedQuantity - 1)
                                             }}
                                         >
                                             -
                                         </button>
-                                        <span style={{ flex: 1, textAlign: 'center', color: 'white' }}>{item.quantity}</span>
+                                        <span style={{ flex: 1, textAlign: 'center', color: 'white' }}>{selectedQuantity}</span>
                                         <button
                                             style={{
                                                 border: 'none',
@@ -221,7 +227,9 @@ export default function ProductDetails() {
                                                 color: 'white',
                                             }}
 
-                                            onClick={() => increase(item.id)}
+                                            onClick={() => {
+                                                setSelectedQuantity(selectedQuantity + 1)
+                                            }}
                                         >
                                             +
                                         </button>

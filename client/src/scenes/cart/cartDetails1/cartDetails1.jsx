@@ -50,34 +50,39 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
 
     console.log("checked details" + total)
 
+    const [cartItems, setCartItems] = useState([]);
+
     var totalCartPrice = 0;
 
     // const [cart, setCart] = useState(mockDataCart);
 
     const increase = (id) => {
-        setCart((prevCart) =>
+        setCartItems((prevCart) =>
             prevCart.map((item) =>
                 item.id === id ? { ...item, quantity: item.quantity + 1 } : item
             )
         );
-        calculateSubtotal();
+        // calculateSubtotal();
     };
 
     const decrease = (id) => {
-        setCart((prevCart) =>
+        console.log("display Id" + id)
+        setCartItems((prevCart) =>
+            //    {console.log("prevcart" + JSON.stringify(prevCart))}
             prevCart.map((item) =>
                 item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+
             )
         );
-        setCart((prevCart) =>
+        setCartItems((prevCart) =>
             prevCart.map((item) =>
                 item.id === id && item.quantity === 1 ? { ...item, show: true } : item
             )
         );
-        calculateSubtotal();
+        // calculateSubtotal();
     };
 
-    const [cartItems, setCartItems] = useState([]);
+
 
     useEffect(() => {
         const cartItemsFromLocalStorage = localStorage.getItem('cartItems');
@@ -94,7 +99,7 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
 
             <TableContainer component={Paper} sx={{ maxHeight: 400 }}>
 
-                <div align="left" style={{ backgroundColor: '#222b36', padding: '15px' }}>Cart <span className='color'>(3 item)</span></div>
+                {/* <div align="left" style={{ backgroundColor: '#222b36', padding: '15px' }}>Cart <span className='color'>(3 item)</span></div> */}
 
 
                 <Table sx={{ minWidth: 500 }} stickyHeader aria-label="sticky table">
@@ -195,12 +200,7 @@ export default function CustomizedTables({ cart, setCart, total, calculateSubtot
                 <span className='float-end'>{totalCartPrice}</span>
             </h4> */}
 
-            < div style={{ display: 'flex', marginTop: '20px' }
-            }>
-                <ChevronLeftOutlinedIcon />
-                <span className="space1" /> Continue Shopping
 
-            </div >
         </div >
     );
 }
